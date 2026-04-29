@@ -1,0 +1,48 @@
+/* Este é o container que envolve todas as suas linhas de dados */
+.painel-container {
+    width: 100%;
+    /* Ocupa 100% da largura da área preta */
+    padding: 20px;
+    /* Pequeno respiro para não encostar na borda da tela */
+    box-sizing: border-box;
+}
+
+.terminal-window {
+    display: flex;
+    justify-content: space-between;
+    /* Força os elementos para os polos opostos */
+    align-items: flex-start;
+    /* Alinha pelo topo, melhor para textos longos como GPU */
+
+    width: 100%;
+    /* Garante que o card use toda a largura */
+    margin-bottom: 10px;
+    /* Espaço entre as linhas de dados */
+    padding: 15px px;
+    /* Padding interno */
+
+    background: rgba(0, 0, 0, 0.5);
+    /* Fundo semi-transparente para o estilo terminal */
+    border-bottom: 1px solid var(--border-color);
+    /* Linha divisória fina */
+    border-left: 4px solid var(--primary-green);
+}
+
+.label {
+    flex-shrink: 0;
+    /* Impede a descrição de encolher */
+    font-weight: bold;
+    color: var(--text-dim);
+    min-width: 150px;
+    /* Garante um espaço mínimo para a descrição */
+}
+
+.value {
+    text-align: right;
+    /* Alinha o dado na direita */
+    color: var(--primary-green);
+    word-break: break-all;
+    /* Segurança para strings muito longas */
+    margin-left: 30px;
+    /* Espaço mínimo entre label e value */
+}

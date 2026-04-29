@@ -1,0 +1,104 @@
+
+
+:root {
+    --bg-color: #0d1117;
+    --accent-color: #58a6ff;
+    --sidebar-width: 260px;
+    --collapsed-width: 70px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-color);
+    color: white;
+    display: flex;
+}
+
+/* Esconde o checkbox */
+.nav-toggle {
+    display: none;
+}
+
+/* Sidebar Base */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: #161b22;
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    border-right: 1px solid #30363d;
+}
+
+/* Lógica de Fechamento */
+.nav-toggle:checked~.sidebar {
+    width: var(--collapsed-width);
+}
+
+/* Estilo dos Itens */
+.menu-items {
+    margin-top: 60px;
+    padding: 10px;
+}
+
+.item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.item:hover {
+    background: #21262d;
+    border-left: 4px solid var(--accent-color);
+}
+
+.item span {
+    font-weight: bold;
+    display: block;
+}
+
+.item small {
+    color: #8b949e;
+}
+
+/* Botão Toggle */
+.toggle-button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+/* Área de Conteúdo */
+.content {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.terminal-box {
+    background: black;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #30363d;
+    font-family: 'Courier New', Courier, monospace;
+    color: #39ff14;
+    /* Neon Green */
+}
+
+.item a {
+    text-decoration: none;
+    /* Remove o sublinhado */
+    color: inherit;
+    /* Herda a cor do elemento pai (.item) */
+    display: block;
+    /* Garante que toda a área do item seja clicável */
+}
