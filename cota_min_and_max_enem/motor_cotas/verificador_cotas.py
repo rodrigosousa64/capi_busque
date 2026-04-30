@@ -24,7 +24,7 @@ class AvaliadorDeCotas:
             return "AC"
         
         eh_ppi = self.perfil.raca in ['preta', 'parda', 'indigena']
-        renda_baixa = self.perfil.renda_sm <= 1.5
+        renda_baixa = self.perfil.renda_sm <= 1.0
 
         if renda_baixa:
             if eh_ppi and not self.perfil.pcd: return "L1"
@@ -45,7 +45,7 @@ class AvaliadorDeCotas:
         if not self.perfil.escola_publica:
             return "PCDA" if self.perfil.pcd else "AC"
         
-        renda_baixa = self.perfil.renda_sm <= 1.5
+        renda_baixa = self.perfil.renda_sm <= 1.0
         eh_ppi = self.perfil.raca in ['preta', 'parda', 'indigena']
         eh_quilombola = self.perfil.raca == 'quilombola'
 
@@ -69,7 +69,7 @@ class AvaliadorDeCotas:
         if not self.perfil.escola_publica:
             return "B" if self.perfil.pcd else "A"
         
-        renda_baixa = self.perfil.renda_sm <= 1.5
+        renda_baixa = self.perfil.renda_sm <= 1.0
         eh_ppi = self.perfil.raca in ['preta', 'parda', 'indigena']
         eh_quilombola = self.perfil.raca == 'quilombola'
 
@@ -92,7 +92,7 @@ class AvaliadorDeCotas:
         if not self.perfil.escola_publica:
             return "AC"
         
-        renda_baixa = self.perfil.renda_sm <= 1.5
+        renda_baixa = self.perfil.renda_sm <= 1.0
         eh_ppi = self.perfil.raca in ['preta', 'parda', 'indigena']
         eh_quilombola = self.perfil.raca == 'quilombola'
 
