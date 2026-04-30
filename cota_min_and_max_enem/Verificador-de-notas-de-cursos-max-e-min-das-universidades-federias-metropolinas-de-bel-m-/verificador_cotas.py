@@ -67,21 +67,21 @@ class AvaliadorDeCotas:
         Grupos 3 a 6 (Escola), Grupos 7 a 10 (Escola + Renda <= 1.5)
         """
         if not self.perfil.escola_publica:
-            return "Grupo 2 (Código B)" if self.perfil.pcd else "Grupo 1 (Código A)"
+            return "B" if self.perfil.pcd else "A"
         
         renda_baixa = self.perfil.renda_sm <= 1.5
         eh_ppi = self.perfil.raca in ['preta', 'parda', 'indigena']
         eh_quilombola = self.perfil.raca == 'quilombola'
 
-        # Mapeamento inferido baseado na lógica comum de separação de cotas (Geral, Étnico, PCD, Étnico+PCD)
+        # Retorna apenas a letra do código, que é como o banco de dados armazena
         if self.perfil.pcd and (eh_ppi or eh_quilombola):
-            return "Grupo 10 (Código J)" if renda_baixa else "Grupo 6 (Código F)"
+            return "J" if renda_baixa else "F"
         elif self.perfil.pcd:
-            return "Grupo 9 (Código I)" if renda_baixa else "Grupo 5 (Código E)"
+            return "I" if renda_baixa else "E"
         elif eh_ppi or eh_quilombola:
-            return "Grupo 8 (Código H)" if renda_baixa else "Grupo 4 (Código D)"
+            return "H" if renda_baixa else "D"
         else:
-            return "Grupo 7 (Código G)" if renda_baixa else "Grupo 3 (Código C)"
+            return "G" if renda_baixa else "C"
 
 
     def obter_cota_ufra(self) -> str:
@@ -123,7 +123,7 @@ class AvaliadorDeCotas:
             },
             "UEPA": {
                 "cota_especifica": self.obter_cota_uepa(),
-                "ampla_concorrencia": "Grupo 1 (Código A)"
+                "ampla_concorrencia": "A"
             },
             "UFRA": {
                 "cota_especifica": self.obter_cota_ufra(),
