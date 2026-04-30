@@ -1,0 +1,39 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+<div style="max-width: 500px;">
+    <h2>> REGISTRO_SISTEMA</h2>
+    <form method="post" style="margin-top: 20px;">
+        {% csrf_token %}
+        {% for field in form %}
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px; color: #58a6ff;">{{ field.label_tag }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <div style="color: #ff3333; font-size: 0.8rem; margin-top: 5px;">
+                        {{ field.errors|striptags }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" style="background: #39ff14; color: black; border: none; padding: 10px 20px; font-family: inherit; font-weight: bold; cursor: pointer; margin-top: 10px;">[ REGISTER ]</button>
+    </form>
+    <p style="margin-top: 20px;">
+        Ja possui acesso? <a href="{% url 'login' %}" style="color: #58a6ff;">[ Login_Usuario ]</a>
+    </p>
+</div>
+<style>
+    input, select {
+        width: 100%;
+        padding: 8px;
+        background: black;
+        border: 1px solid #30363d;
+        color: #39ff14;
+        font-family: inherit;
+    }
+    input:focus, select:focus {
+        outline: none;
+        border-color: #39ff14;
+    }
+</style>
+{% endblock %}

@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('project_home.urls'))
+    path('', include('project_home.urls')),
+    path('cotas/', include('cota_min_and_max_enem.urls')),
 ]

@@ -17,9 +17,9 @@
         </label>
         
         <nav class="menu-items">
-            <div class="item"><a href="{% url 'home' %}"><span>Inicio</span> <small>Dashboard</small></div>
-         <div class="item"><a href="{% url 'oque_eu_sei_sobre_voce' %}"><span>O que eu sei sobre voce?</span> <small></small></a></div> 
-   
+            <div class="item"><a href="{% url 'home' %}"><span>Inicio</span> <small>Dashboard</small></a></div>
+            <div class="item"><a href="{% url 'oque_eu_sei_sobre_voce' %}"><span>O que eu sei sobre voce?</span> <small></small></a></div> 
+            <div class="item"><a href="{% url 'login' %}"><span>Cota ENEM</span> <small>Buscador e Perfil</small></a></div>
         </nav>
     </aside>
 
@@ -29,6 +29,13 @@
             <p>Welcome</p>
         </header>
         <section class="terminal-box">
+            {% if messages %}
+                <ul style="list-style: none; padding: 0; color: #ffeb3b; margin-bottom: 20px;">
+                    {% for message in messages %}
+                        <li>[{{ message.tags|upper }}] {{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
             {% block content %}{% endblock %}
         </section>
     </main>
