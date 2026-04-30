@@ -32,8 +32,8 @@ def registro_view(request):
             # Criar perfil padrão automaticamente
             PerfilCandidatoDB.objects.create(user=user)
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-            messages.success(request, "Conta criada com sucesso! Por favor, atualize seu perfil.")
-            return redirect('perfil')
+            messages.success(request, "Conta criada com sucesso!")
+            return redirect('buscar_cursos')
     else:
         form = RegistroForm()
     return render(request, 'cota_min_and_max_enem/registro.html', {'form': form})
@@ -66,36 +66,28 @@ def logout_view(request):
     return redirect('login')
 
 @login_required
-def perfil_view(request):
+def buscar_cursos_view(request):
     try:
         perfil_db = request.user.perfil_candidato
     except PerfilCandidatoDB.DoesNotExist:
         perfil_db = PerfilCandidatoDB.objects.create(user=request.user)
 
+    # Lógica de atualização de perfil (POST)
     if request.method == 'POST':
-        form = PerfilForm(request.POST, instance=perfil_db)
-        if form.is_valid():
-            form.save()
+        perfil_form = PerfilForm(request.POST, instance=perfil_db)
+        if perfil_form.is_valid():
+            perfil_form.save()
             messages.success(request, "Perfil atualizado com sucesso!")
-            return redirect('buscar_cursos')
+            return redirect(request.get_full_path()) # Redireciona mantendo a query de busca se houver
     else:
-        form = PerfilForm(instance=perfil_db)
-        
-    return render(request, 'cota_min_and_max_enem/perfil.html', {'form': form})
+        perfil_form = PerfilForm(instance=perfil_db)
 
-@login_required
-def buscar_cursos_view(request):
-    try:
-        perfil_db = request.user.perfil_candidato
-    except PerfilCandidatoDB.DoesNotExist:
-        messages.warning(request, "Por favor, preencha seu perfil antes de buscar.")
-        return redirect('perfil')
-
-    form = BuscaCursoForm(request.GET or None)
+    # Lógica de busca (GET)
+    busca_form = BuscaCursoForm(request.GET or None)
     resultados = []
 
-    if form.is_valid():
-        curso_buscado = form.cleaned_data['curso']
+    if busca_form.is_valid():
+        curso_buscado = busca_form.cleaned_data['curso']
         
         # Converter PerfilCandidatoDB para a dataclass PerfilCandidato
         perfil_dataclass = PerfilCandidato(
@@ -109,6 +101,7 @@ def buscar_cursos_view(request):
         resultados = buscador.buscar_curso_para_perfil(curso_buscado, perfil_dataclass)
 
     return render(request, 'cota_min_and_max_enem/busca.html', {
-        'form': form,
+        'busca_form': busca_form,
+        'perfil_form': perfil_form,
         'resultados': resultados
     })
