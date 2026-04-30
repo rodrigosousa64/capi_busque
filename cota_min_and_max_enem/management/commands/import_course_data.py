@@ -10,7 +10,7 @@ class Command(BaseCommand):
         # O caminho será relativo à pasta do app
         base_dir = os.path.join(
             os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-            'Verificador-de-notas-de-cursos-max-e-min-das-universidades-federias-metropolinas-de-bel-m-',
+            'motor_cotas',
             'dados_de-cursos'
         )
 

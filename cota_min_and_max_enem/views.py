@@ -9,9 +9,9 @@ from django.utils import timezone
 import os
 import sys
 
-# Workaround para importar o diretório com hifens
+# Workaround para importar o módulo motor_cotas
 current_dir = os.path.dirname(os.path.abspath(__file__))
-sub_dir = os.path.join(current_dir, 'Verificador-de-notas-de-cursos-max-e-min-das-universidades-federias-metropolinas-de-bel-m-')
+sub_dir = os.path.join(current_dir, 'motor_cotas')
 if sub_dir not in sys.path:
     sys.path.append(sub_dir)
 
