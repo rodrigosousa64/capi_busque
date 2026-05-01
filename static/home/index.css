@@ -123,8 +123,8 @@ body {
     /* 1. Fluid Width: Ocupa todo o espaço disponível no eixo X */
     width: 100%;
 
-    /* 2. Boundary Limit: Evita que fique largo demais em monitores Desktop */
-    max-width: 1200px;
+    /* 2. Boundary Limit: Ajustado para um tamanho mais próximo de smartphone/tablet */
+    max-width: 800px;
 
     /* 3. Centralização: Calcula o eixo X e divide a margem restante igualmente */
     margin: 0 auto;

@@ -37,7 +37,7 @@
 
 {% if resultados %}
     <h3 style="color: #58a6ff; margin-bottom: 20px;">> RESULTADOS_ENCONTRADOS</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px;">
         {% for result in resultados %}
         <div style="border: 1px solid #30363d; padding: 20px; border-left: 4px solid #58a6ff;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px;">
