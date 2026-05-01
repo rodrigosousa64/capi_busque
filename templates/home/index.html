@@ -11,11 +11,11 @@
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     
+    <label for="nav-toggle" class="toggle-button">
+        <span class="icon"></span>
+    </label>
+
     <aside class="sidebar">
-        <label for="nav-toggle" class="toggle-button">
-            <span class="icon"></span>
-        </label>
-        
         <nav class="menu-items">
             <div class="item"><a href="{% url 'home' %}"><span>Inicio</span> <small>Dashboard</small></a></div>
             <div class="item"><a href="{% url 'login' %}"><span>Simulador de Cotas</span> <small>Análise de Perfil e Notas</small></a></div>

@@ -70,16 +70,22 @@ body {
 }
 
 
-/* Botão Toggle */
+/* Botão Toggle (Desktop) */
 .toggle-button {
-    position: absolute;
-    right: 15px;
+    position: fixed;
     top: 15px;
+    left: 215px; /* Posição padrão (sidebar aberta: 260px - 45px) */
     cursor: pointer;
     width: 30px;
     height: 30px;
     background: var(--accent-color);
     border-radius: 50%;
+    z-index: 1001;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-toggle:checked ~ .toggle-button {
+    left: 25px; /* Posição colapsada (sidebar fechada: 70px - 45px) */
 }
 
 /* Área de Conteúdo */
@@ -192,12 +198,13 @@ body {
         font-weight: bold;
     }
 
-    .nav-toggle:checked ~ .sidebar .toggle-button {
+    .nav-toggle:checked ~ .toggle-button {
         transform: rotate(90deg);
         background: #ff3333; /* Vermelho para indicar fechar */
+        left: auto; /* Mantém na direita no mobile */
     }
     
-    .nav-toggle:checked ~ .sidebar .toggle-button .icon::before {
+    .nav-toggle:checked ~ .toggle-button .icon::before {
         content: "✕";
         color: #fff;
     }
