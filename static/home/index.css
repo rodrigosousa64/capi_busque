@@ -89,22 +89,6 @@ body {
     color: #8b949e;
 }
 
-/* Botão Toggle dentro da sidebar (fechar no mobile, colapsar no desktop) */
-.toggle-button {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    background: var(--accent-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
-    font-weight: bold;
-}
 
 /* Área de Conteúdo */
 .content {
