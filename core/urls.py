@@ -17,14 +17,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render
-from django.db.models import Max, Min
 from cota_min_and_max_enem.models import CourseOffering
 
 def home_view(request):
-    cursos_aleatorios = CourseOffering.objects.annotate(
-        max_score=Max('quotas__historical_max_score'),
-        min_score=Min('quotas__previous_cutoff')
-    ).order_by('?')[:4]
+    cursos_aleatorios = list(CourseOffering.objects.order_by('?')[:4])
+    
+    for curso in cursos_aleatorios:
+        quotas = curso.quotas.all()
+        curso.min_quota = None
+        curso.max_quota = None
+        
+        if quotas.exists():
+            valid_min = [q for q in quotas if q.previous_cutoff is not None]
+            valid_max = [q for q in quotas if q.historical_max_score is not None]
+            
+            if valid_min:
+                curso.min_quota = min(valid_min, key=lambda q: q.previous_cutoff)
+            if valid_max:
+                curso.max_quota = max(valid_max, key=lambda q: q.historical_max_score)
+
     return render(request, 'home/dashboard.html', {'cursos_aleatorios': cursos_aleatorios})
 
 urlpatterns = [
