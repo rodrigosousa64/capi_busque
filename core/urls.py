@@ -38,8 +38,12 @@ def home_view(request):
 
     return render(request, 'home/dashboard.html', {'cursos_aleatorios': cursos_aleatorios})
 
+def regras_cotas_view(request):
+    return render(request, 'home/regras_cotas.html')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
+    path('regras-cotas/', regras_cotas_view, name='regras_cotas'),
     path('cotas/', include('cota_min_and_max_enem.urls')),
 ]
