@@ -1,0 +1,181 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+<div style="padding: 20px;">
+    <h2 style="color: #39ff14; margin-bottom: 5px;">> Média de Pontuação por Acertos (TRI 2024)</h2>
+    <p style="color: #8b949e; font-size: 0.9rem; margin-top: 0; margin-bottom: 30px;">
+        // Simulação baseada nos microdados provisórios (Candidatos com ao menos 1 acerto).
+    </p>
+
+    <div style="background: #0d1117; border: 1px solid #30363d; border-left: 4px solid #58a6ff; padding: 20px; border-radius: 4px;">
+        <canvas id="triChart" height="100"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('triChart').getContext('2d');
+        
+        // Geração dos eixos X (Acertos de 1 a 45)
+        const labels = Array.from({length: 45}, (_, i) => i + 1);
+
+        // Funções para simular a curva do gráfico
+        // As curvas seguem uma aproximação baseada na imagem da TRI
+        
+        function gerarDadosMatematica() {
+            // Inicia perto de 380, termina perto de 960
+            return labels.map(x => {
+                if (x === 1) return 380;
+                // Uma curva que acelera no final
+                return 380 + (x/45) * 200 + Math.pow(x/45, 3) * 380;
+            });
+        }
+
+        function gerarDadosNatureza() {
+            // Inicia perto de 50, termina perto de 870
+            return labels.map(x => {
+                if (x === 1) return 50;
+                // Curva suave
+                return 50 + (x/45) * 500 + Math.pow(x/45, 2) * 320;
+            });
+        }
+
+        function gerarDadosHumanas() {
+            // Inicia perto de 290, termina perto de 820
+            return labels.map(x => {
+                if (x === 1) return 290;
+                return 290 + (x/45) * 300 + Math.pow(x/45, 2) * 230;
+            });
+        }
+
+        function gerarDadosLinguagens() {
+            // Inicia perto de 310, termina perto de 800
+            return labels.map(x => {
+                if (x === 1) return 310;
+                return 310 + (x/45) * 250 + Math.pow(x/45, 3) * 240;
+            });
+        }
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Matemática',
+                        data: gerarDadosMatematica(),
+                        borderColor: '#ff3333', // Vermelho do tema
+                        backgroundColor: 'rgba(255, 51, 51, 0.1)',
+                        borderWidth: 2,
+                        pointRadius: 1,
+                        pointHoverRadius: 6,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Natureza',
+                        data: gerarDadosNatureza(),
+                        borderColor: '#ffffff', // Branco/Cinza claro
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        borderWidth: 2,
+                        pointRadius: 1,
+                        pointHoverRadius: 6,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Humanas',
+                        data: gerarDadosHumanas(),
+                        borderColor: '#58a6ff', // Azul do tema
+                        backgroundColor: 'rgba(88, 166, 255, 0.1)',
+                        borderWidth: 2,
+                        pointRadius: 1,
+                        pointHoverRadius: 6,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Linguagens',
+                        data: gerarDadosLinguagens(),
+                        borderColor: '#39ff14', // Verde Neon do tema
+                        backgroundColor: 'rgba(57, 255, 20, 0.1)',
+                        borderWidth: 2,
+                        pointRadius: 1,
+                        pointHoverRadius: 6,
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#8b949e',
+                            font: { family: 'Courier New, monospace', size: 14 }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        titleColor: '#39ff14',
+                        titleFont: { family: 'Courier New, monospace' },
+                        bodyFont: { family: 'Courier New, monospace' },
+                        borderColor: '#30363d',
+                        borderWidth: 1,
+                        callbacks: {
+                            title: function(context) {
+                                return context[0].label + ' Acertos';
+                            },
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += Math.round(context.parsed.y) + ' pts';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Número de Acertos',
+                            color: '#8b949e',
+                            font: { family: 'Courier New, monospace' }
+                        },
+                        grid: {
+                            color: '#30363d'
+                        },
+                        ticks: {
+                            color: '#8b949e'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Pontuação TRI',
+                            color: '#8b949e',
+                            font: { family: 'Courier New, monospace' }
+                        },
+                        grid: {
+                            color: '#30363d'
+                        },
+                        ticks: {
+                            color: '#8b949e'
+                        },
+                        min: 0,
+                        max: 1000
+                    }
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
