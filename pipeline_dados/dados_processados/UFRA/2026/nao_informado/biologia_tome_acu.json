@@ -1,0 +1,72 @@
+{
+    "institution": "UFRA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "BIOLOGIA",
+            "campus": "TOMÉ-AÇU",
+            "degree": "LICENCIATURA",
+            "shift": "Não Informado",
+            "total_spots_filled": 25,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 9,
+                    "previous_cutoff": 551.34,
+                    "historical_max_score": 655.52
+                },
+                {
+                    "quota_code": "LB_EP",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo). Sem critério de raça ou deficiência",
+                    "spots": 1,
+                    "previous_cutoff": 544.8,
+                    "historical_max_score": 544.8
+                },
+                {
+                    "quota_code": "LB_PPI",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PPI",
+                    "spots": 6,
+                    "previous_cutoff": 515.98,
+                    "historical_max_score": 546.86
+                },
+                {
+                    "quota_code": "LB_Q",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 491.78,
+                    "historical_max_score": 491.78
+                },
+                {
+                    "quota_code": "LB_PCD",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 479.36,
+                    "historical_max_score": 479.36
+                },
+                {
+                    "quota_code": "LI_EP",
+                    "description": "Cota Escola + Renda Livre (sem restrição de renda). Sem critério de raça ou deficiência",
+                    "spots": 1,
+                    "previous_cutoff": 534.96,
+                    "historical_max_score": 534.96
+                },
+                {
+                    "quota_code": "LI_PPI",
+                    "description": "Cota Escola + Renda Livre + PPI",
+                    "spots": 5,
+                    "previous_cutoff": 504.72,
+                    "historical_max_score": 543.46
+                },
+                {
+                    "quota_code": "LI_PCD",
+                    "description": "Cota Escola + Renda Livre + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 504.66,
+                    "historical_max_score": 504.66
+                }
+            ]
+        }
+    ]
+}

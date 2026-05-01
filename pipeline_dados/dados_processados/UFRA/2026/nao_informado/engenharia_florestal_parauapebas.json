@@ -1,0 +1,72 @@
+{
+    "institution": "UFRA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "ENGENHARIA FLORESTAL",
+            "campus": "PARAUAPEBAS",
+            "degree": "BACHARELADO",
+            "shift": "Não Informado",
+            "total_spots_filled": 25,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 9,
+                    "previous_cutoff": 592.78,
+                    "historical_max_score": 619.64
+                },
+                {
+                    "quota_code": "LB_EP",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo). Sem critério de raça ou deficiência",
+                    "spots": 1,
+                    "previous_cutoff": 587.64,
+                    "historical_max_score": 587.64
+                },
+                {
+                    "quota_code": "LB_PPI",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PPI",
+                    "spots": 6,
+                    "previous_cutoff": 528.94,
+                    "historical_max_score": 588.32
+                },
+                {
+                    "quota_code": "LB_Q",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 516.92,
+                    "historical_max_score": 516.92
+                },
+                {
+                    "quota_code": "LB_PCD",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 492.86,
+                    "historical_max_score": 492.86
+                },
+                {
+                    "quota_code": "LI_EP",
+                    "description": "Cota Escola + Renda Livre (sem restrição de renda). Sem critério de raça ou deficiência",
+                    "spots": 1,
+                    "previous_cutoff": 589.76,
+                    "historical_max_score": 589.76
+                },
+                {
+                    "quota_code": "LI_PPI",
+                    "description": "Cota Escola + Renda Livre + PPI",
+                    "spots": 5,
+                    "previous_cutoff": 541.56,
+                    "historical_max_score": 586.38
+                },
+                {
+                    "quota_code": "LI_PCD",
+                    "description": "Cota Escola + Renda Livre + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 576.3,
+                    "historical_max_score": 576.3
+                }
+            ]
+        }
+    ]
+}

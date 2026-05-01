@@ -1,0 +1,72 @@
+{
+    "institution": "UFRA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "ENGENHARIA AMBIENTAL E ENERGIAS RENOVÁVEIS",
+            "campus": "BELÉM",
+            "degree": "BACHARELADO",
+            "shift": "Não Informado",
+            "total_spots_filled": 25,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 9,
+                    "previous_cutoff": 686.32,
+                    "historical_max_score": 749.44
+                },
+                {
+                    "quota_code": "LB_EP",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo). Sem critério de raça ou deficiência",
+                    "spots": 1,
+                    "previous_cutoff": 657.94,
+                    "historical_max_score": 657.94
+                },
+                {
+                    "quota_code": "LB_PPI",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PPI",
+                    "spots": 6,
+                    "previous_cutoff": 606.66,
+                    "historical_max_score": 625.06
+                },
+                {
+                    "quota_code": "LB_Q",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 524.68,
+                    "historical_max_score": 524.68
+                },
+                {
+                    "quota_code": "LB_PCD",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 533.44,
+                    "historical_max_score": 533.44
+                },
+                {
+                    "quota_code": "LI_EP",
+                    "description": "Cota Escola + Renda Livre (sem restrição de renda). Sem critério de raça ou deficiência",
+                    "spots": 1,
+                    "previous_cutoff": 657.1,
+                    "historical_max_score": 657.1
+                },
+                {
+                    "quota_code": "LI_PPI",
+                    "description": "Cota Escola + Renda Livre + PPI",
+                    "spots": 5,
+                    "previous_cutoff": 601.92,
+                    "historical_max_score": 647.34
+                },
+                {
+                    "quota_code": "LI_PCD",
+                    "description": "Cota Escola + Renda Livre + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 540.7,
+                    "historical_max_score": 540.7
+                }
+            ]
+        }
+    ]
+}

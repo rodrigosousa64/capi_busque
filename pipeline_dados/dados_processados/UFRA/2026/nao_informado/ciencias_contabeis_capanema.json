@@ -1,0 +1,72 @@
+{
+    "institution": "UFRA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "CIÊNCIAS CONTÁBEIS",
+            "campus": "CAPANEMA",
+            "degree": "BACHARELADO",
+            "shift": "Não Informado",
+            "total_spots_filled": 25,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 9,
+                    "previous_cutoff": 632.04,
+                    "historical_max_score": 684.82
+                },
+                {
+                    "quota_code": "LB_EP",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo). Sem critério de raça ou deficiência",
+                    "spots": 1,
+                    "previous_cutoff": 627.82,
+                    "historical_max_score": 627.82
+                },
+                {
+                    "quota_code": "LB_PPI",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PPI",
+                    "spots": 6,
+                    "previous_cutoff": 565.58,
+                    "historical_max_score": 624.14
+                },
+                {
+                    "quota_code": "LB_Q",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 565.24,
+                    "historical_max_score": 565.24
+                },
+                {
+                    "quota_code": "LB_PCD",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 535.12,
+                    "historical_max_score": 535.12
+                },
+                {
+                    "quota_code": "LI_EP",
+                    "description": "Cota Escola + Renda Livre (sem restrição de renda). Sem critério de raça ou deficiência",
+                    "spots": 1,
+                    "previous_cutoff": 630.26,
+                    "historical_max_score": 630.26
+                },
+                {
+                    "quota_code": "LI_PPI",
+                    "description": "Cota Escola + Renda Livre + PPI",
+                    "spots": 5,
+                    "previous_cutoff": 554.12,
+                    "historical_max_score": 601.12
+                },
+                {
+                    "quota_code": "LI_PCD",
+                    "description": "Cota Escola + Renda Livre + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 563.22,
+                    "historical_max_score": 563.22
+                }
+            ]
+        }
+    ]
+}

@@ -51,7 +51,8 @@ class Command(BaseCommand):
                                 campus=offering_data.get("campus", ""),
                                 degree=offering_data.get("degree", ""),
                                 shift=offering_data.get("shift", ""),
-                                total_spots_filled=offering_data.get("total_spots_filled", 0)
+                                total_spots_filled=offering_data.get("total_spots_filled", 0),
+                                leftover_spots=offering_data.get("leftover_spots", 0)
                             )
                             ofertas_criadas += 1
 

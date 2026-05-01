@@ -1,0 +1,72 @@
+{
+    "institution": "UFRA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "ENGENHARIA FLORESTAL",
+            "campus": "PARAGOMINAS",
+            "degree": "BACHARELADO",
+            "shift": "Não Informado",
+            "total_spots_filled": 25,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 9,
+                    "previous_cutoff": 590.18,
+                    "historical_max_score": 669.2
+                },
+                {
+                    "quota_code": "LB_EP",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo). Sem critério de raça ou deficiência",
+                    "spots": 1,
+                    "previous_cutoff": 576.76,
+                    "historical_max_score": 576.76
+                },
+                {
+                    "quota_code": "LB_PPI",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PPI",
+                    "spots": 6,
+                    "previous_cutoff": 510.1,
+                    "historical_max_score": 564.3
+                },
+                {
+                    "quota_code": "LB_Q",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 503.42,
+                    "historical_max_score": 503.42
+                },
+                {
+                    "quota_code": "LB_PCD",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 505.9,
+                    "historical_max_score": 505.9
+                },
+                {
+                    "quota_code": "LI_EP",
+                    "description": "Cota Escola + Renda Livre (sem restrição de renda). Sem critério de raça ou deficiência",
+                    "spots": 1,
+                    "previous_cutoff": 522.98,
+                    "historical_max_score": 522.98
+                },
+                {
+                    "quota_code": "LI_PPI",
+                    "description": "Cota Escola + Renda Livre + PPI",
+                    "spots": 5,
+                    "previous_cutoff": 457.66,
+                    "historical_max_score": 483.74
+                },
+                {
+                    "quota_code": "LI_PCD",
+                    "description": "Cota Escola + Renda Livre + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 501.8,
+                    "historical_max_score": 501.8
+                }
+            ]
+        }
+    ]
+}

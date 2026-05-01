@@ -1,0 +1,86 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "ARQUITETURA E URBANISMO",
+            "campus": "BELÉM",
+            "degree": "BAC",
+            "shift": "VESPERTINO",
+            "total_spots_filled": 31,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 12,
+                    "previous_cutoff": 717.46,
+                    "historical_max_score": 776.18
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 637.02,
+                    "historical_max_score": 637.02
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 695.34,
+                    "historical_max_score": 695.34
+                },
+                {
+                    "quota_code": "EPCD",
+                    "description": "Cota Escola + Pessoas com Deficiência (PcD)",
+                    "spots": 1,
+                    "previous_cutoff": 502.2,
+                    "historical_max_score": 502.2
+                },
+                {
+                    "quota_code": "EQ",
+                    "description": "Cota Escola + Quilombolas",
+                    "spots": 0,
+                    "previous_cutoff": 0.0,
+                    "historical_max_score": 0.0
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 6,
+                    "previous_cutoff": 607.54,
+                    "historical_max_score": 658.6
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 1,
+                    "previous_cutoff": 665.64,
+                    "historical_max_score": 665.64
+                },
+                {
+                    "quota_code": "ERPCD",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Pessoas com Deficiência (PcD)",
+                    "spots": 0,
+                    "previous_cutoff": 0.0,
+                    "historical_max_score": 0.0
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 503.68,
+                    "historical_max_score": 503.68
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 8,
+                    "previous_cutoff": 548.76,
+                    "historical_max_score": 605.74
+                }
+            ]
+        }
+    ]
+}

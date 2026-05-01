@@ -1,0 +1,86 @@
+{
+    "institution": "UEPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "GEOGRAFIA",
+            "campus": "BELÉM",
+            "degree": "Licenciatura",
+            "shift": "Vespertino",
+            "total_spots_filled": 11,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "A",
+                    "description": "Ampla Concorrência (Grupo 1)",
+                    "spots": 4,
+                    "previous_cutoff": 699.16,
+                    "historical_max_score": 814.2
+                },
+                {
+                    "quota_code": "B",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência - PcD (Grupo 2)",
+                    "spots": 0,
+                    "previous_cutoff": 637.02,
+                    "historical_max_score": 637.02
+                },
+                {
+                    "quota_code": "C",
+                    "description": "Apenas Cota Escola (Grupo 3)",
+                    "spots": 0,
+                    "previous_cutoff": 694.36,
+                    "historical_max_score": 694.46
+                },
+                {
+                    "quota_code": "D",
+                    "description": "Cota Escola + PcD (Grupo 4)",
+                    "spots": 1,
+                    "previous_cutoff": 598.22,
+                    "historical_max_score": 598.22
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Cota Escola + Étnico-Racial-Quilombola (Grupo 5)",
+                    "spots": 4,
+                    "previous_cutoff": 619.67,
+                    "historical_max_score": 670.43
+                },
+                {
+                    "quota_code": "F",
+                    "description": "Cota Escola + Étnico-Racial-Quilombola + PcD (Grupo 6)",
+                    "spots": 0,
+                    "previous_cutoff": 0.0,
+                    "historical_max_score": 0.0
+                },
+                {
+                    "quota_code": "G",
+                    "description": "Cota Escola + Renda (Grupo 7)",
+                    "spots": 1,
+                    "previous_cutoff": 677.78,
+                    "historical_max_score": 678.79
+                },
+                {
+                    "quota_code": "H",
+                    "description": "Cota Escola + Renda + PcD (Grupo 8)",
+                    "spots": 0,
+                    "previous_cutoff": 519.07,
+                    "historical_max_score": 519.07
+                },
+                {
+                    "quota_code": "I",
+                    "description": "Cota Escola + Renda + Étnico-Racial-Quilombola (Grupo 9)",
+                    "spots": 1,
+                    "previous_cutoff": 573.85,
+                    "historical_max_score": 618.68
+                },
+                {
+                    "quota_code": "J",
+                    "description": "Cota Escola + Renda + Étnico-Racial-Quilombola + PcD (Grupo 10)",
+                    "spots": 0,
+                    "previous_cutoff": 0.0,
+                    "historical_max_score": 0.0
+                }
+            ]
+        }
+    ]
+}

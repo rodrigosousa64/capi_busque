@@ -1,0 +1,86 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "ENGENHARIA DE PRODUCAO",
+            "campus": "ABAETETUBA",
+            "degree": "BAC",
+            "shift": "INTEGRAL",
+            "total_spots_filled": 41,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 17,
+                    "previous_cutoff": 649.66,
+                    "historical_max_score": 727.44
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 614.96,
+                    "historical_max_score": 614.96
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 640.28,
+                    "historical_max_score": 640.28
+                },
+                {
+                    "quota_code": "EPCD",
+                    "description": "Cota Escola + Pessoas com Deficiência (PcD)",
+                    "spots": 1,
+                    "previous_cutoff": 611.04,
+                    "historical_max_score": 611.04
+                },
+                {
+                    "quota_code": "EQ",
+                    "description": "Cota Escola + Quilombolas",
+                    "spots": 0,
+                    "previous_cutoff": 0.0,
+                    "historical_max_score": 0.0
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 9,
+                    "previous_cutoff": 610.96,
+                    "historical_max_score": 637.26
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 1,
+                    "previous_cutoff": 637.7,
+                    "historical_max_score": 637.7
+                },
+                {
+                    "quota_code": "ERPCD",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Pessoas com Deficiência (PcD)",
+                    "spots": 1,
+                    "previous_cutoff": 524.42,
+                    "historical_max_score": 524.42
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 584.84,
+                    "historical_max_score": 584.84
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 9,
+                    "previous_cutoff": 552.54,
+                    "historical_max_score": 610.54
+                }
+            ]
+        }
+    ]
+}

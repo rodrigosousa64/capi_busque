@@ -9,6 +9,7 @@ class CourseOffering(models.Model):
     degree = models.CharField(max_length=100, blank=True, null=True)
     shift = models.CharField(max_length=50)
     total_spots_filled = models.IntegerField(default=0)
+    leftover_spots = models.IntegerField(default=0)
 
     def __str__(self):
         return f"{self.course_name} - {self.institution} ({self.campus})"

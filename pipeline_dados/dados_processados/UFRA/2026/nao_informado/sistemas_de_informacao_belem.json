@@ -3,67 +3,68 @@
     "year_reference": 2026,
     "offerings": [
         {
-            "course": "Sistemas De Informação",
-            "campus": "Belém",
-            "degree": "Bacharelado",
-            "shift": "Nao Informado",
+            "course": "SISTEMAS DE INFORMAÇÃO",
+            "campus": "BELÉM",
+            "degree": "BACHARELADO",
+            "shift": "Não Informado",
             "total_spots_filled": 25,
+            "leftover_spots": 0,
             "competition_data": [
                 {
                     "quota_code": "AC",
-                    "description": "Cota AC",
+                    "description": "Ampla Concorrência",
                     "spots": 9,
-                    "previous_cutoff": 762.5,
-                    "historical_max_score": 782.89
+                    "previous_cutoff": 700.32,
+                    "historical_max_score": 731.44
                 },
                 {
                     "quota_code": "LB_EP",
-                    "description": "Cota LB_EP",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo). Sem critério de raça ou deficiência",
                     "spots": 1,
-                    "previous_cutoff": 734.28,
-                    "historical_max_score": 734.28
-                },
-                {
-                    "quota_code": "LB_PCD",
-                    "description": "Cota LB_PCD",
-                    "spots": 1,
-                    "previous_cutoff": 644.25,
-                    "historical_max_score": 644.25
+                    "previous_cutoff": 675.02,
+                    "historical_max_score": 675.02
                 },
                 {
                     "quota_code": "LB_PPI",
-                    "description": "Cota LB_PPI",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PPI",
                     "spots": 6,
-                    "previous_cutoff": 686.94,
-                    "historical_max_score": 704.96
+                    "previous_cutoff": 620.52,
+                    "historical_max_score": 662.24
                 },
                 {
                     "quota_code": "LB_Q",
-                    "description": "Cota LB_Q",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + Quilombolas",
                     "spots": 1,
-                    "previous_cutoff": 666.88,
-                    "historical_max_score": 666.88
+                    "previous_cutoff": 531.5,
+                    "historical_max_score": 531.5
+                },
+                {
+                    "quota_code": "LB_PCD",
+                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 576.98,
+                    "historical_max_score": 576.98
                 },
                 {
                     "quota_code": "LI_EP",
-                    "description": "Cota LI_EP",
+                    "description": "Cota Escola + Renda Livre (sem restrição de renda). Sem critério de raça ou deficiência",
                     "spots": 1,
-                    "previous_cutoff": 761.9,
-                    "historical_max_score": 761.9
-                },
-                {
-                    "quota_code": "LI_PCD",
-                    "description": "Cota LI_PCD",
-                    "spots": 1,
-                    "previous_cutoff": 702.79,
-                    "historical_max_score": 702.79
+                    "previous_cutoff": 694.82,
+                    "historical_max_score": 694.82
                 },
                 {
                     "quota_code": "LI_PPI",
-                    "description": "Cota LI_PPI",
+                    "description": "Cota Escola + Renda Livre + PPI",
                     "spots": 5,
-                    "previous_cutoff": 708.35,
-                    "historical_max_score": 726.79
+                    "previous_cutoff": 650.74,
+                    "historical_max_score": 692.76
+                },
+                {
+                    "quota_code": "LI_PCD",
+                    "description": "Cota Escola + Renda Livre + PcD",
+                    "spots": 1,
+                    "previous_cutoff": 597.9,
+                    "historical_max_score": 597.9
                 }
             ]
         }

@@ -1,0 +1,86 @@
+{
+    "institution": "UEPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "ENGENHARIA AMBIENTAL E SANITÁRIA",
+            "campus": "CASTANHAL",
+            "degree": "Bacharelado",
+            "shift": "Matutino",
+            "total_spots_filled": 8,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "A",
+                    "description": "Ampla Concorrência (Grupo 1)",
+                    "spots": 4,
+                    "previous_cutoff": 669.79,
+                    "historical_max_score": 808.35
+                },
+                {
+                    "quota_code": "B",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência - PcD (Grupo 2)",
+                    "spots": 1,
+                    "previous_cutoff": 626.8,
+                    "historical_max_score": 626.8
+                },
+                {
+                    "quota_code": "C",
+                    "description": "Apenas Cota Escola (Grupo 3)",
+                    "spots": 1,
+                    "previous_cutoff": 668.1,
+                    "historical_max_score": 669.64
+                },
+                {
+                    "quota_code": "D",
+                    "description": "Cota Escola + PcD (Grupo 4)",
+                    "spots": 0,
+                    "previous_cutoff": 594.07,
+                    "historical_max_score": 594.07
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Cota Escola + Étnico-Racial-Quilombola (Grupo 5)",
+                    "spots": 0,
+                    "previous_cutoff": 617.3,
+                    "historical_max_score": 663.23
+                },
+                {
+                    "quota_code": "F",
+                    "description": "Cota Escola + Étnico-Racial-Quilombola + PcD (Grupo 6)",
+                    "spots": 0,
+                    "previous_cutoff": 0.0,
+                    "historical_max_score": 0.0
+                },
+                {
+                    "quota_code": "G",
+                    "description": "Cota Escola + Renda (Grupo 7)",
+                    "spots": 0,
+                    "previous_cutoff": 653.55,
+                    "historical_max_score": 665.61
+                },
+                {
+                    "quota_code": "H",
+                    "description": "Cota Escola + Renda + PcD (Grupo 8)",
+                    "spots": 1,
+                    "previous_cutoff": 588.35,
+                    "historical_max_score": 588.35
+                },
+                {
+                    "quota_code": "I",
+                    "description": "Cota Escola + Renda + Étnico-Racial-Quilombola (Grupo 9)",
+                    "spots": 1,
+                    "previous_cutoff": 545.03,
+                    "historical_max_score": 612.5
+                },
+                {
+                    "quota_code": "J",
+                    "description": "Cota Escola + Renda + Étnico-Racial-Quilombola + PcD (Grupo 10)",
+                    "spots": 0,
+                    "previous_cutoff": 0.0,
+                    "historical_max_score": 0.0
+                }
+            ]
+        }
+    ]
+}

@@ -133,6 +133,7 @@ def gerar_template_json(institution: str, year: int, course: str,
                 "degree": degree,
                 "shift": shift,
                 "total_spots_filled": 0,  # <- preencher
+                "leftover_spots": 0,      # <- preencher (calculado)
                 "competition_data": [
                     {
                         "quota_code": codigo,
