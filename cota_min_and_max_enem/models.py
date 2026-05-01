@@ -35,7 +35,7 @@ class PerfilCandidatoDB(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='perfil_candidato')
     escola_publica = models.BooleanField(default=True, verbose_name="Estudou em Escola Pública?")
-    renda_sm = models.FloatField(default=1.0, verbose_name="Renda Familiar (em Salários Mínimos)")
+    renda_sm = models.FloatField(default=1.0, verbose_name="Renda Familiar (em Salários Mínimos por pessoa na residência)")
     raca = models.CharField(max_length=20, choices=RACA_CHOICES, default='branca', verbose_name="Raça/Cor")
     pcd = models.BooleanField(default=False, verbose_name="Pessoa com Deficiência (PCD)?")
 
