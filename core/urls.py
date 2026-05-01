@@ -17,9 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render
+from cota_min_and_max_enem.models import CourseOffering
 
 def home_view(request):
-    return render(request, 'home/dashboard.html')
+    cursos_aleatorios = CourseOffering.objects.order_by('?')[:4]
+    return render(request, 'home/dashboard.html', {'cursos_aleatorios': cursos_aleatorios})
 
 urlpatterns = [
     path('admin/', admin.site.urls),
