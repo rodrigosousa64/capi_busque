@@ -7,11 +7,11 @@ class Command(BaseCommand):
     help = 'Importa os dados dos cursos em JSON para o banco de dados'
 
     def handle(self, *args, **kwargs):
-        # O caminho será relativo à pasta do app
+        # Caminho para a nova pasta centralizada de dados
         base_dir = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-            'motor_cotas',
-            'dados_de-cursos'
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+            'pipeline_dados',
+            'dados_processados'
         )
 
         if not os.path.exists(base_dir):
