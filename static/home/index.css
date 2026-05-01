@@ -103,19 +103,76 @@ body {
     display: block;
 }
 
-/* RESPONSIVIDADE PARA MOBILE */
-@media (max-width: 768px) {
+/* RESPONSIVIDADE PARA MOBILE (SMARTPHONES) */
+@media (max-width: 600px) {
     body {
         flex-direction: column;
     }
 
-    .content {
-        padding: 15px;
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-right: none;
+        border-bottom: 1px solid #30363d;
+        background: #161b22;
     }
 
-    /* Ajustes específicos para as caixas do dashboard na tela pequena */
-    .terminal-box {
+    .menu-items {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+        padding: 5px;
+        justify-content: space-around;
+        overflow-x: auto;
+    }
+
+    .item {
+        padding: 12px 8px;
+        margin-bottom: 0;
+        text-align: center;
+        flex: 1;
+        border-radius: 0;
+    }
+
+    .item:hover {
+        border-left: none;
+        border-bottom: 3px solid var(--accent-color);
+        background: #21262d;
+    }
+
+    .item span {
+        font-size: 0.8rem;
+    }
+
+    .item small {
+        display: none; /* Esconde o texto pequeno no celular para caber tudo */
+    }
+
+    .toggle-button {
+        display: none; /* Não colapsar no topo */
+    }
+
+    .content {
         padding: 15px 10px;
+    }
+
+    .terminal-box {
+        padding: 10px;
+        border: none;
+        background: transparent;
+    }
+}
+
+/* RESPONSIVIDADE PARA TABLETS (SIDEBAR MAIS ESTREITA) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    :root {
+        --sidebar-width: 200px;
+    }
+    .content {
+        padding: 25px;
     }
 }
 
