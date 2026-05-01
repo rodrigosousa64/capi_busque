@@ -56,36 +56,40 @@ class BuscadorDeNotas:
                 
                 # Mapeia as cotas disponíveis no banco para esta oferta
                 mapa_cotas_db = {q.quota_code: q for q in oferta.quotas.all()}
-                
-                cota_encontrada = None
-                dados_cota_encontrada = None
-                outras_cotas_validas = []
-                
-                # Tenta encaixar na melhor cota disponível seguindo a cascata
+                todas_cotas_do_perfil = []
+                # Coleta todas as cotas válidas para o perfil na oferta atual
                 for cota_tentativa in cascata_prioridades:
                     if cota_tentativa in mapa_cotas_db:
-                        if not cota_encontrada:
-                            cota_encontrada = cota_tentativa
-                            dados_cota_encontrada = mapa_cotas_db[cota_tentativa]
-                        else:
-                            # Não duplicar Ampla Concorrência se for AC ou A (elas aparecem embaixo)
-                            if cota_tentativa not in ["AC", "A"]:
-                                outras_cotas_validas.append({
-                                    "codigo": cota_tentativa,
-                                    "descricao": mapa_cotas_db[cota_tentativa].description,
-                                    "vagas": mapa_cotas_db[cota_tentativa].spots,
-                                    "nota_minima": mapa_cotas_db[cota_tentativa].previous_cutoff,
-                                    "nota_maxima": mapa_cotas_db[cota_tentativa].historical_max_score,
-                                })
-                        
+                        todas_cotas_do_perfil.append(mapa_cotas_db[cota_tentativa])
+                
                 # Sempre pega a AC para parâmetro de comparação
                 dados_ac = mapa_cotas_db.get("AC", None)
                 if not dados_ac and instituicao == "UEPA":
                     dados_ac = mapa_cotas_db.get("A")
 
-                # Se não achou NENHUMA cota (nem AC), pula.
-                if not dados_cota_encontrada:
+                # Se não achou NENHUMA cota, pula.
+                if not todas_cotas_do_perfil:
                     continue
+                    
+                # Ordena as cotas pela menor nota de corte
+                def sort_key(q):
+                    return q.previous_cutoff if q.previous_cutoff is not None else float('inf')
+                
+                todas_cotas_do_perfil.sort(key=sort_key)
+                
+                dados_cota_encontrada = todas_cotas_do_perfil[0]
+                cota_encontrada = dados_cota_encontrada.quota_code
+                
+                outras_cotas_validas = []
+                for q in todas_cotas_do_perfil[1:]:
+                    if q.quota_code not in ["AC", "A"]:
+                        outras_cotas_validas.append({
+                            "codigo": q.quota_code,
+                            "descricao": q.description,
+                            "vagas": q.spots,
+                            "nota_minima": q.previous_cutoff,
+                            "nota_maxima": q.historical_max_score,
+                        })
                 
                 resultado_oferta = {
                     "instituicao": instituicao,
