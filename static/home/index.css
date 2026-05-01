@@ -5,8 +5,15 @@
     --collapsed-width: 70px;
 }
 
-body {
+* {
+    box-sizing: border-box;
+}
+
+html, body {
     margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: var(--bg-color);
     color: white;
@@ -33,6 +40,8 @@ body {
     overflow-x: hidden;
     border-right: 1px solid #30363d;
     flex-shrink: 0;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
 }
 
 /* Lógica de Fechamento */
@@ -92,6 +101,7 @@ body {
 .content {
     flex-grow: 1;
     padding: 40px;
+    min-width: 0;
 }
 
 .terminal-box {
@@ -103,118 +113,139 @@ body {
     color: #39ff14;
 }
 
+/* Grid de Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Tablet: max 2 colunas */
+@media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 coluna */
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .item a {
     text-decoration: none;
     color: inherit;
     display: block;
 }
 
-/* RESPONSIVIDADE PARA MOBILE (BOTÃO FLUTUANTE CIRCULAR) */
+/* RESPONSIVIDADE PARA MOBILE (DRAWER LATERAL + BOTÃO FLUTUANTE) */
 @media (max-width: 600px) {
     body {
         flex-direction: column;
     }
 
-    .sidebar {
+    /* O fundo escuro quando o menu abre */
+    .nav-toggle:checked ~ .overlay {
+        display: block !important;
         position: fixed;
-        bottom: 105px;
-        right: 25px;
-        width: 260px;
-        height: auto;
-        min-height: 0;
-        max-height: 0;
-        opacity: 0;
-        visibility: hidden;
-        background: #161b22;
-        border: 1px solid #30363d;
-        border-radius: 15px;
-        z-index: 2000;
-        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-        overflow: visible;
-        left: auto;
-        top: auto;
-        border-right: 1px solid #30363d;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(3px);
+        z-index: 1999;
     }
 
-    /* O menu expande ao clicar no círculo */
-    .nav-toggle:checked ~ .sidebar {
-        max-height: 450px;
+    /* O Menu Lateral (Drawer) */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: -270px; /* Escondido totalmente à direita */
+        width: 260px;
+        height: 100vh;
+        max-height: 100vh;
         opacity: 1;
         visibility: visible;
-        padding: 10px;
+        background: #161b22;
+        border-left: 1px solid #30363d;
+        border-right: none;
+        border-radius: 0;
+        z-index: 2000;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        display: block;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .nav-toggle:checked ~ .sidebar {
+        right: 0; /* Desliza para dentro da tela */
     }
 
     .menu-items {
         display: flex;
         flex-direction: column;
-        margin-top: 0;
-        padding: 5px;
+        margin-top: 50px;
+        padding: 0;
     }
 
     .item {
-        padding: 15px;
+        padding: 20px 15px;
         border-bottom: 1px solid #30363d;
         white-space: normal;
-        border-radius: 8px;
-    }
-    
-    .item:last-child {
-        border-bottom: none;
     }
 
-    .item:hover {
-        background: #21262d;
-        border-left: 4px solid var(--accent-color);
-    }
-
-    .item small {
-        display: block;
-    }
-
-    /* O BOTÃO AZUL CIRCULAR FLUTUANTE */
+    /* Ajuste do Botão Azul no Mobile */
     .toggle-button {
         display: flex;
         position: fixed;
         bottom: 30px;
         right: 30px;
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
         background: var(--accent-color);
         border-radius: 50%;
-        z-index: 2001;
+        z-index: 2001; /* Fica acima de tudo, inclusive do menu */
         justify-content: center;
         align-items: center;
-        box-shadow: 0 5px 20px rgba(88, 166, 255, 0.5);
+        box-shadow: 0 5px 25px rgba(88, 166, 255, 0.5);
         transition: all 0.3s ease;
-        top: auto; 
+        top: auto;
         left: auto;
     }
 
     .toggle-button .icon::before {
         content: "☰";
         color: #000;
-        font-size: 1.8rem;
-        font-weight: bold;
+        font-size: 2rem;
     }
 
     .nav-toggle:checked ~ .toggle-button {
+        background: #ff3333;
         transform: rotate(90deg);
-        background: #ff3333; /* Vermelho para indicar fechar */
-        left: auto; /* Mantém na direita no mobile */
     }
-    
+
     .nav-toggle:checked ~ .toggle-button .icon::before {
         content: "✕";
         color: #fff;
     }
 
     .content {
-        padding: 15px;
+        padding: 10px 5px;
+        max-width: 100%; /* No celular ocupa tudo */
+    }
+
+    /* Remove redundância do container que o usuário adicionou */
+    .main-content {
+        max-width: 100%;
+        padding: 0;
     }
 
     .terminal-box {
-        padding: 15px 10px;
+        padding: 12px 8px;
     }
 }
 

@@ -17,9 +17,9 @@
         </div>
     </div>
     <h3 style="color: #58a6ff; margin-bottom: 15px; border-bottom: 1px dashed #30363d; padding-bottom: 10px;">> CURSOS_ALEATORIOS</h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px; margin-bottom: 40px;">
+    <div class="card-grid" style="margin-bottom: 40px;">
         {% for curso in cursos_aleatorios %}
-        <div style="border: 1px solid #30363d; padding: 15px; background: #0d1117; display: flex; flex-direction: column; word-break: break-word;">
+        <div style="border: 1px solid #30363d; padding: 15px; background: #0d1117; display: flex; flex-direction: column; word-break: break-word; min-width: 0;">
             <div style="color: #8b949e; font-size: 0.8rem; margin-bottom: 5px;">[{{ curso.institution }} | {{ curso.year_reference }}]</div>
             <div style="color: #39ff14; font-weight: bold; margin-bottom: 15px; font-size: 1.1rem; flex-grow: 1;">> {{ curso.course_name }}</div>
             
@@ -54,8 +54,8 @@
         // Simulação baseada nos microdados provisórios (Candidatos com ao menos 1 acerto).
     </p>
 
-    <div style="background: #0d1117; border: 1px solid #30363d; border-left: 4px solid #58a6ff; padding: 20px; border-radius: 4px; margin-bottom: 40px; overflow-x: auto; box-sizing: border-box; width: 100%;">
-        <div style="min-width: 600px; position: relative; height: 300px;">
+    <div style="background: #0d1117; border: 1px solid #30363d; border-left: 4px solid #58a6ff; padding: 20px; border-radius: 4px; margin-bottom: 40px; box-sizing: border-box; width: 100%;">
+        <div style="width: 100%; position: relative; height: 300px;">
             <canvas id="triChart"></canvas>
         </div>
     </div>
