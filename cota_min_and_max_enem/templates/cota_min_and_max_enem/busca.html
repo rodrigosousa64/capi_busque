@@ -76,6 +76,19 @@
                     <div style="font-weight: bold; color: #ffeb3b;">{{ result.cota_perfil.nota_maxima|default:"NULL" }}</div>
                 </div>
             </div>
+            {% if result.outras_cotas %}
+            <div style="border-top: 1px solid #30363d; padding-top: 10px;">
+                <div style="color: #8b949e; font-size: 0.8rem; margin-bottom: 5px;">[OUTRAS_COTAS_ELEGIVEIS_CASCATA]</div>
+                {% for cota in result.outras_cotas %}
+                <div style="display: flex; gap: 15px; font-size: 0.85rem; color: #c9d1d9; margin-bottom: 5px;">
+                    <span style="color: #58a6ff; font-weight: bold; width: 30px;">{{ cota.codigo }}</span>
+                    <span>VAGAS: {{ cota.vagas|default:"N/A" }}</span>
+                    <span>MIN: <span style="color: #ffeb3b;">{{ cota.nota_minima|default:"NULL" }}</span></span>
+                    <span>MAX: <span style="color: #ffeb3b;">{{ cota.nota_maxima|default:"NULL" }}</span></span>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
             
             {% if result.ampla_concorrencia and result.ampla_concorrencia.codigo != result.cota_perfil.codigo %}
             <div style="border-top: 1px solid #30363d; padding-top: 10px;">

@@ -59,13 +59,24 @@ class BuscadorDeNotas:
                 
                 cota_encontrada = None
                 dados_cota_encontrada = None
+                outras_cotas_validas = []
                 
                 # Tenta encaixar na melhor cota disponível seguindo a cascata
                 for cota_tentativa in cascata_prioridades:
                     if cota_tentativa in mapa_cotas_db:
-                        cota_encontrada = cota_tentativa
-                        dados_cota_encontrada = mapa_cotas_db[cota_tentativa]
-                        break # Achou a melhor possível, para de descer a cascata!
+                        if not cota_encontrada:
+                            cota_encontrada = cota_tentativa
+                            dados_cota_encontrada = mapa_cotas_db[cota_tentativa]
+                        else:
+                            # Não duplicar Ampla Concorrência se for AC ou A (elas aparecem embaixo)
+                            if cota_tentativa not in ["AC", "A"]:
+                                outras_cotas_validas.append({
+                                    "codigo": cota_tentativa,
+                                    "descricao": mapa_cotas_db[cota_tentativa].description,
+                                    "vagas": mapa_cotas_db[cota_tentativa].spots,
+                                    "nota_minima": mapa_cotas_db[cota_tentativa].previous_cutoff,
+                                    "nota_maxima": mapa_cotas_db[cota_tentativa].historical_max_score,
+                                })
                         
                 # Sempre pega a AC para parâmetro de comparação
                 dados_ac = mapa_cotas_db.get("AC", None)
@@ -90,6 +101,7 @@ class BuscadorDeNotas:
                         "nota_minima": dados_cota_encontrada.previous_cutoff,
                         "nota_maxima": dados_cota_encontrada.historical_max_score,
                     },
+                    "outras_cotas": outras_cotas_validas,
                     "ampla_concorrencia": {
                         "codigo": dados_ac.quota_code if dados_ac else "AC",
                         "vagas": dados_ac.spots if dados_ac else None,
