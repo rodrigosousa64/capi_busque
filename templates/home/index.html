@@ -11,14 +11,10 @@
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     
-    <div class="mobile-header">
-        <label for="nav-toggle" class="mobile-menu-btn">☰ MENU</label>
-    </div>
-
-    <!-- Fundo escuro ao abrir o menu no celular -->
-    <label for="nav-toggle" class="overlay"></label>
-
     <aside class="sidebar">
+        <label for="nav-toggle" class="toggle-button">
+            <span class="icon"></span>
+        </label>
         
         <nav class="menu-items">
             <div class="item"><a href="{% url 'home' %}"><span>Inicio</span> <small>Dashboard</small></a></div>

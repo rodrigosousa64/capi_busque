@@ -20,24 +20,7 @@ body {
     display: none;
 }
 
-/* Header mobile - oculto no desktop */
-.mobile-header {
-    display: none;
-    background: #161b22;
-    padding: 15px 20px;
-    align-items: center;
-    border-bottom: 1px solid #30363d;
-    position: sticky;
-    top: 0;
-    z-index: 900;
-}
 
-.mobile-menu-btn {
-    cursor: pointer;
-    color: var(--accent-color);
-    font-size: 1.5rem;
-    font-weight: bold;
-}
 
 /* Sidebar Base */
 .sidebar {
@@ -53,11 +36,9 @@ body {
     flex-shrink: 0;
 }
 
-/* Lógica de Fechamento (Desktop) */
-@media (min-width: 769px) {
-    .nav-toggle:checked~.sidebar {
-        width: var(--collapsed-width);
-    }
+/* Lógica de Fechamento */
+.nav-toggle:checked~.sidebar {
+    width: var(--collapsed-width);
 }
 
 /* Estilo dos Itens */
@@ -90,12 +71,22 @@ body {
 }
 
 
+/* Botão Toggle */
+.toggle-button {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
 /* Área de Conteúdo */
 .content {
     flex-grow: 1;
     padding: 40px;
-    max-width: 100%;
-    box-sizing: border-box;
 }
 
 .terminal-box {
@@ -105,7 +96,6 @@ body {
     border: 1px solid #30363d;
     font-family: 'Courier New', Courier, monospace;
     color: #39ff14;
-    overflow-x: auto;
 }
 
 .item a {
@@ -114,44 +104,10 @@ body {
     display: block;
 }
 
-.overlay {
-    display: none;
-}
-
 /* RESPONSIVIDADE PARA MOBILE */
 @media (max-width: 768px) {
     body {
         flex-direction: column;
-    }
-    
-    .mobile-header {
-        display: flex;
-    }
-
-    /* Sidebar se torna off-canvas (escondida na esquerda) */
-    .sidebar {
-        position: fixed;
-        left: -var(--sidebar-width);
-        z-index: 1000;
-        transition: left 0.3s ease;
-    }
-
-    /* Quando ativado no mobile, ela desliza pra tela */
-    .nav-toggle:checked~.sidebar {
-        left: 0;
-        width: var(--sidebar-width); /* ignora o collapsed-width */
-    }
-
-    /* Fundo escuro atrás da sidebar quando aberta */
-    .nav-toggle:checked~.overlay {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0,0,0,0.7);
-        z-index: 999;
     }
 
     .content {
