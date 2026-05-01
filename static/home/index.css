@@ -130,6 +130,10 @@ body {
     display: block;
 }
 
+.overlay {
+    display: none;
+}
+
 /* RESPONSIVIDADE PARA MOBILE */
 @media (max-width: 768px) {
     body {
