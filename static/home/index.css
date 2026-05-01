@@ -1,4 +1,3 @@
-
 :root {
     --bg-color: #0d1117;
     --accent-color: #58a6ff;
@@ -118,4 +117,21 @@ body {
     .terminal-box {
         padding: 15px 10px;
     }
+}
+
+.main-content {
+    /* 1. Fluid Width: Ocupa todo o espaço disponível no eixo X */
+    width: 100%;
+
+    /* 2. Boundary Limit: Evita que fique largo demais em monitores Desktop */
+    max-width: 1200px;
+
+    /* 3. Centralização: Calcula o eixo X e divide a margem restante igualmente */
+    margin: 0 auto;
+
+    /* 4. Breathing Room: Espaço de respiro para o texto não colar nas bordas da tela */
+    padding: 0 16px;
+
+    /* 5. Geometria de Caixa (Crucial) */
+    box-sizing: border-box;
 }
