@@ -1,37 +1,40 @@
 {% extends 'home/index.html' %}
 
 {% block content %}
-<div style="display: flex; gap: 40px; margin-bottom: 30px;">
+<div style="display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 30px;">
     <!-- Lado Esquerdo: Busca -->
-    <div style="flex: 2;">
+    <div style="flex: 1 1 300px; min-width: 0;">
         <h2>> EXECUTAR_BUSCA_NOTAS</h2>
-        <form method="get" action="{% url 'buscar_cursos' %}" style="display: flex; gap: 10px; margin-top: 15px;">
-            <div style="flex: 1;">
+        <form method="get" action="{% url 'buscar_cursos' %}" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
+            <div style="flex: 1 1 200px; min-width: 0;">
                 {{ busca_form.curso }}
             </div>
-            <button type="submit" style="background: #39ff14; color: black; border: none; padding: 8px 20px; font-family: inherit; font-weight: bold; cursor: pointer;">[ SEARCH ]</button>
+            <button type="submit" style="background: #39ff14; color: black; border: none; padding: 8px 20px; font-family: inherit; font-weight: bold; cursor: pointer; flex: 0 0 auto;">[ SEARCH ]</button>
         </form>
     </div>
 
     <!-- Lado Direito: Perfil -->
-    <div style="flex: 1; border-left: 1px solid #30363d; padding-left: 40px;">
-        <h3 style="color: #58a6ff; margin-bottom: 15px; margin-top: 0;">> MEU_PERFIL</h3>
-        <form method="post" action="{% url 'buscar_cursos' %}?curso={{ request.GET.curso }}">
-            {% csrf_token %}
-            {% for field in perfil_form %}
-                <div style="margin-bottom: 10px; font-size: 0.85rem;">
-                    <label style="display: block; color: #8b949e; margin-bottom: 3px;">{{ field.label_tag }}</label>
-                    {% if field.field.widget.input_type == 'checkbox' %}
-                        <div style="display: flex; align-items: center;">
-                            {{ field }} <span style="margin-left: 10px; color: #39ff14; font-size: 0.8rem;">{{ field.help_text }}</span>
-                        </div>
-                    {% else %}
-                        {{ field }}
-                    {% endif %}
-                </div>
-            {% endfor %}
-            <button type="submit" style="background: transparent; color: #58a6ff; border: 1px solid #58a6ff; padding: 5px 15px; font-family: inherit; font-weight: bold; cursor: pointer; margin-top: 10px; width: 100%;">[ ATUALIZAR_PERFIL ]</button>
-        </form>
+    <div style="flex: 1 1 250px; min-width: 0; border-top: 1px dashed #30363d; padding-top: 20px; border-left: none;">
+        <!-- No Desktop vamos manter uma borda sutil se houver espaço -->
+        <div style="border-left: 1px solid #30363d; padding-left: 30px; height: 100%;">
+            <h3 style="color: #58a6ff; margin-bottom: 15px; margin-top: 0;">> MEU_PERFIL</h3>
+            <form method="post" action="{% url 'buscar_cursos' %}?curso={{ request.GET.curso }}">
+                {% csrf_token %}
+                {% for field in perfil_form %}
+                    <div style="margin-bottom: 10px; font-size: 0.85rem;">
+                        <label style="display: block; color: #8b949e; margin-bottom: 3px;">{{ field.label_tag }}</label>
+                        {% if field.field.widget.input_type == 'checkbox' %}
+                            <div style="display: flex; align-items: center;">
+                                {{ field }} <span style="margin-left: 10px; color: #39ff14; font-size: 0.8rem;">{{ field.help_text }}</span>
+                            </div>
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button type="submit" style="background: transparent; color: #58a6ff; border: 1px solid #58a6ff; padding: 5px 15px; font-family: inherit; font-weight: bold; cursor: pointer; margin-top: 10px; width: 100%;">[ ATUALIZAR_PERFIL ]</button>
+            </form>
+        </div>
     </div>
 </div>
 
