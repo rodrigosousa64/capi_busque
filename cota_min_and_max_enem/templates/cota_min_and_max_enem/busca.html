@@ -80,7 +80,7 @@
             <div style="border-top: 1px solid #30363d; padding-top: 10px;">
                 <div style="color: #8b949e; font-size: 0.8rem; margin-bottom: 5px;">[OUTRAS_COTAS_ELEGIVEIS_CASCATA]</div>
                 {% for cota in result.outras_cotas %}
-                <div style="display: flex; gap: 15px; font-size: 0.85rem; color: #c9d1d9; margin-bottom: 5px;">
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; font-size: 0.85rem; color: #c9d1d9; margin-bottom: 5px;">
                     <span style="color: #58a6ff; font-weight: bold; width: 30px;">{{ cota.codigo }}</span>
                     <span>VAGAS: {{ cota.vagas|default:"N/A" }}</span>
                     <span>MIN: <span style="color: #ffeb3b;">{{ cota.nota_minima|default:"NULL" }}</span></span>
@@ -93,7 +93,7 @@
             {% if result.ampla_concorrencia and result.ampla_concorrencia.codigo != result.cota_perfil.codigo %}
             <div style="border-top: 1px solid #30363d; padding-top: 10px;">
                 <div style="color: #8b949e; font-size: 0.8rem; margin-bottom: 5px;">[COMPARE: AMPLA_CONCORRENCIA]</div>
-                <div style="display: flex; gap: 15px; font-size: 0.85rem; color: #fff;">
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; font-size: 0.85rem; color: #fff;">
                     <span>VAGAS: {{ result.ampla_concorrencia.vagas|default:"N/A" }}</span>
                     <span>MIN: {{ result.ampla_concorrencia.nota_minima|default:"NULL" }}</span>
                     <span>MAX: {{ result.ampla_concorrencia.nota_maxima|default:"NULL" }}</span>
