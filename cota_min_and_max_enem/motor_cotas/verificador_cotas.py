@@ -24,7 +24,7 @@ class AvaliadorDeCotas:
             return "AC"
         
         eh_ppi = self.perfil.raca in ['preta', 'parda', 'indigena']
-        renda_baixa = self.perfil.renda_sm <= 1.0
+        renda_baixa = self.perfil.renda_sm <= 1.5
 
         if renda_baixa:
             if eh_ppi and not self.perfil.pcd: return "L1"
