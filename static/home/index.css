@@ -103,66 +103,111 @@ body {
     display: block;
 }
 
-/* RESPONSIVIDADE PARA MOBILE (SMARTPHONES) */
+/* RESPONSIVIDADE PARA MOBILE (BOTÃO FLUTUANTE CIRCULAR) */
 @media (max-width: 600px) {
     body {
         flex-direction: column;
     }
 
     .sidebar {
-        width: 100%;
+        position: fixed;
+        bottom: 105px;
+        right: 25px;
+        width: 260px;
         height: auto;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        border-right: none;
-        border-bottom: 1px solid #30363d;
+        min-height: 0;
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
         background: #161b22;
+        border: 1px solid #30363d;
+        border-radius: 15px;
+        z-index: 2000;
+        transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        overflow: visible;
+        left: auto;
+        top: auto;
+        border-right: 1px solid #30363d;
+    }
+
+    /* O menu expande ao clicar no círculo */
+    .nav-toggle:checked ~ .sidebar {
+        max-height: 450px;
+        opacity: 1;
+        visibility: visible;
+        padding: 10px;
     }
 
     .menu-items {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         margin-top: 0;
         padding: 5px;
-        justify-content: space-around;
-        overflow-x: auto;
     }
 
     .item {
-        padding: 12px 8px;
-        margin-bottom: 0;
-        text-align: center;
-        flex: 1;
-        border-radius: 0;
+        padding: 15px;
+        border-bottom: 1px solid #30363d;
+        white-space: normal;
+        border-radius: 8px;
+    }
+    
+    .item:last-child {
+        border-bottom: none;
     }
 
     .item:hover {
-        border-left: none;
-        border-bottom: 3px solid var(--accent-color);
         background: #21262d;
-    }
-
-    .item span {
-        font-size: 0.8rem;
+        border-left: 4px solid var(--accent-color);
     }
 
     .item small {
-        display: none; /* Esconde o texto pequeno no celular para caber tudo */
+        display: block;
     }
 
+    /* O BOTÃO AZUL CIRCULAR FLUTUANTE */
     .toggle-button {
-        display: none; /* Não colapsar no topo */
+        display: flex;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        z-index: 2001;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 5px 20px rgba(88, 166, 255, 0.5);
+        transition: all 0.3s ease;
+        top: auto; 
+        left: auto;
+    }
+
+    .toggle-button .icon::before {
+        content: "☰";
+        color: #000;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .nav-toggle:checked ~ .sidebar .toggle-button {
+        transform: rotate(90deg);
+        background: #ff3333; /* Vermelho para indicar fechar */
+    }
+    
+    .nav-toggle:checked ~ .sidebar .toggle-button .icon::before {
+        content: "✕";
+        color: #fff;
     }
 
     .content {
-        padding: 15px 10px;
+        padding: 15px;
     }
 
     .terminal-box {
-        padding: 10px;
-        border: none;
-        background: transparent;
+        padding: 15px 10px;
     }
 }
 
