@@ -82,14 +82,17 @@ class BuscadorDeNotas:
                     "campus": oferta.campus,
                     "turno": oferta.shift,
                     "ano_referencia": oferta.year_reference,
+                    "total_vagas": oferta.total_spots_filled,
                     "cota_perfil": {
                         "codigo": cota_encontrada,
                         "descricao": dados_cota_encontrada.description,
+                        "vagas": dados_cota_encontrada.spots,
                         "nota_minima": dados_cota_encontrada.previous_cutoff,
                         "nota_maxima": dados_cota_encontrada.historical_max_score,
                     },
                     "ampla_concorrencia": {
                         "codigo": dados_ac.quota_code if dados_ac else "AC",
+                        "vagas": dados_ac.spots if dados_ac else None,
                         "nota_minima": dados_ac.previous_cutoff if dados_ac else None,
                         "nota_maxima": dados_ac.historical_max_score if dados_ac else None,
                     } if dados_ac else None
