@@ -57,6 +57,12 @@
             <div style="color: #39ff14; font-size: 1rem; font-weight: bold; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dashed #30363d;">
                 > {{ result.nome_curso }}
             </div>
+
+            {% if result.sobra_vagas > 0 %}
+            <div style="background-color: #ffca28; color: #000; padding: 10px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; display: inline-block;">
+                🏆 OPORTUNIDADE DE OURO: Este curso teve sobra de {{ result.sobra_vagas }} vagas! Historicamente, basta ter a nota mínima do edital (e não zerar a redação) para entrar.
+            </div>
+            {% endif %}
             
             <div style="margin-bottom: 15px;">
                 <div style="color: #8b949e; font-size: 0.85rem;">[COTA_SUGERIDA]</div>

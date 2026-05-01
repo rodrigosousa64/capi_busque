@@ -98,6 +98,7 @@ class BuscadorDeNotas:
                     "turno": oferta.shift,
                     "ano_referencia": oferta.year_reference,
                     "total_vagas": oferta.total_spots_filled,
+                    "sobra_vagas": oferta.leftover_spots,
                     "cota_perfil": {
                         "codigo": cota_encontrada,
                         "descricao": dados_cota_encontrada.description,
