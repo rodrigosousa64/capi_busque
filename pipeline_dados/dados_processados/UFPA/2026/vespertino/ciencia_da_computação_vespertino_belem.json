@@ -1,0 +1,79 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "Ciência da Computação",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Vespertino",
+            "total_spots_filled": 26,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 9,
+                    "previous_cutoff": 754.56,
+                    "historical_max_score": 779.48
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional PCD",
+                    "spots": 1,
+                    "previous_cutoff": 710.3,
+                    "historical_max_score": 710.3
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 751.28,
+                    "historical_max_score": 751.28
+                },
+                {
+                    "quota_code": "EPCD",
+                    "description": "Cota Escola PCD",
+                    "spots": 1,
+                    "previous_cutoff": 667.06,
+                    "historical_max_score": 667.06
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola PPI",
+                    "spots": 5,
+                    "previous_cutoff": 666.52,
+                    "historical_max_score": 686.9
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola Renda",
+                    "spots": 1,
+                    "previous_cutoff": 748.1,
+                    "historical_max_score": 748.1
+                },
+                {
+                    "quota_code": "ERPCD",
+                    "description": "Cota Escola Renda PCD",
+                    "spots": 1,
+                    "previous_cutoff": 585.84,
+                    "historical_max_score": 585.84
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola Renda Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 540.94,
+                    "historical_max_score": 540.94
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola Renda PPI",
+                    "spots": 6,
+                    "previous_cutoff": 658.58,
+                    "historical_max_score": 665.52
+                }
+            ],
+            "leftover_spots": 0
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "Tecnologia Em Análise E Desenvolvimento De Sistemas",
+            "campus": "Belém",
+            "degree": "Tecnólogo",
+            "shift": "Vespertino",
+            "total_spots_filled": 15,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 7,
+                    "previous_cutoff": 684.8,
+                    "historical_max_score": 728.98
+                },
+                {
+                    "quota_code": "L1",
+                    "description": "Exclusiva para candidatos que se autodeclaram pretos, pardos ou indígenas e que possuem uma renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo.",
+                    "spots": 3,
+                    "previous_cutoff": 637.18,
+                    "historical_max_score": 641.98
+                },
+                {
+                    "quota_code": "L3",
+                    "description": "Exclusiva para candidatos que se autodeclaram pretos, pardos ou indígenas e que possuem renda familiar bruta per capita superior a 1,5 salário mínimo.",
+                    "spots": 3,
+                    "previous_cutoff": 633.78,
+                    "historical_max_score": 681.52
+                },
+                {
+                    "quota_code": "L5",
+                    "description": "Exclusiva para Pessoas com Deficiência (PcD) que se autodeclaram pretas, pardas ou indígenas e que possuem renda familiar bruta per capita igual ou inferior a 1,5 salário mínimo.",
+                    "spots": 1,
+                    "previous_cutoff": 550.42,
+                    "historical_max_score": 550.42
+                },
+                {
+                    "quota_code": "L7",
+                    "description": "Exclusiva para Pessoas com Deficiência (PcD) que se autodeclaram pretas, pardas ou indígenas e que possuem renda familiar bruta per capita superior a 1,5 salário mínimo.",
+                    "spots": 1,
+                    "previous_cutoff": 482.36,
+                    "historical_max_score": 482.36
+                }
+            ],
+            "leftover_spots": 0
+        }
+    ]
+}

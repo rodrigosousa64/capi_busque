@@ -1,0 +1,72 @@
+{
+    "institution": "UFRA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "Computação",
+            "campus": "Belém",
+            "degree": "Licenciatura",
+            "shift": "Noturno",
+            "total_spots_filled": 25,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Cota AC",
+                    "spots": 9,
+                    "previous_cutoff": 748.68,
+                    "historical_max_score": 788.19
+                },
+                {
+                    "quota_code": "LB_EP",
+                    "description": "Cota LB_EP",
+                    "spots": 1,
+                    "previous_cutoff": 738.48,
+                    "historical_max_score": 738.48
+                },
+                {
+                    "quota_code": "LB_PCD",
+                    "description": "Cota LB_PCD",
+                    "spots": 1,
+                    "previous_cutoff": 635.7,
+                    "historical_max_score": 635.7
+                },
+                {
+                    "quota_code": "LB_PPI",
+                    "description": "Cota LB_PPI",
+                    "spots": 6,
+                    "previous_cutoff": 679.49,
+                    "historical_max_score": 688.51
+                },
+                {
+                    "quota_code": "LB_Q",
+                    "description": "Cota LB_Q",
+                    "spots": 1,
+                    "previous_cutoff": 680.61,
+                    "historical_max_score": 680.61
+                },
+                {
+                    "quota_code": "LI_EP",
+                    "description": "Cota LI_EP",
+                    "spots": 1,
+                    "previous_cutoff": 740.53,
+                    "historical_max_score": 740.53
+                },
+                {
+                    "quota_code": "LI_PCD",
+                    "description": "Cota LI_PCD",
+                    "spots": 1,
+                    "previous_cutoff": 665.34,
+                    "historical_max_score": 665.34
+                },
+                {
+                    "quota_code": "LI_PPI",
+                    "description": "Cota LI_PPI",
+                    "spots": 5,
+                    "previous_cutoff": 693.44,
+                    "historical_max_score": 718.34
+                }
+            ],
+            "leftover_spots": 0
+        }
+    ]
+}

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cota_min_and_max_enem',
+    'vagas_sobrando',
 ]
 
 MIDDLEWARE = [

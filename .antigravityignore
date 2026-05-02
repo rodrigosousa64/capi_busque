@@ -1,0 +1,4 @@
+pipeline_dados/brutos/
+pipeline_dados/dados_processados/
+*.pdf
+*.json

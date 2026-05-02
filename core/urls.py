@@ -46,4 +46,5 @@ urlpatterns = [
     path('', home_view, name='home'),
     path('regras-cotas/', regras_cotas_view, name='regras_cotas'),
     path('cotas/', include('cota_min_and_max_enem.urls')),
+    path('sobras/', include('vagas_sobrando.urls')),
 ]

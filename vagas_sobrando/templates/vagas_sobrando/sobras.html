@@ -1,0 +1,54 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+<div>
+    <div style="margin-bottom: 40px; border-bottom: 1px dashed #30363d; padding-bottom: 20px;">
+        <h1 style="color: #58a6ff; font-size: 2rem; margin-bottom: 10px; margin-top: 0;">> SABIA QUE VAGAS SOBRAM?</h1>
+        <p style="color: #c9d1d9; font-size: 1.05rem; line-height: 1.6; margin-bottom: 10px;">
+            Muitas vezes as universidades ofertam vagas que acabam não sendo preenchidas por falta de candidatos ou desistências.
+            Abaixo estão os cursos que tiveram sobra de vagas em anos anteriores!
+        </p>
+        <p style="color: #8b949e; font-size: 0.95rem; line-height: 1.5; margin-top: 0; margin-bottom: 20px;">
+            // Essa é uma excelente oportunidade (OPORTUNIDADE DE OURO) para tentar o ingresso com notas possivelmente menores, devido à baixa concorrência.
+        </p>
+    </div>
+
+    <h3 style="color: #ffca28; margin-bottom: 15px; border-bottom: 1px dashed #30363d; padding-bottom: 10px;">> CURSOS COM SOBRA DE VAGAS</h3>
+    
+    <div class="card-grid" style="margin-bottom: 40px;">
+        {% for curso in cursos_com_sobra %}
+        <div style="border: 1px solid #ffca28; padding: 15px; background: #0d1117; display: flex; flex-direction: column; word-break: break-word; min-width: 0;">
+            <div style="color: #8b949e; font-size: 0.8rem; margin-bottom: 5px;">[{{ curso.institution }} | {{ curso.year_reference }}]</div>
+            <div style="color: #ffca28; font-weight: bold; margin-bottom: 15px; font-size: 1.1rem; flex-grow: 1;">> {{ curso.course_name }}</div>
+            
+            <div style="background-color: #ffca28; color: #000; padding: 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; text-align: center;">
+                🏆 SOBRA DE {{ curso.leftover_spots }} VAGAS!
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-top: 1px dashed #30363d; border-bottom: 1px dashed #30363d; padding: 10px 0;">
+                <div>
+                    <div style="color: #8b949e; font-size: 0.75rem;">NOTA MÍNIMA</div>
+                    <div style="color: #ffeb3b; font-weight: bold; font-size: 1.1rem;">{{ curso.min_quota.previous_cutoff|default:"--"|floatformat:2 }}</div>
+                    <div style="color: #39ff14; font-size: 0.7rem; margin-top: 3px;">[{{ curso.min_quota.quota_code|default:"--" }}]</div>
+                </div>
+                <div style="text-align: right;">
+                    <div style="color: #8b949e; font-size: 0.75rem;">NOTA MÁXIMA</div>
+                    <div style="color: #ffeb3b; font-weight: bold; font-size: 1.1rem;">{{ curso.max_quota.historical_max_score|default:"--"|floatformat:2 }}</div>
+                    <div style="color: #39ff14; font-size: 0.7rem; margin-top: 3px;">[{{ curso.max_quota.quota_code|default:"--" }}]</div>
+                </div>
+            </div>
+
+            <div style="font-size: 0.8rem; color: #c9d1d9; margin-bottom: 15px;">
+                Campus: {{ curso.campus }}<br>Turno: {{ curso.shift }}
+            </div>
+            
+            <div>
+                <a href="/cotas/buscar/?curso={{ curso.course_name|urlencode }}" style="display: block; text-align: center; color: #000; background: #ffca28; text-decoration: none; font-size: 0.9rem; font-weight: bold; padding: 6px 0; border-radius: 2px;">[ VER_DETALHES_COTAS ]</a>
+            </div>
+        </div>
+        {% empty %}
+        <div style="color: #8b949e; font-size: 0.9rem;">Nenhuma vaga sobrando foi encontrada no momento.</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
