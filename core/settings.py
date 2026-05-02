@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cota_min_and_max_enem',
     'vagas_sobrando',
+    'favoritos',
 ]
 
 MIDDLEWARE = [

@@ -1,48 +1,15 @@
 {% extends 'home/index.html' %}
 
 {% block content %}
-<div style="display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 30px;">
-    <!-- Lado Esquerdo: Busca -->
-    <div style="flex: 1 1 300px; min-width: 0;">
-        <h2>> EXECUTAR_BUSCA_NOTAS</h2>
-        <form method="get" action="{% url 'buscar_cursos' %}" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px;">
-            <div style="flex: 1 1 200px; min-width: 0;">
-                {{ busca_form.curso }}
-            </div>
-            <button type="submit" style="background: #39ff14; color: black; border: none; padding: 8px 20px; font-family: inherit; font-weight: bold; cursor: pointer; flex: 0 0 auto;">[ SEARCH ]</button>
-        </form>
-    </div>
-
-    <!-- Lado Direito: Perfil -->
-    <div style="flex: 1 1 250px; min-width: 0; border-top: 1px dashed #30363d; padding-top: 20px; border-left: none;">
-        <!-- No Desktop vamos manter uma borda sutil se houver espaço -->
-        <div style="border-left: 1px solid #30363d; padding-left: 30px; height: 100%;">
-            <h3 style="color: #58a6ff; margin-bottom: 15px; margin-top: 0;">> MEU_PERFIL</h3>
-            <form method="post" action="{% url 'buscar_cursos' %}?curso={{ request.GET.curso }}">
-                {% csrf_token %}
-                {% for field in perfil_form %}
-                    <div style="margin-bottom: 10px; font-size: 0.85rem;">
-                        <label style="display: block; color: #8b949e; margin-bottom: 3px;">{{ field.label_tag }}</label>
-                        {% if field.field.widget.input_type == 'checkbox' %}
-                            <div style="display: flex; align-items: center;">
-                                {{ field }} <span style="margin-left: 10px; color: #39ff14; font-size: 0.8rem;">{{ field.help_text }}</span>
-                            </div>
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    </div>
-                {% endfor %}
-                <button type="submit" style="background: transparent; color: #58a6ff; border: 1px solid #58a6ff; padding: 5px 15px; font-family: inherit; font-weight: bold; cursor: pointer; margin-top: 10px; width: 100%;">[ ATUALIZAR_PERFIL ]</button>
-            </form>
-        </div>
-    </div>
+<div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 1px dashed #30363d; padding-bottom: 15px;">
+    <h2 style="margin: 0;">> MEUS_FAVORITOS</h2>
+    <a href="{% url 'buscar_cursos' %}" style="background: transparent; color: #58a6ff; border: 1px solid #58a6ff; padding: 8px 15px; font-family: inherit; font-weight: bold; cursor: pointer; text-decoration: none; border-radius: 4px;">[ VOLTAR_PARA_BUSCA ]</a>
 </div>
 
 {% if resultados %}
-    <h3 style="color: #58a6ff; margin-bottom: 20px;">> RESULTADOS_ENCONTRADOS</h3>
     <div class="card-grid">
         {% for result in resultados %}
-        <div style="border: 1px solid #30363d; padding: 20px; border-left: 4px solid #58a6ff; background: #0d1117; display: flex; flex-direction: column; min-width: 0; word-break: break-word;">
+        <div style="border: 1px solid #30363d; padding: 20px; border-left: 4px solid #eab308; background: #0d1117; display: flex; flex-direction: column; min-width: 0; word-break: break-word;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px;">
                 <h4 style="margin: 0; font-size: 1.2rem; color: #fff;">{{ result.instituicao }}</h4>
                 <div style="text-align: right;">
@@ -54,26 +21,18 @@
                     </span>
                 </div>
             </div>
+            
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #30363d; padding-bottom: 10px; margin-bottom: 15px;">
                 <div style="color: #39ff14; font-size: 1rem; font-weight: bold;">
                     > {{ result.nome_curso }}
                 </div>
                 <div>
-                    {% if result.oferta_id in favoritos_ids %}
-                        <form method="post" action="{% url 'remover_favorito' result.oferta_id %}" style="display: inline;">
-                            {% csrf_token %}
-                            <button type="submit" style="background: transparent; color: #eab308; border: none; padding: 4px; cursor: pointer;" title="Remover dos favoritos">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-                            </button>
-                        </form>
-                    {% else %}
-                        <form method="post" action="{% url 'adicionar_favorito' result.oferta_id %}" style="display: inline;">
-                            {% csrf_token %}
-                            <button type="submit" style="background: transparent; color: #8b949e; border: none; padding: 4px; cursor: pointer; transition: color 0.3s ease;" onmouseover="this.style.color='#eab308'" onmouseout="this.style.color='#8b949e'" title="Adicionar aos favoritos">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-                            </button>
-                        </form>
-                    {% endif %}
+                    <form method="post" action="{% url 'remover_favorito' result.oferta_id %}" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" style="background: transparent; color: #eab308; border: none; padding: 4px; cursor: pointer;" title="Remover dos favoritos">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                        </button>
+                    </form>
                 </div>
             </div>
 
@@ -132,32 +91,11 @@
         </div>
         {% endfor %}
     </div>
-{% elif request.GET.curso %}
+{% else %}
     <div style="padding: 40px; text-align: center; border: 1px dashed #30363d;">
-        <div style="font-size: 2rem; margin-bottom: 15px;">[ 404 ]</div>
-        <h3 style="color: #ff3333;">CURSO_NAO_ENCONTRADO</h3>
-        <p style="color: #8b949e;">Nenhuma ocorrencia para "{{ request.GET.curso }}" no banco de dados.</p>
+        <div style="font-size: 2rem; margin-bottom: 15px;">[ EMPTY ]</div>
+        <h3 style="color: #eab308;">NENHUM_FAVORITO_ENCONTRADO</h3>
+        <p style="color: #8b949e;">Você ainda não salvou nenhum curso. <a href="{% url 'buscar_cursos' %}" style="color: #58a6ff;">Clique aqui para buscar cursos.</a></p>
     </div>
 {% endif %}
-
-<style>
-    input[type="text"], input[type="number"], select {
-        width: 100%;
-        padding: 8px;
-        background: black;
-        border: 1px solid #30363d;
-        color: #39ff14;
-        font-family: inherit;
-        box-sizing: border-box;
-    }
-    input:focus, select:focus {
-        outline: none;
-        border-color: #39ff14;
-    }
-    input[type="checkbox"] {
-        accent-color: #39ff14;
-        width: 16px;
-        height: 16px;
-    }
-</style>
 {% endblock %}

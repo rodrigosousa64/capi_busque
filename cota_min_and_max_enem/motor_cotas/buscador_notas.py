@@ -30,6 +30,88 @@ class BuscadorDeNotas:
         texto = unicodedata.normalize('NFKD', texto).encode('ASCII', 'ignore').decode('utf-8')
         return texto
 
+    def avaliar_oferta(self, oferta: CourseOffering, perfil: PerfilCandidato, avaliador=None) -> dict:
+        if avaliador is None:
+            avaliador = AvaliadorDeCotas(perfil)
+            
+        instituicao = oferta.institution
+        
+        # Gera a ordem de prioridade de cotas (Fallback)
+        cascata_prioridades = avaliador.obter_cascata_de_cotas(instituicao)
+        
+        # Mapeia as cotas disponíveis no banco para esta oferta
+        mapa_cotas_db = {q.quota_code: q for q in oferta.quotas.all()}
+        todas_cotas_do_perfil = []
+        # Coleta todas as cotas válidas para o perfil na oferta atual
+        for cota_tentativa in cascata_prioridades:
+            if cota_tentativa in mapa_cotas_db:
+                todas_cotas_do_perfil.append(mapa_cotas_db[cota_tentativa])
+        
+        # Sempre pega a AC para parâmetro de comparação
+        dados_ac = mapa_cotas_db.get("AC", None)
+        if not dados_ac and instituicao == "UEPA":
+            dados_ac = mapa_cotas_db.get("A")
+
+        # Se não achou NENHUMA cota, pula.
+        if not todas_cotas_do_perfil:
+            return None
+            
+        # Ordena as cotas: prioriza cotas com dados reais (nota > 0), depois as sem dados
+        def sort_key(q):
+            cutoff = q.previous_cutoff
+            if cutoff is None or cutoff == 0.0:
+                return float('inf')
+            return cutoff
+        
+        todas_cotas_do_perfil.sort(key=sort_key)
+        
+        # Pega a melhor cota COM dados reais se possível, senão pega qualquer uma
+        dados_cota_encontrada = todas_cotas_do_perfil[0]
+        cota_encontrada = dados_cota_encontrada.quota_code
+        
+        # Verifica se a cota selecionada tem dados; se não, marca como "sem histórico"
+        sem_historico = (
+            dados_cota_encontrada.previous_cutoff is None or
+            dados_cota_encontrada.previous_cutoff == 0.0
+        )
+        
+        outras_cotas_validas = []
+        for q in todas_cotas_do_perfil[1:]:
+            if q.quota_code not in ["AC", "A"]:
+                outras_cotas_validas.append({
+                    "codigo": q.quota_code,
+                    "descricao": q.description,
+                    "vagas": q.spots,
+                    "nota_minima": q.previous_cutoff,
+                    "nota_maxima": q.historical_max_score,
+                })
+        
+        resultado_oferta = {
+            "oferta_id": oferta.id,
+            "instituicao": instituicao,
+            "nome_curso": oferta.course_name,
+            "campus": oferta.campus,
+            "turno": oferta.shift,
+            "ano_referencia": oferta.year_reference,
+            "total_vagas": oferta.total_spots_filled,
+            "sobra_vagas": oferta.leftover_spots,
+            "cota_perfil": {
+                "codigo": cota_encontrada,
+                "descricao": dados_cota_encontrada.description,
+                "vagas": dados_cota_encontrada.spots,
+                "nota_minima": dados_cota_encontrada.previous_cutoff,
+                "nota_maxima": dados_cota_encontrada.historical_max_score,
+            },
+            "outras_cotas": outras_cotas_validas,
+            "ampla_concorrencia": {
+                "codigo": dados_ac.quota_code if dados_ac else "AC",
+                "vagas": dados_ac.spots if dados_ac else None,
+                "nota_minima": dados_ac.previous_cutoff if dados_ac else None,
+                "nota_maxima": dados_ac.historical_max_score if dados_ac else None,
+            } if dados_ac else None
+        }
+        return resultado_oferta
+
     def buscar_curso_para_perfil(self, nome_curso_desejado: str, perfil: PerfilCandidato) -> list:
         """
         Busca o curso no banco de dados, utiliza a cascata de cotas do perfil
@@ -49,82 +131,9 @@ class BuscadorDeNotas:
             
             # Se a palavra-chave buscada estiver contida no nome do curso
             if curso_normalizado in nome_curso_db:
-                instituicao = oferta.institution
-                
-                # Gera a ordem de prioridade de cotas (Fallback)
-                cascata_prioridades = avaliador.obter_cascata_de_cotas(instituicao)
-                
-                # Mapeia as cotas disponíveis no banco para esta oferta
-                mapa_cotas_db = {q.quota_code: q for q in oferta.quotas.all()}
-                todas_cotas_do_perfil = []
-                # Coleta todas as cotas válidas para o perfil na oferta atual
-                for cota_tentativa in cascata_prioridades:
-                    if cota_tentativa in mapa_cotas_db:
-                        todas_cotas_do_perfil.append(mapa_cotas_db[cota_tentativa])
-                
-                # Sempre pega a AC para parâmetro de comparação
-                dados_ac = mapa_cotas_db.get("AC", None)
-                if not dados_ac and instituicao == "UEPA":
-                    dados_ac = mapa_cotas_db.get("A")
-
-                # Se não achou NENHUMA cota, pula.
-                if not todas_cotas_do_perfil:
-                    continue
-                    
-                # Ordena as cotas: prioriza cotas com dados reais (nota > 0), depois as sem dados
-                def sort_key(q):
-                    cutoff = q.previous_cutoff
-                    if cutoff is None or cutoff == 0.0:
-                        return float('inf')
-                    return cutoff
-                
-                todas_cotas_do_perfil.sort(key=sort_key)
-                
-                # Pega a melhor cota COM dados reais se possível, senão pega qualquer uma
-                dados_cota_encontrada = todas_cotas_do_perfil[0]
-                cota_encontrada = dados_cota_encontrada.quota_code
-                
-                # Verifica se a cota selecionada tem dados; se não, marca como "sem histórico"
-                sem_historico = (
-                    dados_cota_encontrada.previous_cutoff is None or
-                    dados_cota_encontrada.previous_cutoff == 0.0
-                )
-                
-                outras_cotas_validas = []
-                for q in todas_cotas_do_perfil[1:]:
-                    if q.quota_code not in ["AC", "A"]:
-                        outras_cotas_validas.append({
-                            "codigo": q.quota_code,
-                            "descricao": q.description,
-                            "vagas": q.spots,
-                            "nota_minima": q.previous_cutoff,
-                            "nota_maxima": q.historical_max_score,
-                        })
-                
-                resultado_oferta = {
-                    "instituicao": instituicao,
-                    "nome_curso": oferta.course_name,
-                    "campus": oferta.campus,
-                    "turno": oferta.shift,
-                    "ano_referencia": oferta.year_reference,
-                    "total_vagas": oferta.total_spots_filled,
-                    "sobra_vagas": oferta.leftover_spots,
-                    "cota_perfil": {
-                        "codigo": cota_encontrada,
-                        "descricao": dados_cota_encontrada.description,
-                        "vagas": dados_cota_encontrada.spots,
-                        "nota_minima": dados_cota_encontrada.previous_cutoff,
-                        "nota_maxima": dados_cota_encontrada.historical_max_score,
-                    },
-                    "outras_cotas": outras_cotas_validas,
-                    "ampla_concorrencia": {
-                        "codigo": dados_ac.quota_code if dados_ac else "AC",
-                        "vagas": dados_ac.spots if dados_ac else None,
-                        "nota_minima": dados_ac.previous_cutoff if dados_ac else None,
-                        "nota_maxima": dados_ac.historical_max_score if dados_ac else None,
-                    } if dados_ac else None
-                }
-                resultados.append(resultado_oferta)
+                resultado_oferta = self.avaliar_oferta(oferta, perfil, avaliador)
+                if resultado_oferta:
+                    resultados.append(resultado_oferta)
                             
         return resultados
 
