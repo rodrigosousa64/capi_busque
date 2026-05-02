@@ -9,10 +9,13 @@
     box-sizing: border-box;
 }
 
-html, body {
+html {
+    overflow-x: hidden;
+}
+
+body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: var(--bg-color);
@@ -163,9 +166,12 @@ html, body {
     .sidebar {
         position: fixed;
         top: 0;
-        right: -270px; /* Escondido totalmente à direita */
-        width: 260px;
+        right: 0;
+        width: 85vw;       /* Ocupa 85% da largura da tela */
+        min-width: 260px;  /* Mínimo confortável */
+        max-width: 340px;  /* Não fica gigante em telas maiores */
         height: 100vh;
+        height: 100dvh; /* dynamic viewport height para mobile */
         max-height: 100vh;
         opacity: 1;
         visibility: visible;
@@ -174,15 +180,18 @@ html, body {
         border-right: none;
         border-radius: 0;
         z-index: 2000;
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: -10px 0 30px rgba(0,0,0,0.5);
         display: block;
         padding: 20px;
         box-sizing: border-box;
+        transform: translateX(100%);
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 
     .nav-toggle:checked ~ .sidebar {
-        right: 0; /* Desliza para dentro da tela */
+        transform: translateX(0); /* Desliza para dentro da tela */
     }
 
     .menu-items {
