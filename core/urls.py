@@ -28,8 +28,8 @@ def home_view(request):
         curso.max_quota = None
         
         if quotas.exists():
-            valid_min = [q for q in quotas if q.previous_cutoff is not None]
-            valid_max = [q for q in quotas if q.historical_max_score is not None]
+            valid_min = [q for q in quotas if q.previous_cutoff is not None and q.previous_cutoff > 0]
+            valid_max = [q for q in quotas if q.historical_max_score is not None and q.historical_max_score > 0]
             
             if valid_min:
                 curso.min_quota = min(valid_min, key=lambda q: q.previous_cutoff)

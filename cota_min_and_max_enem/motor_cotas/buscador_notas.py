@@ -71,14 +71,24 @@ class BuscadorDeNotas:
                 if not todas_cotas_do_perfil:
                     continue
                     
-                # Ordena as cotas pela menor nota de corte
+                # Ordena as cotas: prioriza cotas com dados reais (nota > 0), depois as sem dados
                 def sort_key(q):
-                    return q.previous_cutoff if q.previous_cutoff is not None else float('inf')
+                    cutoff = q.previous_cutoff
+                    if cutoff is None or cutoff == 0.0:
+                        return float('inf')
+                    return cutoff
                 
                 todas_cotas_do_perfil.sort(key=sort_key)
                 
+                # Pega a melhor cota COM dados reais se possível, senão pega qualquer uma
                 dados_cota_encontrada = todas_cotas_do_perfil[0]
                 cota_encontrada = dados_cota_encontrada.quota_code
+                
+                # Verifica se a cota selecionada tem dados; se não, marca como "sem histórico"
+                sem_historico = (
+                    dados_cota_encontrada.previous_cutoff is None or
+                    dados_cota_encontrada.previous_cutoff == 0.0
+                )
                 
                 outras_cotas_validas = []
                 for q in todas_cotas_do_perfil[1:]:
