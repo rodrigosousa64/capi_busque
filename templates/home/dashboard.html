@@ -2,19 +2,14 @@
 
 {% block content %}
 <div>
-    <div style="margin-bottom: 40px; border-bottom: 1px dashed #30363d; padding-bottom: 20px;">
-        <h1 style="color: #58a6ff; font-size: 2rem; margin-bottom: 10px; margin-top: 0;">> BUSCADOR DE COTAS METROPOLITANO DE BELÉM</h1>
-        <p style="color: #c9d1d9; font-size: 1.05rem; line-height: 1.6; margin-bottom: 10px;">
-            Seja bem-vindo(a) ao sistema inteligente para análise de cotas universitárias da região metropolitana de Belém. 
-            No momento, nosso banco de dados abrange as principais instituições locais (UFPA, IFPA, UEPA e UFRA).
+    <div style="margin-bottom: 50px; border-bottom: 1px dashed #30363d; padding-bottom: 40px; text-align: center; margin-top: 20px;">
+        <h1 style="color: #39ff14; font-size: 2.2rem; margin-bottom: 15px; margin-top: 0; text-transform: uppercase; font-family: 'Courier New', Courier, monospace; text-shadow: 0 0 10px rgba(57, 255, 20, 0.2);">> DESCUBRA SUA VAGA NAS UNIVERSIDADES PÚBLICAS DO PARÁ</h1>
+        <p style="color: #c9d1d9; font-size: 1.1rem; line-height: 1.6; margin-bottom: 35px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Análise estatística de notas de corte da UFPA, IFPA, UEPA e UFRA baseada em dados reais dos últimos anos.
         </p>
-        <p style="color: #8b949e; font-size: 0.95rem; line-height: 1.5; margin-top: 0; margin-bottom: 20px;">
-            // Nosso algoritmo cruza o seu perfil socioeconômico com o histórico de notas de corte, revelando exatamente em quais cotas você pode concorrer e qual exige a menor pontuação. Chega de se perder em editais: nós organizamos a sopa de letrinhas para você.
-        </p>
-        <div style="background: rgba(255, 235, 59, 0.1); border-left: 4px solid #ffeb3b; padding: 15px; color: #ffeb3b; font-size: 0.95rem; border-radius: 4px;">
-            <strong style="font-size: 1rem;">[ ALERTA_DE_SISTEMA: BÔNUS REGIONAL ]</strong><br>
-            Lembre-se: candidatos que cursaram todo o Ensino Médio em escolas da Região Norte possuem direito ao Bônus Regional, que adiciona <strong>10% a mais</strong> na média final do ENEM em diversas instituições (como a UFPA). Se você se enquadra nessa regra, suas chances são ainda maiores!
-        </div>
+        <a href="{% url 'login' %}" style="display: inline-block; background-color: #39ff14; color: #0d1117; padding: 15px 35px; font-size: 1.1rem; font-weight: bold; text-decoration: none; border-radius: 4px; box-shadow: 0 0 15px rgba(57, 255, 20, 0.4); text-transform: uppercase; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#fff'; this.style.color='#000'; this.style.boxShadow='0 0 25px rgba(255,255,255,0.6)';" onmouseout="this.style.backgroundColor='#39ff14'; this.style.color='#0d1117'; this.style.boxShadow='0 0 15px rgba(57, 255, 20, 0.4)';">
+            [ INICIAR SIMULAÇÃO ]
+        </a>
     </div>
     <h3 style="color: #58a6ff; margin-bottom: 15px; border-bottom: 1px dashed #30363d; padding-bottom: 10px;">> CURSOS_ALEATORIOS</h3>
     <div class="card-grid" style="margin-bottom: 40px;">
@@ -76,40 +71,36 @@
         // Geração dos eixos X (Acertos de 1 a 45)
         const labels = Array.from({length: 45}, (_, i) => i + 1);
 
-        // Funções para simular a curva do gráfico
-        // As curvas seguem uma aproximação baseada na imagem da TRI
-        
+        // Funções para simular a curva do gráfico usando os dados oficiais do ENEM 2024
+        // Matemática 2024: Min = 334.30, Max = 961.90, Delta = 627.60
         function gerarDadosMatematica() {
-            // Inicia perto de 380, termina perto de 960
             return labels.map(x => {
-                if (x === 1) return 380;
-                // Uma curva que acelera no final
-                return 380 + (x/45) * 200 + Math.pow(x/45, 3) * 380;
+                let t = x / 45;
+                return 334.30 + 627.60 * (0.34 * t + 0.66 * Math.pow(t, 3));
             });
         }
 
+        // Natureza 2024: Min = 308.10, Max = 867.20, Delta = 559.10
         function gerarDadosNatureza() {
-            // Inicia perto de 50, termina perto de 870
             return labels.map(x => {
-                if (x === 1) return 50;
-                // Curva suave
-                return 50 + (x/45) * 500 + Math.pow(x/45, 2) * 320;
+                let t = x / 45;
+                return 308.10 + 559.10 * (0.61 * t + 0.39 * Math.pow(t, 2));
             });
         }
 
+        // Humanas 2024: Min = 283.80, Max = 819.70, Delta = 535.90
         function gerarDadosHumanas() {
-            // Inicia perto de 290, termina perto de 820
             return labels.map(x => {
-                if (x === 1) return 290;
-                return 290 + (x/45) * 300 + Math.pow(x/45, 2) * 230;
+                let t = x / 45;
+                return 283.80 + 535.90 * (0.57 * t + 0.43 * Math.pow(t, 2));
             });
         }
 
+        // Linguagens 2024: Min = 294.10, Max = 795.80, Delta = 501.70
         function gerarDadosLinguagens() {
-            // Inicia perto de 310, termina perto de 800
             return labels.map(x => {
-                if (x === 1) return 310;
-                return 310 + (x/45) * 250 + Math.pow(x/45, 3) * 240;
+                let t = x / 45;
+                return 294.10 + 501.70 * (0.51 * t + 0.49 * Math.pow(t, 3));
             });
         }
 

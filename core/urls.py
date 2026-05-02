@@ -48,4 +48,5 @@ urlpatterns = [
     path('cotas/', include('cota_min_and_max_enem.urls')),
     path('sobras/', include('vagas_sobrando.urls')),
     path('favoritos/', include('favoritos.urls')),
+    path('calculadora/', include('calculadora.urls')),
 ]

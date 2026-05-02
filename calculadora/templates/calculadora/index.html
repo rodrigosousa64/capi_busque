@@ -1,0 +1,281 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+<div style="margin-bottom: 30px; border-bottom: 1px dashed #30363d; padding-bottom: 15px;">
+    <h2 style="color: #58a6ff; margin: 0;">> CALCULADORA_TRI_SIMULADOR</h2>
+    <p style="color: #8b949e; font-size: 0.9rem; margin-top: 5px;">
+        // Insira seus acertos para calcular a estimativa da média e verificar se é suficiente para os seus cursos salvos.
+    </p>
+</div>
+
+<div class="calc-container">
+    <!-- Esquerda: Favoritos -->
+    <div class="calc-sidebar">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h3 style="color: #39ff14; margin: 0;">> MEUS_FAVORITOS_SALVOS</h3>
+            <a href="{% url 'listar_favoritos' %}" style="color: #8b949e; text-decoration: none; border: 1px dashed #30363d; padding: 4px 8px; font-size: 0.75rem; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#fff'; this.style.borderColor='#58a6ff';" onmouseout="this.style.color='#8b949e'; this.style.borderColor='#30363d';">[ GERENCIAR_TODOS ]</a>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            {% for fav in resultados %}
+                <div class="fav-card" id="fav-{{ forloop.counter }}" data-min-score="{{ fav.cota_perfil.nota_minima|default:0 }}" style="border: 1px solid #30363d; padding: 15px; border-left: 4px solid #30363d; background: #0d1117; border-radius: 4px; transition: all 0.3s ease;">
+                    <div style="font-weight: bold; color: #fff; font-size: 0.9rem;">{{ fav.nome_curso }}</div>
+                    <div style="color: #8b949e; font-size: 0.75rem; margin-top: 4px;">{{ fav.instituicao }} - {{ fav.campus }}</div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; border-top: 1px dashed #30363d; padding-top: 10px;">
+                        <span style="color: #58a6ff; font-size: 0.8rem; font-weight: bold;">Cota: {{ fav.cota_perfil.codigo }}</span>
+                        <span style="color: #ffeb3b; font-size: 0.9rem; font-weight: bold;" class="fav-score">{{ fav.cota_perfil.nota_minima|default:"N/A"|floatformat:2 }}</span>
+                    </div>
+                </div>
+            {% empty %}
+                <div style="color: #8b949e; font-size: 0.9rem; text-align: center; padding: 20px; border: 1px dashed #30363d;">
+                    Nenhum favorito salvo.
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Direita: Calculadora -->
+    <div class="calc-main">
+        <div style="background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 20px;">
+            <h3 style="color: #ffeb3b; margin-top: 0; border-bottom: 1px dashed #30363d; padding-bottom: 10px;">> INPUT_DE_NOTAS</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 20px;">
+                <!-- Matemática -->
+                <div>
+                    <label style="color: #8b949e; font-size: 0.8rem; display: block; margin-bottom: 5px;">MATEMÁTICA (0-45)</label>
+                    <input type="number" id="acertos_mat" min="0" max="45" value="0" style="width: 100%; padding: 10px; background: #000; border: 1px solid #ff3333; color: #ff3333; font-weight: bold; font-family: inherit;">
+                    <div id="nota_mat" style="color: #ff3333; font-size: 0.75rem; margin-top: 5px; text-align: right;">Nota: --</div>
+                </div>
+                
+                <!-- Natureza -->
+                <div>
+                    <label style="color: #8b949e; font-size: 0.8rem; display: block; margin-bottom: 5px;">NATUREZA (0-45)</label>
+                    <input type="number" id="acertos_nat" min="0" max="45" value="0" style="width: 100%; padding: 10px; background: #000; border: 1px solid #ffffff; color: #ffffff; font-weight: bold; font-family: inherit;">
+                    <div id="nota_nat" style="color: #ffffff; font-size: 0.75rem; margin-top: 5px; text-align: right;">Nota: --</div>
+                </div>
+
+                <!-- Humanas -->
+                <div>
+                    <label style="color: #8b949e; font-size: 0.8rem; display: block; margin-bottom: 5px;">HUMANAS (0-45)</label>
+                    <input type="number" id="acertos_hum" min="0" max="45" value="0" style="width: 100%; padding: 10px; background: #000; border: 1px solid #58a6ff; color: #58a6ff; font-weight: bold; font-family: inherit;">
+                    <div id="nota_hum" style="color: #58a6ff; font-size: 0.75rem; margin-top: 5px; text-align: right;">Nota: --</div>
+                </div>
+
+                <!-- Linguagens -->
+                <div>
+                    <label style="color: #8b949e; font-size: 0.8rem; display: block; margin-bottom: 5px;">LINGUAGENS (0-45)</label>
+                    <input type="number" id="acertos_lin" min="0" max="45" value="0" style="width: 100%; padding: 10px; background: #000; border: 1px solid #39ff14; color: #39ff14; font-weight: bold; font-family: inherit;">
+                    <div id="nota_lin" style="color: #39ff14; font-size: 0.75rem; margin-top: 5px; text-align: right;">Nota: --</div>
+                </div>
+                
+                <!-- Redação -->
+                <div>
+                    <label style="color: #8b949e; font-size: 0.8rem; display: block; margin-bottom: 5px;">REDAÇÃO (0-1000)</label>
+                    <input type="number" id="nota_redacao" min="0" max="1000" value="0" style="width: 100%; padding: 10px; background: #000; border: 1px solid #eab308; color: #eab308; font-weight: bold; font-family: inherit;">
+                    <div id="nota_red" style="color: #eab308; font-size: 0.75rem; margin-top: 5px; text-align: right;">Nota: --</div>
+                </div>
+            </div>
+
+            <div style="border-top: 1px dashed #30363d; padding-top: 20px; margin-bottom: 20px;">
+                <label style="display: flex; align-items: center; cursor: pointer;">
+                    <input type="checkbox" id="bonus_regional" style="width: 20px; height: 20px; accent-color: #ffeb3b; margin-right: 10px;">
+                    <span style="color: #ffeb3b; font-weight: bold;">[ APLICAR BÔNUS REGIONAL +10% ]</span>
+                </label>
+            </div>
+
+            <div style="background: rgba(88, 166, 255, 0.1); border: 1px solid #58a6ff; padding: 20px; border-radius: 8px; text-align: center;">
+                <div style="color: #8b949e; font-size: 1rem; margin-bottom: 10px;">> MÉDIA_FINAL_ESTIMADA <</div>
+                <div id="media_final" style="font-size: 3rem; font-weight: bold; color: #fff; font-family: 'Courier New', Courier, monospace;">
+                    000.00
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .calc-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .calc-sidebar {
+        flex: 1 1 300px;
+        min-width: 0;
+    }
+    .calc-main {
+        flex: 2 1 350px;
+        min-width: 0;
+    }
+    /* Estilos para estado de aprovação */
+    .fav-card.passed {
+        border-color: #39ff14 !important;
+        border-left: 6px solid #39ff14 !important;
+        box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+    }
+    .fav-card.passed .fav-score {
+        color: #39ff14 !important;
+    }
+    .fav-card.failed {
+        border-color: #ff3333 !important;
+        border-left: 4px solid #ff3333 !important;
+        opacity: 0.7;
+    }
+    .fav-card.failed .fav-score {
+        color: #ff3333 !important;
+    }
+    
+    @media (max-width: 768px) {
+        .calc-container {
+            flex-direction: column;
+            gap: 20px;
+        }
+        .calc-sidebar {
+            order: 2; /* No mobile, os favoritos descem */
+            width: 100%;
+            flex: 1 1 auto;
+        }
+        .calc-main {
+            order: 1; /* Calculadora em cima */
+            width: 100%;
+            flex: 1 1 auto;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const inputs = [
+            document.getElementById('acertos_mat'),
+            document.getElementById('acertos_nat'),
+            document.getElementById('acertos_hum'),
+            document.getElementById('acertos_lin'),
+            document.getElementById('nota_redacao'),
+            document.getElementById('bonus_regional')
+        ];
+
+        // Lógica TRI (baseada nos dados oficiais do ENEM 2024)
+        function calcBase(x, min, max, delta, a, b, c) {
+            if (x <= 0) return min;
+            let t = x / 45;
+            return min + delta * (a * t + b * Math.pow(t, 2) + c * Math.pow(t, 3));
+        }
+
+        // Variância parabólica (maior no meio, zero nas pontas)
+        function calcVariancia(x, maxVar) {
+            if (x <= 0 || x >= 45) return 0;
+            let t = x / 45;
+            return 4 * t * (1 - t) * maxVar;
+        }
+
+        function getScores(x, min, max, delta, a, b, c, maxVar) {
+            let media = calcBase(x, min, max, delta, a, b, c);
+            let v = calcVariancia(x, maxVar);
+            
+            // Garantir que não ultrapasse os limites oficiais
+            let otimista = Math.min(media + v, max);
+            let pessimista = Math.max(media - v, min);
+            
+            return {
+                media: media,
+                otimista: otimista,
+                pessimista: pessimista
+            };
+        }
+
+        function calcMat(x) {
+            return getScores(x, 334.30, 961.90, 627.60, 0.34, 0, 0.66, 120);
+        }
+
+        function calcNat(x) {
+            return getScores(x, 308.10, 867.20, 559.10, 0.61, 0.39, 0, 100);
+        }
+
+        function calcHum(x) {
+            return getScores(x, 283.80, 819.70, 535.90, 0.57, 0.43, 0, 80);
+        }
+
+        function calcLin(x) {
+            return getScores(x, 294.10, 795.80, 501.70, 0.51, 0, 0.49, 70);
+        }
+
+        function atualizarCalculo() {
+            let acertos_mat = parseInt(document.getElementById('acertos_mat').value) || 0;
+            let acertos_nat = parseInt(document.getElementById('acertos_nat').value) || 0;
+            let acertos_hum = parseInt(document.getElementById('acertos_hum').value) || 0;
+            let acertos_lin = parseInt(document.getElementById('acertos_lin').value) || 0;
+            let redacao = parseFloat(document.getElementById('nota_redacao').value) || 0;
+            let bonus = document.getElementById('bonus_regional').checked;
+
+            // Clamp max values
+            acertos_mat = Math.min(acertos_mat, 45);
+            acertos_nat = Math.min(acertos_nat, 45);
+            acertos_hum = Math.min(acertos_hum, 45);
+            acertos_lin = Math.min(acertos_lin, 45);
+            redacao = Math.min(redacao, 1000);
+
+            // Calcula as pontuações (media, otimista, pessimista)
+            let s_mat = calcMat(acertos_mat);
+            let s_nat = calcNat(acertos_nat);
+            let s_hum = calcHum(acertos_hum);
+            let s_lin = calcLin(acertos_lin);
+
+            // Atualiza UI das notas individuais (usando a média)
+            document.getElementById('nota_mat').innerHTML = `Média: ${s_mat.media.toFixed(1)}<br><span style="font-size: 0.65rem; color: #8b949e;">[Otimista: ${s_mat.otimista.toFixed(0)}]</span>`;
+            document.getElementById('nota_nat').innerHTML = `Média: ${s_nat.media.toFixed(1)}<br><span style="font-size: 0.65rem; color: #8b949e;">[Otimista: ${s_nat.otimista.toFixed(0)}]</span>`;
+            document.getElementById('nota_hum').innerHTML = `Média: ${s_hum.media.toFixed(1)}<br><span style="font-size: 0.65rem; color: #8b949e;">[Otimista: ${s_hum.otimista.toFixed(0)}]</span>`;
+            document.getElementById('nota_lin').innerHTML = `Média: ${s_lin.media.toFixed(1)}<br><span style="font-size: 0.65rem; color: #8b949e;">[Otimista: ${s_lin.otimista.toFixed(0)}]</span>`;
+            document.getElementById('nota_red').innerHTML = `Nota: ${redacao.toFixed(1)}`;
+
+            // Cálculos Finais
+            let media_simples = (s_mat.media + s_nat.media + s_hum.media + s_lin.media + redacao) / 5;
+            let media_otimista = (s_mat.otimista + s_nat.otimista + s_hum.otimista + s_lin.otimista + redacao) / 5;
+            
+            // Aplica bônus se marcado
+            let final_media = bonus ? media_simples * 1.10 : media_simples;
+            let final_otimista = bonus ? media_otimista * 1.10 : media_otimista;
+
+            // Atualiza o display final
+            document.getElementById('media_final').innerHTML = `
+                ${final_media.toFixed(2)}
+                <div style="font-size: 1rem; color: #8b949e; margin-top: 15px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                    <span style="color: #39ff14;">Cenário Otimista: ${final_otimista.toFixed(2)}</span>
+                </div>
+                <div style="font-size: 0.8rem; color: #8b949e; margin-top: 15px; line-height: 1.5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: left; padding: 15px; background: rgba(0,0,0,0.3); border-left: 3px solid #58a6ff;">
+                    <strong>[ INFO_SISTEMA: Variação TRI ]</strong><br>
+                    No ENEM, o mesmo número de acertos pode gerar notas diferentes devido à TRI (Teoria de Resposta ao Item). A TRI avalia a <em>coerência</em>: se você estudou o básico e acertou somente as questões fáceis, o sistema entende que não houve "chute" e sua nota sobe bastante. É exatamente por isso que o <strong>Cenário Otimista</strong> existe: ele projeta a sua nota caso você tenha garantido o básico e mantido uma alta coerência na prova!
+                </div>
+            `;
+            
+            // Compara com os favoritos usando o Cenário Otimista
+            avaliarFavoritos(final_otimista);
+        }
+
+        function avaliarFavoritos(media_final) {
+            if(media_final <= 0) return; // Nao pintar nada se tiver 0
+            
+            const cards = document.querySelectorAll('.fav-card');
+            cards.forEach(card => {
+                let minScore = parseFloat(card.getAttribute('data-min-score'));
+                if (!isNaN(minScore) && minScore > 0) {
+                    if (media_final >= minScore) {
+                        card.classList.add('passed');
+                        card.classList.remove('failed');
+                    } else {
+                        card.classList.add('failed');
+                        card.classList.remove('passed');
+                    }
+                }
+            });
+        }
+
+        // Listener events
+        inputs.forEach(input => {
+            input.addEventListener('input', atualizarCalculo);
+            input.addEventListener('change', atualizarCalculo); // para o checkbox
+        });
+
+        // Calculo inicial (0)
+        atualizarCalculo();
+    });
+</script>
+{% endblock %}

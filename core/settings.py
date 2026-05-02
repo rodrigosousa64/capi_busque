@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'cota_min_and_max_enem',
     'vagas_sobrando',
     'favoritos',
+    'calculadora',
 ]
 
 MIDDLEWARE = [
