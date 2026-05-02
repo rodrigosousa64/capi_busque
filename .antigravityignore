@@ -1,4 +1,31 @@
+# Dados e Arquivos Pesados
 pipeline_dados/brutos/
 pipeline_dados/dados_processados/
+cota_min_and_max_enem/Verificador-de-notas-de-cursos-max-e-min-das-universidades-federias-metropolinas-de-bel-m-/
 *.pdf
 *.json
+*.csv
+*.xlsx
+
+# Python e Ambientes Virtuais
+__pycache__/
+*.py[cod]
+*.class
+*.so
+venv/
+env/
+.venv/
+Scripts/
+Lib/
+Include/
+
+# Django
+db.sqlite3
+staticfiles/
+media/
+
+# Sistema e Logs
+.git/
+.VSCode/
+*.log
+node_modules/
