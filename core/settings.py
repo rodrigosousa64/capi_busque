@@ -11,16 +11,22 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Carrega variáveis do arquivo .env (para desenvolvimento local)
+load_dotenv(BASE_DIR / '.env')
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j6inlo40z)cf!)ym_g^-jq^_%@zku^k1#3o!hlk3217)&!e%ha'
+SECRET_KEY = os.environ.get('SECRET_KEY', '8139288492152007')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -46,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Serve estáticos em produção
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -74,13 +81,13 @@ TEMPLATES = [
 
 STATIC_URL = 'static/'
 
-
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 WSGI_APPLICATION = 'core.wsgi.application'
@@ -89,11 +96,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+# Banco de dados: usa DATABASE_URL do ambiente (.env ou Railway)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.config(
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+        ssl_require=True if os.environ.get('RAILWAY_ENVIRONMENT') or os.environ.get('DATABASE_URL') else False,
+    )
 }
 
 
