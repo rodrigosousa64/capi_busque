@@ -32,8 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']   
-CSRF_TRUSTED_ORIGINS = ['https://*.loca.lt']
-
+CSRF_TRUSTED_ORIGINS = ['https://capibusque-production.up.railway.app']
 
 # Application definition
 
