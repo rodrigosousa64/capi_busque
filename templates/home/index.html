@@ -16,17 +16,18 @@
     </label>
 
     <aside class="sidebar">
-        <!-- ÁREA DO CAPI-BOT -->
+        <!-- ÁREA DO CAPI-BUSQUE -->
         <div style="padding: 20px; text-align: center; border-bottom: 1px dashed #30363d; margin-top: 10px; margin-bottom: 15px;">
-            <img src="{% static 'img/capibot.jpg' %}" alt="Capi-bot" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);">
-            <h2 style="color: #00e5ff; margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 1.5rem;">> CAPI_BOT</h2>
-            <div style="color: #39ff14; font-size: 0.8rem; margin-top: 8px; font-weight: bold; font-family: 'Courier New', Courier, monospace; line-height: 1.3;">// Capi-bot acha pra você!</div>
+            <img src="{% static 'img/capibot.jpg' %}" alt="Capi-busque" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);">
+            <h2 style="color: #00e5ff; margin: 0; font-family: 'Courier New', Courier, monospace; font-size: 1.5rem;">> CAPI_BUSQUE</h2>
+            <div style="color: #39ff14; font-size: 0.8rem; margin-top: 8px; font-weight: bold; font-family: 'Courier New', Courier, monospace; line-height: 1.3;">// Capi-busque acha pra você!</div>
         </div>
 
         <nav class="menu-items" style="margin-top: 0;">
             <div class="item"><a href="{% url 'home' %}"><span>Inicio</span> <small>Dashboard</small></a></div>
-            <div class="item"><a href="{% url 'login' %}"><span>Simulador de Cotas</span> <small>Análise de Perfil e Notas</small></a></div>
+            <div class="item"><a href="{% url 'buscar_cursos' %}"><span>Simulador de Cotas</span> <small>Análise de Perfil e Notas</small></a></div>
             <div class="item"><a href="{% url 'calculadora_index' %}"><span>Calculadora TRI</span> <small>Compare sua nota simulada</small></a></div>
+            <div class="item"><a href="{% url 'listar_favoritos' %}"><span>Gerencie seus Favoritos</span> <small>Remover e Visualizar</small></a></div>
             <div class="item"><a href="{% url 'vagas_sobrando_lista' %}"><span>Sabia que vagas sobram?</span> <small>Cursos com Sobras</small></a></div>
             <div class="item"><a href="{% url 'regras_cotas' %}"><span>Dicionário de Cotas</span> <small>Regras e Siglas</small></a></div>
         </nav>
@@ -35,6 +36,11 @@
     <div class="overlay"></div>
 
     <main class="content">
+        {% if not request.user.is_authenticated %}
+        <div style="background: rgba(234, 179, 8, 0.1); border-left: 4px solid #eab308; padding: 10px 15px; margin-bottom: 15px; color: #eab308; font-size: 0.85rem; border-radius: 4px; font-family: 'Courier New', Courier, monospace;">
+            <strong>[ MODO VISITANTE ]</strong> Você está navegando sem conta. Para salvar cursos favoritos e usar a Calculadora TRI com precisão, <a href="{% url 'login' %}" style="color: #eab308; text-decoration: underline; font-weight: bold;">faça o seu login aqui</a>.
+        </div>
+        {% endif %}
         <section class="terminal-box">
             {% if messages %}
                 <ul style="list-style: none; padding: 0; color: #ffeb3b; margin-bottom: 20px;">

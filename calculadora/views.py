@@ -15,33 +15,33 @@ if sub_dir not in sys.path:
 from buscador_notas import BuscadorDeNotas
 from verificador_cotas import PerfilCandidato, AvaliadorDeCotas
 
-@login_required
+# login_required removido
 def calculadora_view(request):
-    try:
-        perfil_db = request.user.perfil_candidato
-    except PerfilCandidatoDB.DoesNotExist:
-        messages.warning(request, "Você precisa configurar seu perfil antes de usar a calculadora.")
-        return redirect('buscar_cursos')
-
-    perfil_dataclass = PerfilCandidato(
-        escola_publica=perfil_db.escola_publica,
-        renda_sm=perfil_db.renda_sm,
-        raca=perfil_db.raca,
-        pcd=perfil_db.pcd
-    )
-
-    favoritos = Favorito.objects.filter(user=request.user).select_related('oferta')
-    
-    buscador = BuscadorDeNotas()
-    avaliador = AvaliadorDeCotas(perfil_dataclass)
-    
     resultados_favoritos = []
     
-    for fav in favoritos:
-        resultado = buscador.avaliar_oferta(fav.oferta, perfil_dataclass, avaliador)
-        if resultado:
-            resultado['is_favorito'] = True
-            resultados_favoritos.append(resultado)
+    if request.user.is_authenticated:
+        try:
+            perfil_db = request.user.perfil_candidato
+        except PerfilCandidatoDB.DoesNotExist:
+            perfil_db = PerfilCandidatoDB.objects.create(user=request.user)
+
+        perfil_dataclass = PerfilCandidato(
+            escola_publica=perfil_db.escola_publica,
+            renda_sm=perfil_db.renda_sm,
+            raca=perfil_db.raca,
+            pcd=perfil_db.pcd
+        )
+
+        favoritos = Favorito.objects.filter(user=request.user).select_related('oferta')
+        
+        buscador = BuscadorDeNotas()
+        avaliador = AvaliadorDeCotas(perfil_dataclass)
+        
+        for fav in favoritos:
+            resultado = buscador.avaliar_oferta(fav.oferta, perfil_dataclass, avaliador)
+            if resultado:
+                resultado['is_favorito'] = True
+                resultados_favoritos.append(resultado)
 
     return render(request, 'calculadora/index.html', {
         'resultados': resultados_favoritos

@@ -65,22 +65,58 @@ def logout_view(request):
     messages.info(request, "Você saiu com sucesso.")
     return redirect('login')
 
-@login_required
+# @login_required removido
 def buscar_cursos_view(request):
-    try:
-        perfil_db = request.user.perfil_candidato
-    except PerfilCandidatoDB.DoesNotExist:
-        perfil_db = PerfilCandidatoDB.objects.create(user=request.user)
-
-    # Lógica de atualização de perfil (POST)
-    if request.method == 'POST':
-        perfil_form = PerfilForm(request.POST, instance=perfil_db)
-        if perfil_form.is_valid():
-            perfil_form.save()
-            messages.success(request, "Perfil atualizado com sucesso!")
-            return redirect(request.get_full_path()) # Redireciona mantendo a query de busca se houver
+    if request.user.is_authenticated:
+        try:
+            perfil_db = request.user.perfil_candidato
+        except PerfilCandidatoDB.DoesNotExist:
+            perfil_db = PerfilCandidatoDB.objects.create(user=request.user)
+    
+        if request.method == 'POST':
+            perfil_form = PerfilForm(request.POST, instance=perfil_db)
+            if perfil_form.is_valid():
+                perfil_form.save()
+                messages.success(request, "Perfil atualizado com sucesso!")
+                return redirect(request.get_full_path())
+        else:
+            perfil_form = PerfilForm(instance=perfil_db)
+            
+        perfil_dataclass = PerfilCandidato(
+            escola_publica=perfil_db.escola_publica,
+            renda_sm=perfil_db.renda_sm,
+            raca=perfil_db.raca,
+            pcd=perfil_db.pcd
+        )
     else:
-        perfil_form = PerfilForm(instance=perfil_db)
+        session_perfil = request.session.get('perfil_candidato', {
+            'escola_publica': False,
+            'renda_sm': 1.5,
+            'raca': 'ND',
+            'pcd': False
+        })
+        
+        if request.method == 'POST':
+            perfil_form = PerfilForm(request.POST)
+            if perfil_form.is_valid():
+                session_perfil = {
+                    'escola_publica': perfil_form.cleaned_data['escola_publica'],
+                    'renda_sm': float(perfil_form.cleaned_data['renda_sm']),
+                    'raca': perfil_form.cleaned_data['raca'],
+                    'pcd': perfil_form.cleaned_data['pcd'],
+                }
+                request.session['perfil_candidato'] = session_perfil
+                messages.success(request, "Perfil atualizado para esta simulação!")
+                return redirect(request.get_full_path())
+        else:
+            perfil_form = PerfilForm(initial=session_perfil)
+            
+        perfil_dataclass = PerfilCandidato(
+            escola_publica=session_perfil['escola_publica'],
+            renda_sm=session_perfil['renda_sm'],
+            raca=session_perfil['raca'],
+            pcd=session_perfil['pcd']
+        )
 
     # Lógica de busca (GET)
     busca_form = BuscaCursoForm(request.GET or None)
@@ -88,14 +124,6 @@ def buscar_cursos_view(request):
 
     if busca_form.is_valid():
         curso_buscado = busca_form.cleaned_data['curso']
-        
-        # Converter PerfilCandidatoDB para a dataclass PerfilCandidato
-        perfil_dataclass = PerfilCandidato(
-            escola_publica=perfil_db.escola_publica,
-            renda_sm=perfil_db.renda_sm,
-            raca=perfil_db.raca,
-            pcd=perfil_db.pcd
-        )
         
         buscador = BuscadorDeNotas()
         resultados = buscador.buscar_curso_para_perfil(curso_buscado, perfil_dataclass)

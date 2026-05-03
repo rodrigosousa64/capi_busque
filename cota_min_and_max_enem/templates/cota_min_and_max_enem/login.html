@@ -2,8 +2,11 @@
 
 {% block content %}
 <div style="max-width: 500px;">
-    <h2>> LOGIN_SISTEMA</h2>
-    <form method="post" style="margin-top: 20px;">
+    <h2 style="color: #58a6ff; margin-bottom: 15px;">> LOGIN_SISTEMA</h2>
+    <div style="background: rgba(88, 166, 255, 0.1); border-left: 3px solid #58a6ff; padding: 12px; margin-bottom: 25px; font-size: 0.85rem; color: #c9d1d9; border-radius: 0 4px 4px 0;">
+        <strong>[ INFO ]</strong> O login é necessário apenas para que você possa salvar seus <strong>cursos favoritos</strong> e usá-los na <strong>Calculadora TRI</strong> para projetar sua aprovação.
+    </div>
+    <form method="post">
         {% csrf_token %}
         {% for field in form %}
             <div style="margin-bottom: 15px;">
