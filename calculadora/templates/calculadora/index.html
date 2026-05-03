@@ -13,9 +13,6 @@
     <div class="calc-sidebar">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
             <h3 style="color: #39ff14; margin: 0;">> MEUS_FAVORITOS_SALVOS</h3>
-            {% if request.user.is_authenticated %}
-                <a href="{% url 'listar_favoritos' %}" style="color: #8b949e; text-decoration: none; border: 1px dashed #30363d; padding: 4px 8px; font-size: 0.75rem; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.color='#fff'; this.style.borderColor='#58a6ff';" onmouseout="this.style.color='#8b949e'; this.style.borderColor='#30363d';">[ GERENCIAR_TODOS ]</a>
-            {% endif %}
         </div>
         <div style="display: flex; flex-direction: column; gap: 15px;">
             {% if request.user.is_authenticated %}
