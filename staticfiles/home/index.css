@@ -1,0 +1,286 @@
+:root {
+    --bg-color: #0d1117;
+    --accent-color: #58a6ff;
+    --sidebar-width: 260px;
+    --collapsed-width: 70px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-color);
+    color: white;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Esconde o checkbox */
+.nav-toggle {
+    display: none;
+}
+
+
+
+/* Sidebar Base */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: #161b22;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-right: 1px solid #30363d;
+    flex-shrink: 0;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+/* Lógica de Fechamento */
+.nav-toggle:checked~.sidebar {
+    width: var(--collapsed-width);
+}
+
+/* Estilo dos Itens */
+.menu-items {
+    margin-top: 60px;
+    padding: 10px;
+}
+
+.item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.item:hover {
+    background: #21262d;
+    border-left: 4px solid var(--accent-color);
+}
+
+.item span {
+    font-weight: bold;
+    display: block;
+}
+
+.item small {
+    color: #8b949e;
+}
+
+
+/* Botão Toggle (Desktop) */
+.toggle-button {
+    position: fixed;
+    top: 15px;
+    left: 215px; /* Posição padrão (sidebar aberta: 260px - 45px) */
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    z-index: 1001;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.nav-toggle:checked ~ .toggle-button {
+    left: 25px; /* Posição colapsada (sidebar fechada: 70px - 45px) */
+}
+
+/* Área de Conteúdo */
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    min-width: 0;
+}
+
+.terminal-box {
+    background: black;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #30363d;
+    font-family: 'Courier New', Courier, monospace;
+    color: #39ff14;
+}
+
+/* Grid de Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Tablet: max 2 colunas */
+@media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 coluna */
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* RESPONSIVIDADE PARA MOBILE (DRAWER LATERAL + BOTÃO FLUTUANTE) */
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+
+    /* O fundo escuro quando o menu abre */
+    .nav-toggle:checked ~ .overlay {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(3px);
+        z-index: 1999;
+    }
+
+    /* O Menu Lateral (Drawer) */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 85vw;       /* Ocupa 85% da largura da tela */
+        min-width: 260px;  /* Mínimo confortável */
+        max-width: 340px;  /* Não fica gigante em telas maiores */
+        height: 100vh;
+        height: 100dvh; /* dynamic viewport height para mobile */
+        max-height: 100vh;
+        opacity: 1;
+        visibility: visible;
+        background: #161b22;
+        border-left: 1px solid #30363d;
+        border-right: none;
+        border-radius: 0;
+        z-index: 2000;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        display: block;
+        padding: 20px;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .nav-toggle:checked ~ .sidebar {
+        transform: translateX(0); /* Desliza para dentro da tela */
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        padding: 0;
+    }
+
+    .item {
+        padding: 20px 15px;
+        border-bottom: 1px solid #30363d;
+        white-space: normal;
+    }
+
+    /* Ajuste do Botão Azul no Mobile */
+    .toggle-button {
+        display: flex;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 65px;
+        height: 65px;
+        background: var(--accent-color);
+        border-radius: 50%;
+        z-index: 2001; /* Fica acima de tudo, inclusive do menu */
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 5px 25px rgba(88, 166, 255, 0.5);
+        transition: all 0.3s ease;
+        top: auto;
+        left: auto;
+    }
+
+    .toggle-button .icon::before {
+        content: "☰";
+        color: #000;
+        font-size: 2rem;
+    }
+
+    .nav-toggle:checked ~ .toggle-button {
+        background: #ff3333;
+        transform: rotate(90deg);
+    }
+
+    .nav-toggle:checked ~ .toggle-button .icon::before {
+        content: "✕";
+        color: #fff;
+    }
+
+    .content {
+        padding: 10px 5px;
+        max-width: 100%; /* No celular ocupa tudo */
+    }
+
+    /* Remove redundância do container que o usuário adicionou */
+    .main-content {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .terminal-box {
+        padding: 12px 8px;
+    }
+}
+
+/* RESPONSIVIDADE PARA TABLETS (SIDEBAR MAIS ESTREITA) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    :root {
+        --sidebar-width: 200px;
+    }
+    .content {
+        padding: 25px;
+    }
+}
+
+.main-content {
+    /* 1. Fluid Width: Ocupa todo o espaço disponível no eixo X */
+    width: 100%;
+
+    /* 2. Boundary Limit: Ajustado para um tamanho mais próximo de smartphone/tablet */
+    max-width: 800px;
+
+    /* 3. Centralização: Calcula o eixo X e divide a margem restante igualmente */
+    margin: 0 auto;
+
+    /* 4. Breathing Room: Espaço de respiro para o texto não colar nas bordas da tela */
+    padding: 0 16px;
+
+    /* 5. Geometria de Caixa (Crucial) */
+    box-sizing: border-box;
+}

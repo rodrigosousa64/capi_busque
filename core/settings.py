@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j6inlo40z)cf!)ym_g^-jq^_%@zku^k1#3o!hlk3217)&!e%ha'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']   
 CSRF_TRUSTED_ORIGINS = ['https://*.loca.lt']
