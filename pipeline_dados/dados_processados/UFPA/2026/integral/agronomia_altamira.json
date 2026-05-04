@@ -18,32 +18,11 @@
                     "historical_max_score": 781.26
                 },
                 {
-                    "quota_code": "PCDA",
-                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
                     "quota_code": "E",
                     "description": "Apenas Cota Escola",
                     "spots": 1,
                     "previous_cutoff": 664.29,
                     "historical_max_score": 664.29
-                },
-                {
-                    "quota_code": "EPCD",
-                    "description": "Cota Escola + Pessoas com Deficiência (PcD)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "EQ",
-                    "description": "Cota Escola + Quilombolas",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
                 },
                 {
                     "quota_code": "EPPI",
@@ -58,13 +37,6 @@
                     "spots": 8,
                     "previous_cutoff": 576.2,
                     "historical_max_score": 663.61
-                },
-                {
-                    "quota_code": "ERPCD",
-                    "description": "Cota Escola + Renda ≤ 1 SM + Pessoas com Deficiência (PcD)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
                 },
                 {
                     "quota_code": "ERQ",

@@ -1,0 +1,44 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "LETRAS",
+            "campus": "TUCURUÍ",
+            "degree": "LICENCIATURA",
+            "shift": "VESPERTINO",
+            "total_spots_filled": 49,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "RI_PPI",
+                    "description": "Vagas reservadas a candidatos autodeclarados pretos, pardos ou indígenas, com renda familiar bruta igual ou inferior a 1 salário mínimo per capita, que tenham cursado o ensino médio integralmente em escola pública.",
+                    "spots": 1,
+                    "previous_cutoff": 493.24,
+                    "historical_max_score": 493.24
+                },
+                {
+                    "quota_code": "IR_PPI",
+                    "description": "Vagas reservadas a candidatos autodeclarados pretos, pardos ou indígenas, independente de renda, que tenham cursado o ensino médio integralmente em escola pública.",
+                    "spots": 4,
+                    "previous_cutoff": 560.58,
+                    "historical_max_score": 577.0
+                },
+                {
+                    "quota_code": "IR_EP",
+                    "description": "Vagas reservadas a candidatos, independente de renda, que tenham cursado o ensino médio integralmente em escola pública (Geral/Independente de autodeclaração).",
+                    "spots": 9,
+                    "previous_cutoff": 467.46,
+                    "historical_max_score": 574.64
+                },
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 35,
+                    "previous_cutoff": 459.46,
+                    "historical_max_score": 671.16
+                }
+            ]
+        }
+    ]
+}

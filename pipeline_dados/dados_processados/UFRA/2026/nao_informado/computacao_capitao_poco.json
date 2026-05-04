@@ -18,32 +18,11 @@
                     "historical_max_score": 671.84
                 },
                 {
-                    "quota_code": "LB_EP",
-                    "description": "Cota Escola + Renda (≤ 1 salário mínimo). Sem critério de raça ou deficiência",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
                     "quota_code": "LB_PPI",
                     "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PPI",
                     "spots": 5,
                     "previous_cutoff": 477.48,
                     "historical_max_score": 500.82
-                },
-                {
-                    "quota_code": "LB_Q",
-                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + Quilombolas",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "LB_PCD",
-                    "description": "Cota Escola + Renda (≤ 1 salário mínimo) + PcD",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
                 },
                 {
                     "quota_code": "LI_EP",
@@ -58,13 +37,6 @@
                     "spots": 1,
                     "previous_cutoff": 475.08,
                     "historical_max_score": 475.08
-                },
-                {
-                    "quota_code": "LI_PCD",
-                    "description": "Cota Escola + Renda Livre + PcD",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
                 }
             ]
         }

@@ -1,0 +1,23 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "HISTÓRIA",
+            "campus": "CASTANHAL",
+            "degree": "LICENCIATURA",
+            "shift": "NOTURNO",
+            "total_spots_filled": 28,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 28,
+                    "previous_cutoff": 432.34,
+                    "historical_max_score": 632.3
+                }
+            ]
+        }
+    ]
+}

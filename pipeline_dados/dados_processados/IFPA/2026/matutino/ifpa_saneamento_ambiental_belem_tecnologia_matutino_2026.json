@@ -1,0 +1,65 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "SANEAMENTO AMBIENTAL",
+            "campus": "BELÉM",
+            "degree": "TECNOLOGIA",
+            "shift": "MATUTINO",
+            "total_spots_filled": 49,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "RI_PPI",
+                    "description": "Vagas reservadas a candidatos autodeclarados pretos, pardos ou indígenas, com renda familiar bruta igual ou inferior a 1 salário mínimo per capita, que tenham cursado o ensino médio integralmente em escola pública.",
+                    "spots": 13,
+                    "previous_cutoff": 525.14,
+                    "historical_max_score": 556.16
+                },
+                {
+                    "quota_code": "RI_PCD",
+                    "description": "Vagas reservadas a candidatos com deficiência, com renda familiar bruta igual ou inferior a 1 salário mínimo per capita, que tenham cursado o ensino médio integralmente em escola pública.",
+                    "spots": 2,
+                    "previous_cutoff": 485.48,
+                    "historical_max_score": 531.98
+                },
+                {
+                    "quota_code": "RI_EP",
+                    "description": "Vagas reservadas a candidatos com renda familiar bruta per capita igual ou inferior a 1 salário mínimo, que tenham cursado o ensino médio integralmente em escola pública (Geral/Independente de autodeclaração).",
+                    "spots": 2,
+                    "previous_cutoff": 543.98,
+                    "historical_max_score": 631.74
+                },
+                {
+                    "quota_code": "IR_PPI",
+                    "description": "Vagas reservadas a candidatos autodeclarados pretos, pardos ou indígenas, independente de renda, que tenham cursado o ensino médio integralmente em escola pública.",
+                    "spots": 7,
+                    "previous_cutoff": 560.26,
+                    "historical_max_score": 611.04
+                },
+                {
+                    "quota_code": "IR_PCD",
+                    "description": "Vagas reservadas a candidatos com deficiência, independente de renda, que tenham cursado o ensino médio integralmente em escola pública.",
+                    "spots": 1,
+                    "previous_cutoff": 489.26,
+                    "historical_max_score": 489.26
+                },
+                {
+                    "quota_code": "IR_EP",
+                    "description": "Vagas reservadas a candidatos, independente de renda, que tenham cursado o ensino médio integralmente em escola pública (Geral/Independente de autodeclaração).",
+                    "spots": 1,
+                    "previous_cutoff": 638.32,
+                    "historical_max_score": 638.32
+                },
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 23,
+                    "previous_cutoff": 640.08,
+                    "historical_max_score": 753.98
+                }
+            ]
+        }
+    ]
+}

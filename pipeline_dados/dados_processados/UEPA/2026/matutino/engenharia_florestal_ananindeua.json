@@ -18,20 +18,6 @@
                     "historical_max_score": 743.95
                 },
                 {
-                    "quota_code": "B",
-                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência - PcD (Grupo 2)",
-                    "spots": 0,
-                    "previous_cutoff": 622.45,
-                    "historical_max_score": 622.45
-                },
-                {
-                    "quota_code": "C",
-                    "description": "Apenas Cota Escola (Grupo 3)",
-                    "spots": 0,
-                    "previous_cutoff": 681.16,
-                    "historical_max_score": 681.16
-                },
-                {
                     "quota_code": "D",
                     "description": "Cota Escola + PcD (Grupo 4)",
                     "spots": 1,
@@ -46,20 +32,6 @@
                     "historical_max_score": 669.86
                 },
                 {
-                    "quota_code": "F",
-                    "description": "Cota Escola + Étnico-Racial-Quilombola + PcD (Grupo 6)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "G",
-                    "description": "Cota Escola + Renda (Grupo 7)",
-                    "spots": 0,
-                    "previous_cutoff": 647.44,
-                    "historical_max_score": 660.24
-                },
-                {
                     "quota_code": "H",
                     "description": "Cota Escola + Renda + PcD (Grupo 8)",
                     "spots": 1,
@@ -72,13 +44,6 @@
                     "spots": 1,
                     "previous_cutoff": 592.86,
                     "historical_max_score": 629.86
-                },
-                {
-                    "quota_code": "J",
-                    "description": "Cota Escola + Renda + Étnico-Racial-Quilombola + PcD (Grupo 10)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
                 }
             ]
         }

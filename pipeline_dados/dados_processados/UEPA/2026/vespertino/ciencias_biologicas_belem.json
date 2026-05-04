@@ -18,27 +18,6 @@
                     "historical_max_score": 814.09
                 },
                 {
-                    "quota_code": "B",
-                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência - PcD (Grupo 2)",
-                    "spots": 0,
-                    "previous_cutoff": 692.96,
-                    "historical_max_score": 692.96
-                },
-                {
-                    "quota_code": "C",
-                    "description": "Apenas Cota Escola (Grupo 3)",
-                    "spots": 0,
-                    "previous_cutoff": 742.59,
-                    "historical_max_score": 744.92
-                },
-                {
-                    "quota_code": "D",
-                    "description": "Cota Escola + PcD (Grupo 4)",
-                    "spots": 0,
-                    "previous_cutoff": 658.5,
-                    "historical_max_score": 658.5
-                },
-                {
                     "quota_code": "E",
                     "description": "Cota Escola + Étnico-Racial-Quilombola (Grupo 5)",
                     "spots": 3,
@@ -46,39 +25,11 @@
                     "historical_max_score": 728.09
                 },
                 {
-                    "quota_code": "F",
-                    "description": "Cota Escola + Étnico-Racial-Quilombola + PcD (Grupo 6)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "G",
-                    "description": "Cota Escola + Renda (Grupo 7)",
-                    "spots": 0,
-                    "previous_cutoff": 725.38,
-                    "historical_max_score": 741.77
-                },
-                {
-                    "quota_code": "H",
-                    "description": "Cota Escola + Renda + PcD (Grupo 8)",
-                    "spots": 0,
-                    "previous_cutoff": 640.62,
-                    "historical_max_score": 640.62
-                },
-                {
                     "quota_code": "I",
                     "description": "Cota Escola + Renda + Étnico-Racial-Quilombola (Grupo 9)",
                     "spots": 5,
                     "previous_cutoff": 646.23,
                     "historical_max_score": 670.54
-                },
-                {
-                    "quota_code": "J",
-                    "description": "Cota Escola + Renda + Étnico-Racial-Quilombola + PcD (Grupo 10)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
                 }
             ]
         }

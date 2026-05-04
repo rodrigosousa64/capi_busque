@@ -39,13 +39,6 @@
                     "historical_max_score": 522.46
                 },
                 {
-                    "quota_code": "EQ",
-                    "description": "Cota Escola + Quilombolas",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
                     "quota_code": "EPPI",
                     "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
                     "spots": 9,

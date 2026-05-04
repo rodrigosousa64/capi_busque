@@ -32,20 +32,6 @@
                     "historical_max_score": 640.42
                 },
                 {
-                    "quota_code": "EPCD",
-                    "description": "Cota Escola + Pessoas com Deficiência (PcD)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "EQ",
-                    "description": "Cota Escola + Quilombolas",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
                     "quota_code": "EPPI",
                     "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
                     "spots": 9,
@@ -58,13 +44,6 @@
                     "spots": 1,
                     "previous_cutoff": 638.96,
                     "historical_max_score": 638.96
-                },
-                {
-                    "quota_code": "ERPCD",
-                    "description": "Cota Escola + Renda ≤ 1 SM + Pessoas com Deficiência (PcD)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
                 },
                 {
                     "quota_code": "ERQ",

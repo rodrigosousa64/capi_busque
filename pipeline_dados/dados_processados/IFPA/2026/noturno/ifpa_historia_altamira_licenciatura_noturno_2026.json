@@ -1,0 +1,23 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "HISTÓRIA",
+            "campus": "ALTAMIRA",
+            "degree": "LICENCIATURA",
+            "shift": "NOTURNO",
+            "total_spots_filled": 12,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 12,
+                    "previous_cutoff": 492.64,
+                    "historical_max_score": 634.92
+                }
+            ]
+        }
+    ]
+}

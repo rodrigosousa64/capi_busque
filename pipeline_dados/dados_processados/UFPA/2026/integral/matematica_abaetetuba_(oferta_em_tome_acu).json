@@ -18,67 +18,11 @@
                     "historical_max_score": 633.34
                 },
                 {
-                    "quota_code": "PCDA",
-                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
                     "quota_code": "E",
                     "description": "Apenas Cota Escola",
                     "spots": 1,
                     "previous_cutoff": 497.6,
                     "historical_max_score": 497.6
-                },
-                {
-                    "quota_code": "EPCD",
-                    "description": "Cota Escola + Pessoas com Deficiência (PcD)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "EQ",
-                    "description": "Cota Escola + Quilombolas",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "EPPI",
-                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "ER",
-                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "ERPCD",
-                    "description": "Cota Escola + Renda ≤ 1 SM + Pessoas com Deficiência (PcD)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "ERQ",
-                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "ERPPI",
-                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
                 }
             ]
         }

@@ -1,0 +1,23 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "GESTÃO AMBIENTAL",
+            "campus": "MARABÁ",
+            "degree": "TECNOLOGIA",
+            "shift": "NOTURNO",
+            "total_spots_filled": 20,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 20,
+                    "previous_cutoff": 475.42,
+                    "historical_max_score": 596.62
+                }
+            ]
+        }
+    ]
+}

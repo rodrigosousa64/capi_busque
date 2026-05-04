@@ -18,32 +18,11 @@
                     "historical_max_score": 712.28
                 },
                 {
-                    "quota_code": "PCDA",
-                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
                     "quota_code": "E",
                     "description": "Apenas Cota Escola",
                     "spots": 2,
                     "previous_cutoff": 582.72,
                     "historical_max_score": 598.62
-                },
-                {
-                    "quota_code": "EPCD",
-                    "description": "Cota Escola + Pessoas com Deficiência (PcD)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "EQ",
-                    "description": "Cota Escola + Quilombolas",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
                 },
                 {
                     "quota_code": "EPPI",
@@ -58,20 +37,6 @@
                     "spots": 9,
                     "previous_cutoff": 453.32,
                     "historical_max_score": 593.72
-                },
-                {
-                    "quota_code": "ERPCD",
-                    "description": "Cota Escola + Renda ≤ 1 SM + Pessoas com Deficiência (PcD)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
-                    "quota_code": "ERQ",
-                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
                 },
                 {
                     "quota_code": "ERPPI",

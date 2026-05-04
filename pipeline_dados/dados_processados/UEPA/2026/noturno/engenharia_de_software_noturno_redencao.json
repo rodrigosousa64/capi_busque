@@ -50,20 +50,6 @@
                     "spots": 2,
                     "previous_cutoff": 613.23,
                     "historical_max_score": 616.97
-                },
-                {
-                    "quota_code": "H",
-                    "description": "Grupo de Vaga H",
-                    "spots": 0,
-                    "previous_cutoff": 609.75,
-                    "historical_max_score": 609.75
-                },
-                {
-                    "quota_code": "I",
-                    "description": "Grupo de Vaga I",
-                    "spots": 0,
-                    "previous_cutoff": 498.04,
-                    "historical_max_score": 603.04
                 }
             ],
             "leftover_spots": 0

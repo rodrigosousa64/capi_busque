@@ -1,0 +1,23 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "ELETROTÉCNICA INDUSTRIAL",
+            "campus": "MARABÁ",
+            "degree": "TECNOLOGIA",
+            "shift": "NOTURNO",
+            "total_spots_filled": 23,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 23,
+                    "previous_cutoff": 435.36,
+                    "historical_max_score": 604.54
+                }
+            ]
+        }
+    ]
+}
