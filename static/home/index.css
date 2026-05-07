@@ -1,6 +1,20 @@
 :root {
     --bg-color: #0d1117;
     --accent-color: #58a6ff;
+    --text-primary: white;
+    --text-secondary: #8b949e;
+    --surface-color: #161b22;
+    --surface-hover: #21262d;
+    --border-color: #30363d;
+    --terminal-bg: black;
+    --terminal-text: #39ff14;
+    --overlay-bg: rgba(0, 0, 0, 0.7);
+    --shadow-color: rgba(0,0,0,0.5);
+    --accent-shadow: rgba(88, 166, 255, 0.5);
+    --icon-dark: #000;
+    --icon-light: #fff;
+    --danger-color: #ff3333;
+
     --sidebar-width: 260px;
     --collapsed-width: 70px;
 }
@@ -19,7 +33,7 @@ body {
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: var(--bg-color);
-    color: white;
+    color: var(--text-primary);
     display: flex;
     min-height: 100vh;
 }
@@ -35,13 +49,13 @@ body {
 .sidebar {
     width: var(--sidebar-width);
     height: 100vh;
-    background: #161b22;
+    background: var(--surface-color);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: sticky;
     top: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    border-right: 1px solid #30363d;
+    border-right: 1px solid var(--border-color);
     flex-shrink: 0;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
@@ -68,7 +82,7 @@ body {
 }
 
 .item:hover {
-    background: #21262d;
+    background: var(--surface-hover);
     border-left: 4px solid var(--accent-color);
 }
 
@@ -78,7 +92,7 @@ body {
 }
 
 .item small {
-    color: #8b949e;
+    color: var(--text-secondary);
 }
 
 
@@ -108,12 +122,12 @@ body {
 }
 
 .terminal-box {
-    background: black;
+    background: var(--terminal-bg);
     padding: 20px;
     border-radius: 5px;
-    border: 1px solid #30363d;
+    border: 1px solid var(--border-color);
     font-family: 'Courier New', Courier, monospace;
-    color: #39ff14;
+    color: var(--terminal-text);
 }
 
 /* Grid de Cards */
@@ -157,7 +171,7 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.7);
+        background: var(--overlay-bg);
         backdrop-filter: blur(3px);
         z-index: 1999;
     }
@@ -175,13 +189,13 @@ body {
         max-height: 100vh;
         opacity: 1;
         visibility: visible;
-        background: #161b22;
-        border-left: 1px solid #30363d;
+        background: var(--surface-color);
+        border-left: 1px solid var(--border-color);
         border-right: none;
         border-radius: 0;
         z-index: 2000;
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        box-shadow: -10px 0 30px var(--shadow-color);
         display: block;
         padding: 20px;
         box-sizing: border-box;
@@ -203,7 +217,7 @@ body {
 
     .item {
         padding: 20px 15px;
-        border-bottom: 1px solid #30363d;
+        border-bottom: 1px solid var(--border-color);
         white-space: normal;
     }
 
@@ -220,7 +234,7 @@ body {
         z-index: 2001; /* Fica acima de tudo, inclusive do menu */
         justify-content: center;
         align-items: center;
-        box-shadow: 0 5px 25px rgba(88, 166, 255, 0.5);
+        box-shadow: 0 5px 25px var(--accent-shadow);
         transition: all 0.3s ease;
         top: auto;
         left: auto;
@@ -228,18 +242,18 @@ body {
 
     .toggle-button .icon::before {
         content: "☰";
-        color: #000;
+        color: var(--icon-dark);
         font-size: 2rem;
     }
 
     .nav-toggle:checked ~ .toggle-button {
-        background: #ff3333;
+        background: var(--danger-color);
         transform: rotate(90deg);
     }
 
     .nav-toggle:checked ~ .toggle-button .icon::before {
         content: "✕";
-        color: #fff;
+        color: var(--icon-light);
     }
 
     .content {
