@@ -1,0 +1,58 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "FISICA",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Matutino",
+            "total_spots_filled": 41,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 18,
+                    "previous_cutoff": 626.56,
+                    "historical_max_score": 772.58
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 530.78,
+                    "historical_max_score": 530.78
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 6,
+                    "previous_cutoff": 531.48,
+                    "historical_max_score": 628.58
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 6,
+                    "previous_cutoff": 554.74,
+                    "historical_max_score": 612.36
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 9,
+                    "previous_cutoff": 472.56,
+                    "historical_max_score": 624.02
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 616.98,
+                    "historical_max_score": 616.98
+                }
+            ]
+        }
+    ]
+}

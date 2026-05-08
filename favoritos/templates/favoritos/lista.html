@@ -1,4 +1,5 @@
 {% extends 'home/index.html' %}
+{% load curso_tags %}
 
 {% block content %}
 <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 1px dashed #30363d; padding-bottom: 15px;">
@@ -9,7 +10,7 @@
 {% if resultados %}
     <div class="card-grid">
         {% for result in resultados %}
-        <div style="border: 1px solid #30363d; padding: 20px; border-left: 4px solid #eab308; background: #0d1117; display: flex; flex-direction: column; min-width: 0; word-break: break-word;">
+        <div class="modern-card {{ result.nome_curso|category_class }}" style="padding: 20px;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px;">
                 <h4 style="margin: 0; font-size: 1.2rem; color: #fff;">{{ result.instituicao }}</h4>
                 <div style="text-align: right;">

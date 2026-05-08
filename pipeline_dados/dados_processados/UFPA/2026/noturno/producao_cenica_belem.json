@@ -1,0 +1,30 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "PRODUCAO CENICA",
+            "campus": "Belém",
+            "degree": "Tecnologo",
+            "shift": "Noturno",
+            "total_spots_filled": 13,
+            "leftover_spots": 18,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 12,
+                    "previous_cutoff": 539.4,
+                    "historical_max_score": 715.9
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 531.34,
+                    "historical_max_score": 531.34
+                }
+            ]
+        }
+    ]
+}

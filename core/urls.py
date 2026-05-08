@@ -49,4 +49,5 @@ urlpatterns = [
     path('sobras/', include('vagas_sobrando.urls')),
     path('favoritos/', include('favoritos.urls')),
     path('calculadora/', include('calculadora.urls')),
+    path('comentarios/', include('comentarios.urls')),
 ]

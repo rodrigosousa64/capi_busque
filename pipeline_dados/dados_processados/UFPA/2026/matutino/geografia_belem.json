@@ -1,0 +1,58 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "GEOGRAFIA",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Matutino",
+            "total_spots_filled": 31,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 12,
+                    "previous_cutoff": 626.44,
+                    "historical_max_score": 676.52
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 543.84,
+                    "historical_max_score": 543.84
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 617.98,
+                    "historical_max_score": 617.98
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 6,
+                    "previous_cutoff": 528.66,
+                    "historical_max_score": 564.12
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 9,
+                    "previous_cutoff": 520.62,
+                    "historical_max_score": 587.24
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 2,
+                    "previous_cutoff": 487.78,
+                    "historical_max_score": 507.02
+                }
+            ]
+        }
+    ]
+}

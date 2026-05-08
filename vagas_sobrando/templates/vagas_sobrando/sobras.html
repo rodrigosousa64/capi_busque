@@ -1,4 +1,5 @@
 {% extends 'home/index.html' %}
+{% load curso_tags %}
 
 {% block content %}
 <div>
@@ -17,7 +18,7 @@
     
     <div class="card-grid" style="margin-bottom: 40px;">
         {% for curso in cursos_com_sobra %}
-        <div style="border: 1px solid #ffca28; padding: 15px; background: #0d1117; display: flex; flex-direction: column; word-break: break-word; min-width: 0;">
+        <div class="modern-card {{ curso.course_name|category_class }}">
             <div style="color: #8b949e; font-size: 0.8rem; margin-bottom: 5px;">[{{ curso.institution }} | {{ curso.year_reference }}]</div>
             <div style="color: #ffca28; font-weight: bold; margin-bottom: 15px; font-size: 1.1rem; flex-grow: 1;">> {{ curso.course_name }}</div>
             

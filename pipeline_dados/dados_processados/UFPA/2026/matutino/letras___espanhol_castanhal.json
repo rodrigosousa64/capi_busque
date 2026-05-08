@@ -1,0 +1,51 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "LETRAS - ESPANHOL",
+            "campus": "Castanhal",
+            "degree": "Licenciatura",
+            "shift": "Matutino",
+            "total_spots_filled": 35,
+            "leftover_spots": 1,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 17,
+                    "previous_cutoff": 554.0,
+                    "historical_max_score": 630.5
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 553.48,
+                    "historical_max_score": 553.48
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 8,
+                    "previous_cutoff": 493.94,
+                    "historical_max_score": 551.34
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 8,
+                    "previous_cutoff": 501.66,
+                    "historical_max_score": 547.0
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 1,
+                    "previous_cutoff": 492.2,
+                    "historical_max_score": 492.2
+                }
+            ]
+        }
+    ]
+}

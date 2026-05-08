@@ -1,0 +1,65 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "ENFERMAGEM",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Integral",
+            "total_spots_filled": 42,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 22,
+                    "previous_cutoff": 689.62,
+                    "historical_max_score": 744.7
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 2,
+                    "previous_cutoff": 678.28,
+                    "historical_max_score": 684.46
+                },
+                {
+                    "quota_code": "EPCD",
+                    "description": "Cota Escola + Pessoas com Deficiência (PcD)",
+                    "spots": 2,
+                    "previous_cutoff": 570.02,
+                    "historical_max_score": 594.08
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 6,
+                    "previous_cutoff": 632.22,
+                    "historical_max_score": 676.12
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 1,
+                    "previous_cutoff": 663.68,
+                    "historical_max_score": 663.68
+                },
+                {
+                    "quota_code": "ERPCD",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Pessoas com Deficiência (PcD)",
+                    "spots": 2,
+                    "previous_cutoff": 530.08,
+                    "historical_max_score": 543.7
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 7,
+                    "previous_cutoff": 598.76,
+                    "historical_max_score": 631.3
+                }
+            ]
+        }
+    ]
+}

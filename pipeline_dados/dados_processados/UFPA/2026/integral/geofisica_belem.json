@@ -1,0 +1,44 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "GEOFISICA",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Integral",
+            "total_spots_filled": 37,
+            "leftover_spots": 4,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 28,
+                    "previous_cutoff": 501.74,
+                    "historical_max_score": 693.02
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 2,
+                    "previous_cutoff": 514.2,
+                    "historical_max_score": 581.06
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 3,
+                    "previous_cutoff": 488.26,
+                    "historical_max_score": 553.56
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 4,
+                    "previous_cutoff": 508.54,
+                    "historical_max_score": 562.46
+                }
+            ]
+        }
+    ]
+}

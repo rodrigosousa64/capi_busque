@@ -1,0 +1,15 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "QUIMICA INDUSTRIAL",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Vespertino",
+            "total_spots_filled": 0,
+            "leftover_spots": 0,
+            "competition_data": []
+        }
+    ]
+}

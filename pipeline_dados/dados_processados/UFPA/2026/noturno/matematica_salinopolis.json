@@ -1,0 +1,51 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "MATEMATICA",
+            "campus": "Salinópolis",
+            "degree": "Licenciatura",
+            "shift": "Noturno",
+            "total_spots_filled": 51,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 23,
+                    "previous_cutoff": 559.76,
+                    "historical_max_score": 631.34
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 501.78,
+                    "historical_max_score": 501.78
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 7,
+                    "previous_cutoff": 520.62,
+                    "historical_max_score": 557.96
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 7,
+                    "previous_cutoff": 483.9,
+                    "historical_max_score": 544.32
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 13,
+                    "previous_cutoff": 475.0,
+                    "historical_max_score": 556.52
+                }
+            ]
+        }
+    ]
+}

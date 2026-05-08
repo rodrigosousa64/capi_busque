@@ -1,0 +1,23 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "FISICA",
+            "campus": "Tucuruí",
+            "degree": "Licenciatura",
+            "shift": "Matutino",
+            "total_spots_filled": 13,
+            "leftover_spots": 28,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 13,
+                    "previous_cutoff": 483.9,
+                    "historical_max_score": 681.98
+                }
+            ]
+        }
+    ]
+}

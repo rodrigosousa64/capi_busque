@@ -1,0 +1,44 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "METEOROLOGIA",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Matutino",
+            "total_spots_filled": 30,
+            "leftover_spots": 11,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 18,
+                    "previous_cutoff": 593.92,
+                    "historical_max_score": 758.93
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 4,
+                    "previous_cutoff": 539.4,
+                    "historical_max_score": 604.56
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 5,
+                    "previous_cutoff": 529.47,
+                    "historical_max_score": 601.15
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 3,
+                    "previous_cutoff": 506.73,
+                    "historical_max_score": 595.28
+                }
+            ]
+        }
+    ]
+}

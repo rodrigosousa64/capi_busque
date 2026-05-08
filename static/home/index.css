@@ -17,6 +17,167 @@
 
     --sidebar-width: 260px;
     --collapsed-width: 70px;
+
+    /* Cores das Áreas de Conhecimento (legado) */
+    --cor-engenharia: #f97316;
+    --cor-saude: #22c55e;
+    --cor-tecnologia: #3b82f6;
+    --cor-humanas: #eab308;
+    --cor-letras-artes: #a855f7;
+    --cor-agrarias: #84cc16;
+    --cor-padrao-curso: #30363d;
+
+    /* ─── Categorias Canônicas de Curso ─────────────────────────────── */
+    /* Mapeamento sincronizado com motor_cotas/categorizador_cursos.py   */
+    --cat-tecnologia:        #2563EB;
+    --cat-tecnologia-glow:   rgba(37, 99, 235, 0.20);
+
+    --cat-exatas:            #64748B;
+    --cat-exatas-glow:       rgba(100, 116, 139, 0.20);
+
+    --cat-natureza:          #16A34A;
+    --cat-natureza-glow:     rgba(22, 163, 74, 0.20);
+
+    --cat-humanas:           #EA580C;
+    --cat-humanas-glow:      rgba(234, 88, 12, 0.20);
+
+    --cat-licenciatura:      #9333EA;
+    --cat-licenciatura-glow: rgba(147, 51, 234, 0.20);
+
+    --cat-outros:            #6B7280;
+    --cat-outros-glow:       rgba(107, 114, 128, 0.15);
+
+    /* Cores de Destaque para Cards (Bordas e Glow) */
+    --card-border-blue: #58a6ff;
+    --card-glow-blue: rgba(88, 166, 255, 0.15);
+    
+    --card-border-yellow: #ffeb3b;
+    --card-glow-yellow: rgba(255, 235, 59, 0.15);
+    
+    --card-border-orange: #ffca28;
+    --card-glow-orange: rgba(255, 202, 40, 0.2);
+    
+    --card-border-green: #39ff14;
+    --card-glow-green: rgba(57, 255, 20, 0.15);
+}
+
+/* Classes Utilitárias para Cards */
+.modern-card {
+    border: 1px solid var(--border-color);
+    background: var(--bg-color);
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    word-break: break-word;
+    min-width: 0;
+    transition: all 0.3s ease;
+}
+
+.modern-card:hover {
+    transform: translateY(-2px);
+}
+
+.card-blue {
+    border-left: 4px solid var(--card-border-blue);
+}
+.card-blue:hover {
+    box-shadow: 0 0 15px var(--card-glow-blue);
+}
+
+.card-yellow {
+    border-left: 4px solid var(--card-border-yellow);
+}
+.card-yellow:hover {
+    box-shadow: 0 0 15px var(--card-glow-yellow);
+}
+
+.card-orange {
+    border-left: 4px solid var(--card-border-orange);
+}
+.card-orange:hover {
+    box-shadow: 0 0 15px var(--card-glow-orange);
+}
+
+.card-green {
+    border-left: 4px solid var(--card-border-green);
+}
+.card-green:hover {
+    box-shadow: 0 0 15px var(--card-glow-green);
+}
+
+/* Classes para bordas dos cursos baseadas na área (legado) */
+.border-engenharia { border-left: 4px solid var(--cor-engenharia) !important; }
+.border-engenharia:hover { box-shadow: 0 0 15px rgba(249, 115, 22, 0.2); }
+
+.border-saude { border-left: 4px solid var(--cor-saude) !important; }
+.border-saude:hover { box-shadow: 0 0 15px rgba(34, 197, 94, 0.2); }
+
+.border-tecnologia { border-left: 4px solid var(--cor-tecnologia) !important; }
+.border-tecnologia:hover { box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+
+.border-humanas { border-left: 4px solid var(--cor-humanas) !important; }
+.border-humanas:hover { box-shadow: 0 0 15px rgba(234, 179, 8, 0.2); }
+
+.border-letras-artes { border-left: 4px solid var(--cor-letras-artes) !important; }
+.border-letras-artes:hover { box-shadow: 0 0 15px rgba(168, 85, 247, 0.2); }
+
+.border-agrarias { border-left: 4px solid var(--cor-agrarias) !important; }
+.border-agrarias:hover { box-shadow: 0 0 15px rgba(132, 204, 22, 0.2); }
+
+.border-padrao-curso { border-left: 4px solid var(--cor-padrao-curso) !important; }
+.border-padrao-curso:hover { box-shadow: 0 0 15px rgba(48, 54, 61, 0.2); }
+
+/* ─── Classes Canônicas de Categoria ──────────────────────────────── */
+/* Use data-categoria="TECNOLOGIA" no HTML e o JS adiciona a classe.   */
+/* Ou aplique direto via template tag do Django (get_category_class).  */
+
+.cat-tecnologia {
+    border-left: 4px solid var(--cat-tecnologia) !important;
+}
+.cat-tecnologia:hover {
+    box-shadow: 0 0 18px var(--cat-tecnologia-glow);
+    border-left-color: var(--cat-tecnologia) !important;
+}
+
+.cat-exatas {
+    border-left: 4px solid var(--cat-exatas) !important;
+}
+.cat-exatas:hover {
+    box-shadow: 0 0 18px var(--cat-exatas-glow);
+    border-left-color: var(--cat-exatas) !important;
+}
+
+.cat-natureza {
+    border-left: 4px solid var(--cat-natureza) !important;
+}
+.cat-natureza:hover {
+    box-shadow: 0 0 18px var(--cat-natureza-glow);
+    border-left-color: var(--cat-natureza) !important;
+}
+
+.cat-humanas {
+    border-left: 4px solid var(--cat-humanas) !important;
+}
+.cat-humanas:hover {
+    box-shadow: 0 0 18px var(--cat-humanas-glow);
+    border-left-color: var(--cat-humanas) !important;
+}
+
+.cat-licenciatura {
+    border-left: 4px solid var(--cat-licenciatura) !important;
+}
+.cat-licenciatura:hover {
+    box-shadow: 0 0 18px var(--cat-licenciatura-glow);
+    border-left-color: var(--cat-licenciatura) !important;
+}
+
+.cat-outros {
+    border-left: 4px solid var(--cat-outros) !important;
+}
+.cat-outros:hover {
+    box-shadow: 0 0 18px var(--cat-outros-glow);
+    border-left-color: var(--cat-outros) !important;
 }
 
 * {

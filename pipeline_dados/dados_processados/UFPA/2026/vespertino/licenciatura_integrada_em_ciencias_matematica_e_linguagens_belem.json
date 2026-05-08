@@ -1,0 +1,58 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "LICENCIATURA INTEGRADA EM CIENCIAS MATEMATICA E LINGUAGENS",
+            "campus": "Belém",
+            "degree": "Licenciatura",
+            "shift": "Vespertino",
+            "total_spots_filled": 45,
+            "leftover_spots": 1,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 21,
+                    "previous_cutoff": 553.38,
+                    "historical_max_score": 685.22
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 4,
+                    "previous_cutoff": 506.7,
+                    "historical_max_score": 552.82
+                },
+                {
+                    "quota_code": "EQ",
+                    "description": "Cota Escola + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 480.94,
+                    "historical_max_score": 480.94
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 9,
+                    "previous_cutoff": 471.48,
+                    "historical_max_score": 545.52
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 9,
+                    "previous_cutoff": 454.4,
+                    "historical_max_score": 543.44
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 511.42,
+                    "historical_max_score": 511.42
+                }
+            ]
+        }
+    ]
+}

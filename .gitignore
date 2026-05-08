@@ -215,3 +215,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Arquivos PDF (listoes, editais) - nao versionar
+*.pdf
+
+# Arquivos PDF (listões, editais) — não versionar
+*.pdf
+
+# Arquivos PDF (listoes, editais) - nao versionar
+*.pdf

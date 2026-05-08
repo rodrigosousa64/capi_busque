@@ -1,0 +1,58 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "LETRAS - INGLES",
+            "campus": "Bragança",
+            "degree": "Licenciatura",
+            "shift": "Noturno",
+            "total_spots_filled": 30,
+            "leftover_spots": 1,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 12,
+                    "previous_cutoff": 599.92,
+                    "historical_max_score": 651.12
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 595.76,
+                    "historical_max_score": 595.76
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 6,
+                    "previous_cutoff": 507.08,
+                    "historical_max_score": 556.88
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 5,
+                    "previous_cutoff": 566.18,
+                    "historical_max_score": 579.04
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
+                    "spots": 2,
+                    "previous_cutoff": 475.56,
+                    "historical_max_score": 496.04
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 4,
+                    "previous_cutoff": 465.14,
+                    "historical_max_score": 500.12
+                }
+            ]
+        }
+    ]
+}
