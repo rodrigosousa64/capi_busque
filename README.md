@@ -1,5 +1,6 @@
 # 🐾 CAPI_BUSQUE
 link: https://capibusque-production.up.railway.app/
+
 **Capi_Busque** é um sistema inteligente desenvolvido em Django focado em otimizar a entrada de estudantes nas universidades públicas da Região Metropolitana de Belém e estado do Pará (**UFPA, UEPA, IFPA e UFRA**).
 
 O algoritmo da plataforma cruza o perfil socioeconômico do candidato (renda, origem escolar, cor/raça, deficiência) com um extenso banco de dados de notas de corte de processos seletivos anteriores, indicando com exatidão **qual cota o aluno tem direito** e qual delas exige a **menor nota para aprovação**.
