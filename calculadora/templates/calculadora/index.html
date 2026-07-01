@@ -15,7 +15,6 @@
             <h3 style="color: #39ff14; margin: 0;">> MEUS_FAVORITOS_SALVOS</h3>
         </div>
         <div style="display: flex; flex-direction: column; gap: 15px;">
-            {% if request.user.is_authenticated %}
                 {% for fav in resultados %}
                     <div class="fav-card" id="fav-{{ forloop.counter }}" data-min-score="{{ fav.cota_perfil.nota_minima|default:0 }}" style="border: 1px solid #30363d; padding: 15px; border-left: 4px solid #30363d; background: #0d1117; border-radius: 4px; transition: all 0.3s ease;">
                         <div style="font-weight: bold; color: #fff; font-size: 0.9rem;">{{ fav.nome_curso }}</div>
@@ -31,22 +30,6 @@
                         <a href="{% url 'buscar_cursos' %}" style="color: #58a6ff; text-decoration: none; font-weight: bold;">[ ADICIONAR FAVORITOS NA ABA DE PESQUISA ]</a>
                     </div>
                 {% endfor %}
-            {% else %}
-                <div style="background: rgba(88, 166, 255, 0.05); border: 1px dashed #58a6ff; padding: 20px; border-radius: 4px; text-align: center;">
-                    <div style="color: #58a6ff; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.4;">
-                        Para ver seus favoritos e comparar com o resultado da calculadora, é necessário fazer login.
-                    </div>
-                    <form method="post" action="{% url 'login' %}?next=/calculadora/">
-                        {% csrf_token %}
-                        <input type="text" name="username" placeholder="Usuário" required style="width: 100%; padding: 10px; margin-bottom: 10px; background: #000; border: 1px solid #30363d; color: #39ff14; font-family: inherit; box-sizing: border-box; outline: none;">
-                        <input type="password" name="password" placeholder="Senha" required style="width: 100%; padding: 10px; margin-bottom: 15px; background: #000; border: 1px solid #30363d; color: #39ff14; font-family: inherit; box-sizing: border-box; outline: none;">
-                        <button type="submit" style="width: 100%; background: #39ff14; color: #000; font-weight: bold; font-family: inherit; padding: 12px; border: none; cursor: pointer; text-transform: uppercase;">[ ENTRAR ]</button>
-                    </form>
-                    <div style="margin-top: 15px; font-size: 0.85rem;">
-                        <a href="{% url 'registro' %}" style="color: #8b949e; text-decoration: none;">Ainda não tem conta? <span style="color: #39ff14; text-decoration: underline;">Cadastre-se grátis</span></a>
-                    </div>
-                </div>
-            {% endif %}
         </div>
     </div>
 

@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from favoritos.models import Favorito
-from cota_min_and_max_enem.models import PerfilCandidatoDB
+from cota_min_and_max_enem.models import PerfilCandidatoDB, CourseOffering
 import os
 import sys
 
@@ -15,7 +13,6 @@ if sub_dir not in sys.path:
 from buscador_notas import BuscadorDeNotas
 from verificador_cotas import PerfilCandidato, AvaliadorDeCotas
 
-# login_required removido
 def calculadora_view(request):
     resultados_favoritos = []
     
@@ -31,17 +28,31 @@ def calculadora_view(request):
             raca=perfil_db.raca,
             pcd=perfil_db.pcd
         )
+    else:
+        session_perfil = request.session.get('perfil_candidato', {
+            'escola_publica': False,
+            'renda_sm': 1.5,
+            'raca': 'ND',
+            'pcd': False
+        })
+        perfil_dataclass = PerfilCandidato(
+            escola_publica=session_perfil['escola_publica'],
+            renda_sm=session_perfil['renda_sm'],
+            raca=session_perfil['raca'],
+            pcd=session_perfil['pcd']
+        )
 
-        favoritos = Favorito.objects.filter(user=request.user).select_related('oferta')
-        
-        buscador = BuscadorDeNotas()
-        avaliador = AvaliadorDeCotas(perfil_dataclass)
-        
-        for fav in favoritos:
-            resultado = buscador.avaliar_oferta(fav.oferta, perfil_dataclass, avaliador)
-            if resultado:
-                resultado['is_favorito'] = True
-                resultados_favoritos.append(resultado)
+    favoritos_ids = request.session.get('favoritos', [])
+    ofertas_favoritas = CourseOffering.objects.filter(id__in=favoritos_ids)
+    
+    buscador = BuscadorDeNotas()
+    avaliador = AvaliadorDeCotas(perfil_dataclass)
+    
+    for oferta in ofertas_favoritas:
+        resultado = buscador.avaliar_oferta(oferta, perfil_dataclass, avaliador)
+        if resultado:
+            resultado['is_favorito'] = True
+            resultados_favoritos.append(resultado)
 
     return render(request, 'calculadora/index.html', {
         'resultados': resultados_favoritos
