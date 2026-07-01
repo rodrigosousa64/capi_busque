@@ -128,13 +128,7 @@ def buscar_cursos_view(request):
         buscador = BuscadorDeNotas()
         resultados = buscador.buscar_curso_para_perfil(curso_buscado, perfil_dataclass)
 
-    favoritos_ids = []
-    if request.user.is_authenticated:
-        try:
-            from favoritos.models import Favorito
-            favoritos_ids = list(Favorito.objects.filter(user=request.user).values_list('oferta_id', flat=True))
-        except ImportError:
-            pass
+    favoritos_ids = request.session.get('favoritos', [])
 
     return render(request, 'cota_min_and_max_enem/busca.html', {
         'busca_form': busca_form,

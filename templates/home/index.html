@@ -27,7 +27,7 @@
         <nav class="menu-items" style="margin-top: 0;">
             <div class="item"><a href="{% url 'home' %}"><span>Inicio</span> <small>Dashboard</small></a></div>
             <div class="item"><a href="{% url 'buscar_cursos' %}"><span>Simulador de Cotas</span> <small>Análise de Perfil e Notas</small></a></div>
-            <div class="item"><a href="{% url 'calculadora_index' %}"><span>Calculadora TRI</span> <small>Compare sua nota simulada</small></a></div>
+
             <div class="item"><a href="{% url 'listar_favoritos' %}"><span>Gerencie seus Favoritos</span> <small>Remover e Visualizar</small></a></div>
             <div class="item"><a href="{% url 'vagas_sobrando_lista' %}"><span>Sabia que vagas sobram?</span> <small>Cursos com Sobras</small></a></div>
             <div class="item"><a href="{% url 'comentarios:lista' %}"><span>Comentários</span> <small>Feedback da Comunidade</small></a></div>
@@ -38,11 +38,7 @@
     <div class="overlay"></div>
 
     <main class="content">
-        {% if not request.user.is_authenticated %}
-        <div style="background: rgba(234, 179, 8, 0.1); border-left: 4px solid #eab308; padding: 10px 15px; margin-bottom: 15px; color: #eab308; font-size: 0.85rem; border-radius: 4px; font-family: 'Courier New', Courier, monospace;">
-            <strong>[ MODO VISITANTE ]</strong> Você está navegando sem conta. Para salvar cursos favoritos e usar a Calculadora TRI com precisão, <a href="{% url 'login' %}" style="color: #eab308; text-decoration: underline; font-weight: bold;">faça o seu login aqui</a>.
-        </div>
-        {% endif %}
+
         <section class="terminal-box">
             {% if messages %}
                 <ul style="list-style: none; padding: 0; color: #ffeb3b; margin-bottom: 20px;">
