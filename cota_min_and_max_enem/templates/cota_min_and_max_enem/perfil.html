@@ -1,56 +1,39 @@
 {% extends 'home/index.html' %}
+{% load static %}
 
 {% block content %}
-<div style="max-width: 600px;">
+<link rel="stylesheet" href="{% static 'cota_min_and_max_enem/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'cota_min_and_max_enem/css/perfil.css' %}">
+<div class="perfil-container">
     <h2>> ATUALIZAR_PERFIL_CANDIDATO</h2>
-    <p style="color: #8b949e; margin-bottom: 20px;">
+    <p class="perfil-subtitle">
         // Insira seus dados para calculo das cotas
     </p>
 
     <form method="post">
         {% csrf_token %}
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <div class="perfil-grid">
             {% for field in form %}
-                <div style="{% if forloop.first or forloop.last %}grid-column: 1 / -1;{% endif %}">
-                    <label style="display: block; margin-bottom: 5px; color: #58a6ff;">{{ field.label_tag }}</label>
+                <div class="{% if forloop.first or forloop.last %}perfil-form-group-full{% endif %}">
+                    <label class="perfil-form-label">{{ field.label_tag }}</label>
                     
                     {% if field.field.widget.input_type == 'checkbox' %}
-                        <div style="display: flex; align-items: center;">
-                            {{ field }} <span style="margin-left: 10px; color: #39ff14;">{{ field.help_text }}</span>
+                        <div class="perfil-checkbox-wrapper">
+                            {{ field }} <span class="perfil-checkbox-help">{{ field.help_text }}</span>
                         </div>
                     {% else %}
                         {{ field }}
                     {% endif %}
                     
                     {% if field.errors %}
-                        <div style="color: #ff3333; font-size: 0.8rem; margin-top: 5px;">
+                        <div class="perfil-form-error">
                             {{ field.errors|striptags }}
                         </div>
                     {% endif %}
                 </div>
             {% endfor %}
         </div>
-        <button type="submit" style="background: #39ff14; color: black; border: none; padding: 10px 20px; font-family: inherit; font-weight: bold; cursor: pointer; margin-top: 20px; width: 100%;">[ SALVAR_PERFIL ]</button>
+        <button type="submit" class="perfil-submit-btn">[ SALVAR_PERFIL ]</button>
     </form>
 </div>
-<style>
-    input[type="text"], input[type="number"], select {
-        width: 100%;
-        padding: 8px;
-        background: black;
-        border: 1px solid #30363d;
-        color: #39ff14;
-        font-family: inherit;
-        box-sizing: border-box;
-    }
-    input:focus, select:focus {
-        outline: none;
-        border-color: #39ff14;
-    }
-    input[type="checkbox"] {
-        accent-color: #39ff14;
-        width: 20px;
-        height: 20px;
-    }
-</style>
 {% endblock %}
