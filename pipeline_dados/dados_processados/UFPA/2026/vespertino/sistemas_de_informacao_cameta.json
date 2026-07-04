@@ -1,0 +1,58 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "SISTEMAS DE INFORMACAO",
+            "campus": "Cametá",
+            "degree": "Bacharelado",
+            "shift": "Vespertino",
+            "total_spots_filled": 40,
+            "leftover_spots": 1,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 17,
+                    "previous_cutoff": 618.06,
+                    "historical_max_score": 693.9
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 617.64,
+                    "historical_max_score": 617.64
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 9,
+                    "previous_cutoff": 546.58,
+                    "historical_max_score": 610.24
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 1,
+                    "previous_cutoff": 615.48,
+                    "historical_max_score": 615.48
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 566.18,
+                    "historical_max_score": 566.18
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 11,
+                    "previous_cutoff": 505.18,
+                    "historical_max_score": 545.5
+                }
+            ]
+        }
+    ]
+}

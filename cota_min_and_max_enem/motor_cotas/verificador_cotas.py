@@ -24,18 +24,22 @@ class AvaliadorDeCotas:
             return "AC"
         
         eh_ppi = self.perfil.raca in ['preta', 'parda', 'indigena']
-        renda_baixa = self.perfil.renda_sm <= 1.5
+        eh_q = self.perfil.raca == 'quilombola'
+        renda_baixa = self.perfil.renda_sm <= 1.0 # Atualizado para o novo teto da Lei 14.723/2023
 
+        # 2. Avaliação do Fluxo (Control Flow)
         if renda_baixa:
-            if eh_ppi and not self.perfil.pcd: return "L1"
-            if not eh_ppi and not self.perfil.pcd: return "L2"
-            if eh_ppi and self.perfil.pcd: return "L5"
-            if not eh_ppi and self.perfil.pcd: return "L6"
+            # Categoria RI: Renda Inferior
+            if self.perfil.pcd: return "RI_PCD"
+            if eh_q: return "RI_Q"
+            if eh_ppi: return "RI_PPI"
+            return "RI_EP" # Retorno padrão (Fallback) caso não possua raça/deficiência declarada
         else:
-            if eh_ppi and not self.perfil.pcd: return "L3"
-            if not eh_ppi and not self.perfil.pcd: return "L4"
-            if eh_ppi and self.perfil.pcd: return "L7"
-            if not eh_ppi and self.perfil.pcd: return "L8"
+            # Categoria IR: Independente de Renda
+            if self.perfil.pcd: return "IR_PCD"
+            if eh_q: return "IR_Q"
+            if eh_ppi: return "IR_PPI"
+            return "IR_EP" # Retorno padrão (Fallback) geral"
 
     def obter_cota_ufpa(self) -> str:
         """

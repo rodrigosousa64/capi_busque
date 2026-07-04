@@ -1,0 +1,23 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "AGROECOLOGIA",
+            "campus": "BRAGANÇA",
+            "degree": "TECNOLOGIA",
+            "shift": "MATUTINO",
+            "total_spots_filled": 1,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 1,
+                    "previous_cutoff": 629.34,
+                    "historical_max_score": 629.34
+                }
+            ]
+        }
+    ]
+}

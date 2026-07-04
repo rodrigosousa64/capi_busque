@@ -1,0 +1,65 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "GEOLOGIA",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Integral",
+            "total_spots_filled": 41,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 17,
+                    "previous_cutoff": 710.62,
+                    "historical_max_score": 819.26
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 682.81,
+                    "historical_max_score": 682.81
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 708.58,
+                    "historical_max_score": 708.58
+                },
+                {
+                    "quota_code": "EPCD",
+                    "description": "Cota Escola + Pessoas com Deficiência (PcD)",
+                    "spots": 1,
+                    "previous_cutoff": 674.06,
+                    "historical_max_score": 674.06
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 7,
+                    "previous_cutoff": 534.75,
+                    "historical_max_score": 654.48
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 13,
+                    "previous_cutoff": 535.04,
+                    "historical_max_score": 706.2
+                },
+                {
+                    "quota_code": "ERPCD",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Pessoas com Deficiência (PcD)",
+                    "spots": 1,
+                    "previous_cutoff": 658.5,
+                    "historical_max_score": 658.5
+                }
+            ]
+        }
+    ]
+}

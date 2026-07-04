@@ -1,0 +1,65 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "LETRAS - LINGUA PORTUGUESA",
+            "campus": "Soure",
+            "degree": "Licenciatura",
+            "shift": "Noturno",
+            "total_spots_filled": 40,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 17,
+                    "previous_cutoff": 557.84,
+                    "historical_max_score": 643.72
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 530.54,
+                    "historical_max_score": 530.54
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 556.76,
+                    "historical_max_score": 556.76
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 9,
+                    "previous_cutoff": 530.42,
+                    "historical_max_score": 552.36
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 2,
+                    "previous_cutoff": 544.98,
+                    "historical_max_score": 554.48
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 532.14,
+                    "historical_max_score": 532.14
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 9,
+                    "previous_cutoff": 464.14,
+                    "historical_max_score": 513.04
+                }
+            ]
+        }
+    ]
+}

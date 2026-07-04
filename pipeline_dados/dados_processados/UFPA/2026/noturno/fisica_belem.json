@@ -1,0 +1,44 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "FISICA",
+            "campus": "Belém",
+            "degree": "Licenciatura",
+            "shift": "Noturno",
+            "total_spots_filled": 45,
+            "leftover_spots": 6,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 25,
+                    "previous_cutoff": 562.74,
+                    "historical_max_score": 744.62
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 8,
+                    "previous_cutoff": 523.6,
+                    "historical_max_score": 570.24
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 8,
+                    "previous_cutoff": 492.74,
+                    "historical_max_score": 554.66
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 4,
+                    "previous_cutoff": 493.2,
+                    "historical_max_score": 569.56
+                }
+            ]
+        }
+    ]
+}

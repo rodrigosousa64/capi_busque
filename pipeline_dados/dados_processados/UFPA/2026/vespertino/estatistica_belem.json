@@ -1,0 +1,44 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "ESTATISTICA",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Vespertino",
+            "total_spots_filled": 40,
+            "leftover_spots": 1,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 24,
+                    "previous_cutoff": 593.08,
+                    "historical_max_score": 838.33
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 5,
+                    "previous_cutoff": 627.97,
+                    "historical_max_score": 663.04
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 4,
+                    "previous_cutoff": 599.48,
+                    "historical_max_score": 639.94
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 7,
+                    "previous_cutoff": 552.62,
+                    "historical_max_score": 660.64
+                }
+            ]
+        }
+    ]
+}

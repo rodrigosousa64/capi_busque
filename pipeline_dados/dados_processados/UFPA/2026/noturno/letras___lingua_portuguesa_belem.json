@@ -1,0 +1,51 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "LETRAS - LINGUA PORTUGUESA",
+            "campus": "Belém",
+            "degree": "Licenciatura",
+            "shift": "Noturno",
+            "total_spots_filled": 50,
+            "leftover_spots": 2,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 23,
+                    "previous_cutoff": 615.58,
+                    "historical_max_score": 679.4
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 615.28,
+                    "historical_max_score": 615.28
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 10,
+                    "previous_cutoff": 557.46,
+                    "historical_max_score": 596.94
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 2,
+                    "previous_cutoff": 604.44,
+                    "historical_max_score": 613.96
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 14,
+                    "previous_cutoff": 483.6,
+                    "historical_max_score": 552.92
+                }
+            ]
+        }
+    ]
+}

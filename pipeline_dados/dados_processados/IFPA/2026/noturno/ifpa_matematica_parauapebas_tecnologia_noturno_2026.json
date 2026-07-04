@@ -1,0 +1,44 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "MATEMÁTICA",
+            "campus": "PARAUAPEBAS",
+            "degree": "TECNOLOGIA",
+            "shift": "NOTURNO",
+            "total_spots_filled": 23,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "RI_EP",
+                    "description": "Vagas reservadas a candidatos com renda familiar bruta per capita igual ou inferior a 1 salário mínimo, que tenham cursado o ensino médio integralmente em escola pública (Geral/Independente de autodeclaração).",
+                    "spots": 2,
+                    "previous_cutoff": 560.8,
+                    "historical_max_score": 581.48
+                },
+                {
+                    "quota_code": "IR_PCD",
+                    "description": "Vagas reservadas a candidatos com deficiência, independente de renda, que tenham cursado o ensino médio integralmente em escola pública.",
+                    "spots": 1,
+                    "previous_cutoff": 554.48,
+                    "historical_max_score": 554.48
+                },
+                {
+                    "quota_code": "IR_EP",
+                    "description": "Vagas reservadas a candidatos, independente de renda, que tenham cursado o ensino médio integralmente em escola pública (Geral/Independente de autodeclaração).",
+                    "spots": 1,
+                    "previous_cutoff": 565.92,
+                    "historical_max_score": 565.92
+                },
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 19,
+                    "previous_cutoff": 452.1,
+                    "historical_max_score": 638.54
+                }
+            ]
+        }
+    ]
+}

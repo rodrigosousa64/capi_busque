@@ -1,0 +1,23 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "MATEMÁTICA",
+            "campus": "PARAGOMINAS",
+            "degree": "TECNOLOGIA",
+            "shift": "NOTURNO",
+            "total_spots_filled": 15,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 15,
+                    "previous_cutoff": 481.48,
+                    "historical_max_score": 640.46
+                }
+            ]
+        }
+    ]
+}

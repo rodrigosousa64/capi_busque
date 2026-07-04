@@ -1,0 +1,51 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "CONSERVACAO E RESTAURO",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Matutino",
+            "total_spots_filled": 31,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 12,
+                    "previous_cutoff": 642.09,
+                    "historical_max_score": 771.23
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 601.26,
+                    "historical_max_score": 601.26
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 7,
+                    "previous_cutoff": 560.82,
+                    "historical_max_score": 637.41
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 4,
+                    "previous_cutoff": 557.41,
+                    "historical_max_score": 608.98
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 7,
+                    "previous_cutoff": 506.07,
+                    "historical_max_score": 629.31
+                }
+            ]
+        }
+    ]
+}

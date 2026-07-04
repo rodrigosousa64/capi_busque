@@ -1,0 +1,280 @@
+{% extends 'home/index.html' %}
+
+{% block content %}
+<style>
+    /* Estilos baseados nas variáveis do index.css */
+    .comentarios-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+    
+    .comentario-card {
+        background-color: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-left: 4px solid var(--accent-color);
+        border-radius: 8px;
+        padding: 15px;
+        box-shadow: 0 4px 6px var(--shadow-color);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .comentario-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px var(--shadow-color);
+        border-color: var(--accent-color);
+    }
+    
+    .comentario-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        border-bottom: 1px dashed var(--border-color);
+        padding-bottom: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .comentario-autor {
+        font-weight: bold;
+        color: var(--accent-color);
+        font-family: 'Courier New', Courier, monospace;
+    }
+    
+    .comentario-data {
+        font-size: 0.85em;
+        color: var(--text-secondary);
+    }
+    
+    .comentario-texto {
+        color: var(--text-primary);
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    
+    .comentario-tag {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.8em;
+        font-weight: bold;
+        background-color: var(--surface-hover);
+        border: 1px solid var(--border-color);
+    }
+    
+    .tag-sim { color: #39ff14; border-color: #39ff14; }
+    .tag-parcial { color: #eab308; border-color: #eab308; }
+    .tag-nao { color: var(--text-secondary); }
+
+    .form-container {
+        background-color: var(--surface-color);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .form-title {
+        color: var(--accent-color);
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        border-bottom: 1px dashed var(--border-color);
+        padding-bottom: 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text-primary);
+        font-weight: bold;
+    }
+    
+    .custom-textarea, .custom-select {
+        width: 100%;
+        max-width: 100%;
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        padding: 10px;
+        border-radius: 4px;
+        font-family: inherit;
+        resize: vertical;
+        box-sizing: border-box;
+    }
+
+    .custom-select {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    
+    .form-title, h1 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+    }
+    
+    .custom-textarea:focus, .custom-select:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 2px var(--accent-shadow);
+    }
+    
+    .btn-submit {
+        background-color: var(--accent-color);
+        color: var(--bg-color);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    .btn-submit:hover {
+        background-color: #3b82f6;
+        color: white;
+    }
+    
+    .login-prompt {
+        background: rgba(88, 166, 255, 0.1);
+        border-left: 4px solid var(--accent-color);
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 30px;
+        color: var(--text-primary);
+    }
+    
+    .login-prompt a {
+        color: var(--accent-color);
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    @media (min-width: 600px) {
+        .btn-submit {
+            width: auto;
+        }
+    }
+</style>
+
+<div class="comentarios-container">
+    <h1 style="color: var(--accent-color); font-family: 'Courier New', Courier, monospace; margin-bottom: 5px;">> FEEDBACK_DA_COMUNIDADE</h1>
+    <p style="color: var(--text-secondary); margin-bottom: 20px;">Veja o que os outros estudantes estão achando do Capi Busque e compartilhe a sua experiência.</p>
+
+    <!-- Card de Uptime do Projeto -->
+    <div style="background-color: var(--surface-color); border: 1px solid var(--border-color); border-left: 4px solid #39ff14; border-radius: 8px; padding: 20px; margin-bottom: 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 4px 6px var(--shadow-color);">
+        <div>
+            <h4 style="margin: 0; color: var(--text-secondary); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">Status da Plataforma: Online</h4>
+            <div style="color: var(--text-primary); font-family: 'Courier New', Courier, monospace; font-size: 1.4rem; font-weight: bold; margin-top: 8px;">
+                <span id="uptime-counter">Calculando...</span>
+            </div>
+            <div style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 5px;">
+                Evoluindo desde 28 de Abril de 2026
+            </div>
+        </div>
+        <div style="background: rgba(57, 255, 20, 0.1); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);">
+            <span style="font-size: 1.5rem;">🚀</span>
+        </div>
+    </div>
+
+    <script>
+        function updateUptime() {
+            const creationDate = new Date('2026-04-28T18:17:22-03:00');
+            const now = new Date();
+            const diff = now - creationDate;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+            
+            const h = hours.toString().padStart(2, '0');
+            const m = minutes.toString().padStart(2, '0');
+            const s = seconds.toString().padStart(2, '0');
+            
+            document.getElementById('uptime-counter').textContent = `${days} dias, ${h}:${m}:${s}`;
+        }
+        
+        updateUptime();
+        setInterval(updateUptime, 1000);
+    </script>
+
+    <!-- Formulário de Submissão -->
+    {% if request.user.is_authenticated %}
+        <div class="form-container">
+            <h3 class="form-title">Deixe seu depoimento</h3>
+            
+            <div style="background: rgba(88, 166, 255, 0.05); border-left: 4px solid var(--accent-color); padding: 15px; border-radius: 4px; margin-bottom: 25px;">
+                <p style="margin-top: 0; font-weight: bold; color: var(--accent-color); font-family: 'Courier New', Courier, monospace;">O que escrever?</p>
+                <p style="margin-bottom: 10px; font-size: 0.9rem; color: var(--text-primary);">Para nos guiar no desenvolvimento, fique à vontade para relatar sobre:</p>
+                <ul style="margin: 0; padding-left: 20px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+                    <li>🎨 <strong>UI/Estilo:</strong> O que achou das cores, visual da tela e navegação?</li>
+                    <li>⚙️ <strong>Novas Funções:</strong> Quais ferramentas você gostaria que existissem?</li>
+                    <li>🐛 <strong>Reportar Bugs:</strong> Algo não funcionou como deveria? Onde?</li>
+                    <li>📚 <strong>Cursos Faltando:</strong> Sentiu falta de algum curso específico?</li>
+                    <li>🚀 <strong>Melhorias:</strong> O que faria o Capi Busque perfeito pra você?</li>
+                </ul>
+            </div>
+
+            <form method="post" action="{% url 'comentarios:lista' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.texto_comentario.id_for_label }}">{{ form.texto_comentario.label }}</label>
+                    {{ form.texto_comentario }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.ajudou_preparacao.id_for_label }}">{{ form.ajudou_preparacao.label }}</label>
+                    {{ form.ajudou_preparacao }}
+                </div>
+                <button type="submit" class="btn-submit">Enviar Feedback</button>
+            </form>
+        </div>
+    {% else %}
+        <div class="login-prompt">
+            <strong>Quer compartilhar sua experiência?</strong><br>
+            Você precisa estar logado para enviar um comentário. <a href="{% url 'login' %}">Faça login ou cadastre-se aqui</a> para participar da nossa comunidade!
+        </div>
+    {% endif %}
+
+    <!-- Listagem de Comentários -->
+    <h3 style="color: var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 10px;">Comentários Recentes</h3>
+    
+    {% if comentarios %}
+        {% for comentario in comentarios %}
+            <div class="comentario-card">
+                <div class="comentario-header">
+                    <span class="comentario-autor">@{{ comentario.usuario.username }}</span>
+                    <span class="comentario-data">{{ comentario.data_criacao|date:"d M Y, H:i" }}</span>
+                </div>
+                <div class="comentario-texto">
+                    {{ comentario.texto_comentario|linebreaks }}
+                </div>
+                
+                {% if comentario.ajudou_preparacao == 'S' %}
+                    <span class="comentario-tag tag-sim">✓ Ajudou bastante</span>
+                {% elif comentario.ajudou_preparacao == 'P' %}
+                    <span class="comentario-tag tag-parcial">~ Ajudou parcialmente</span>
+                {% elif comentario.ajudou_preparacao == 'N' %}
+                    <span class="comentario-tag tag-nao">Ainda explorando</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <div style="text-align: center; padding: 40px; color: var(--text-secondary); border: 1px dashed var(--border-color); border-radius: 8px;">
+            Nenhum comentário ainda. Seja o primeiro a compartilhar sua experiência!
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

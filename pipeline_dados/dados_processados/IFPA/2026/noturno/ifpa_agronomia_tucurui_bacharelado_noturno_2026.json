@@ -1,0 +1,23 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "AGRONOMIA",
+            "campus": "TUCURUÍ",
+            "degree": "BACHARELADO",
+            "shift": "NOTURNO",
+            "total_spots_filled": 24,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 24,
+                    "previous_cutoff": 461.6,
+                    "historical_max_score": 692.5
+                }
+            ]
+        }
+    ]
+}

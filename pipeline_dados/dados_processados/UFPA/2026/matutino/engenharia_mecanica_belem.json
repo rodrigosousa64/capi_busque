@@ -1,0 +1,79 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "ENGENHARIA MECANICA",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Matutino",
+            "total_spots_filled": 41,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 17,
+                    "previous_cutoff": 719.2,
+                    "historical_max_score": 796.54
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 615.02,
+                    "historical_max_score": 615.02
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 708.32,
+                    "historical_max_score": 708.32
+                },
+                {
+                    "quota_code": "EPCD",
+                    "description": "Cota Escola + Pessoas com Deficiência (PcD)",
+                    "spots": 1,
+                    "previous_cutoff": 610.08,
+                    "historical_max_score": 610.08
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 9,
+                    "previous_cutoff": 638.48,
+                    "historical_max_score": 683.96
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 1,
+                    "previous_cutoff": 682.0,
+                    "historical_max_score": 682.0
+                },
+                {
+                    "quota_code": "ERPCD",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Pessoas com Deficiência (PcD)",
+                    "spots": 1,
+                    "previous_cutoff": 565.1,
+                    "historical_max_score": 565.1
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 522.32,
+                    "historical_max_score": 522.32
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 9,
+                    "previous_cutoff": 606.6,
+                    "historical_max_score": 626.7
+                }
+            ]
+        }
+    ]
+}

@@ -1,4 +1,5 @@
 {% extends 'home/index.html' %}
+{% load curso_tags %}
 
 {% block content %}
 <!-- TOP SECTION: PERFIL & CALCULATOR SIDE-BY-SIDE -->
@@ -88,7 +89,7 @@
     <h3 style="color: #58a6ff; margin-bottom: 20px;">> RESULTADOS_ENCONTRADOS</h3>
     <div class="card-grid">
         {% for result in resultados %}
-        <div class="fav-card" data-min-score="{{ result.cota_perfil.nota_minima|default:0 }}" style="border: 1px solid #30363d; padding: 12px; border-left: 4px solid #58a6ff; background: #0d1117; display: flex; flex-direction: column; min-width: 0; word-break: break-word;">
+        <div class="modern-card fav-card {{ result.nome_curso|category_class }}" data-min-score="{{ result.cota_perfil.nota_minima|default:0 }}" style="padding: 12px; border: 1px solid #30363d; border-left: 4px solid #58a6ff; background: #0d1117; display: flex; flex-direction: column; min-width: 0; word-break: break-word;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px;">
                 <h4 style="margin: 0; font-size: 1.05rem; color: #fff;">{{ result.instituicao }}</h4>
                 <div style="text-align: right;">

@@ -1,0 +1,51 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "MATEMATICA",
+            "campus": "Belém",
+            "degree": "Licenciatura",
+            "shift": "Matutino",
+            "total_spots_filled": 40,
+            "leftover_spots": 1,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 17,
+                    "previous_cutoff": 661.62,
+                    "historical_max_score": 735.84
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 658.1,
+                    "historical_max_score": 658.1
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 9,
+                    "previous_cutoff": 612.58,
+                    "historical_max_score": 643.74
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 6,
+                    "previous_cutoff": 588.58,
+                    "historical_max_score": 635.36
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 7,
+                    "previous_cutoff": 486.6,
+                    "historical_max_score": 585.44
+                }
+            ]
+        }
+    ]
+}

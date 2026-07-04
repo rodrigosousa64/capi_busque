@@ -1,0 +1,51 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "ENGENHARIA CIVIL",
+            "campus": "Tucuruí",
+            "degree": "Bacharelado",
+            "shift": "Vespertino",
+            "total_spots_filled": 48,
+            "leftover_spots": 1,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 23,
+                    "previous_cutoff": 620.6,
+                    "historical_max_score": 704.4
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 618.66,
+                    "historical_max_score": 618.66
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 10,
+                    "previous_cutoff": 547.28,
+                    "historical_max_score": 607.9
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 9,
+                    "previous_cutoff": 575.92,
+                    "historical_max_score": 615.34
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 5,
+                    "previous_cutoff": 502.54,
+                    "historical_max_score": 546.56
+                }
+            ]
+        }
+    ]
+}

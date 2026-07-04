@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capi Busque</title>
     <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
-    <link rel="stylesheet" href="{% static 'home/index.css' %}">
+    <link rel="stylesheet" href="{% static 'home/index.css' %}?v=2.0">
 </head>
 <body>
 
@@ -30,6 +30,7 @@
 
             <div class="item"><a href="{% url 'listar_favoritos' %}"><span>Gerencie seus Favoritos</span> <small>Remover e Visualizar</small></a></div>
             <div class="item"><a href="{% url 'vagas_sobrando_lista' %}"><span>Sabia que vagas sobram?</span> <small>Cursos com Sobras</small></a></div>
+            <div class="item"><a href="{% url 'comentarios:lista' %}"><span>Comentários</span> <small>Feedback da Comunidade</small></a></div>
             <div class="item"><a href="{% url 'regras_cotas' %}"><span>Dicionário de Cotas</span> <small>Regras e Siglas</small></a></div>
         </nav>
     </aside>

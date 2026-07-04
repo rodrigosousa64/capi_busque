@@ -1,0 +1,72 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "LETRAS - LIBRAS",
+            "campus": "Belém",
+            "degree": "Licenciatura",
+            "shift": "Integral",
+            "total_spots_filled": 27,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 10,
+                    "previous_cutoff": 593.44,
+                    "historical_max_score": 655.6
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 498.38,
+                    "historical_max_score": 498.38
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 584.06,
+                    "historical_max_score": 584.06
+                },
+                {
+                    "quota_code": "EPCD",
+                    "description": "Cota Escola + Pessoas com Deficiência (PcD)",
+                    "spots": 1,
+                    "previous_cutoff": 485.68,
+                    "historical_max_score": 485.68
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 5,
+                    "previous_cutoff": 552.56,
+                    "historical_max_score": 567.52
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 1,
+                    "previous_cutoff": 574.94,
+                    "historical_max_score": 574.94
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 570.92,
+                    "historical_max_score": 570.92
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 7,
+                    "previous_cutoff": 531.0,
+                    "historical_max_score": 551.78
+                }
+            ]
+        }
+    ]
+}

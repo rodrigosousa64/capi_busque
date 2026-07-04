@@ -1,0 +1,58 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "CIENCIAS BIOLOGICAS",
+            "campus": "Belém",
+            "degree": "Licenciatura",
+            "shift": "Noturno",
+            "total_spots_filled": 30,
+            "leftover_spots": 1,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 12,
+                    "previous_cutoff": 638.58,
+                    "historical_max_score": 698.98
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 629.18,
+                    "historical_max_score": 629.18
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 6,
+                    "previous_cutoff": 591.08,
+                    "historical_max_score": 616.44
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 1,
+                    "previous_cutoff": 627.8,
+                    "historical_max_score": 627.8
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 514.92,
+                    "historical_max_score": 514.92
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 9,
+                    "previous_cutoff": 540.48,
+                    "historical_max_score": 589.6
+                }
+            ]
+        }
+    ]
+}

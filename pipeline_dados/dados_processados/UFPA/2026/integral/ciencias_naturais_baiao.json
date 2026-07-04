@@ -1,0 +1,15 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "CIENCIAS NATURAIS",
+            "campus": "Baião",
+            "degree": "Licenciatura",
+            "shift": "Integral",
+            "total_spots_filled": 0,
+            "leftover_spots": 0,
+            "competition_data": []
+        }
+    ]
+}

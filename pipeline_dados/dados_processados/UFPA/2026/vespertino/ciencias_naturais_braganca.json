@@ -1,0 +1,51 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "CIENCIAS NATURAIS",
+            "campus": "Bragança",
+            "degree": "Licenciatura",
+            "shift": "Vespertino",
+            "total_spots_filled": 35,
+            "leftover_spots": 5,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 16,
+                    "previous_cutoff": 531.32,
+                    "historical_max_score": 625.8
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 512.32,
+                    "historical_max_score": 512.32
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 8,
+                    "previous_cutoff": 475.06,
+                    "historical_max_score": 529.86
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 2,
+                    "previous_cutoff": 471.82,
+                    "historical_max_score": 472.02
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 8,
+                    "previous_cutoff": 482.6,
+                    "historical_max_score": 522.2
+                }
+            ]
+        }
+    ]
+}

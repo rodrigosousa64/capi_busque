@@ -1,0 +1,58 @@
+{
+    "institution": "IFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "AGRONOMIA",
+            "campus": "SANTARÉM",
+            "degree": "TECNOLOGIA",
+            "shift": "NOTURNO",
+            "total_spots_filled": 54,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "RI_PPI",
+                    "description": "Vagas reservadas a candidatos autodeclarados pretos, pardos ou indígenas, com renda familiar bruta igual ou inferior a 1 salário mínimo per capita, que tenham cursado o ensino médio integralmente em escola pública.",
+                    "spots": 5,
+                    "previous_cutoff": 504.82,
+                    "historical_max_score": 577.66
+                },
+                {
+                    "quota_code": "RI_EP",
+                    "description": "Vagas reservadas a candidatos com renda familiar bruta per capita igual ou inferior a 1 salário mínimo, que tenham cursado o ensino médio integralmente em escola pública (Geral/Independente de autodeclaração).",
+                    "spots": 5,
+                    "previous_cutoff": 564.54,
+                    "historical_max_score": 689.48
+                },
+                {
+                    "quota_code": "IR_PPI",
+                    "description": "Vagas reservadas a candidatos autodeclarados pretos, pardos ou indígenas, independente de renda, que tenham cursado o ensino médio integralmente em escola pública.",
+                    "spots": 8,
+                    "previous_cutoff": 477.88,
+                    "historical_max_score": 636.46
+                },
+                {
+                    "quota_code": "IR_PCD",
+                    "description": "Vagas reservadas a candidatos com deficiência, independente de renda, que tenham cursado o ensino médio integralmente em escola pública.",
+                    "spots": 2,
+                    "previous_cutoff": 578.06,
+                    "historical_max_score": 633.4
+                },
+                {
+                    "quota_code": "IR_EP",
+                    "description": "Vagas reservadas a candidatos, independente de renda, que tenham cursado o ensino médio integralmente em escola pública (Geral/Independente de autodeclaração).",
+                    "spots": 7,
+                    "previous_cutoff": 554.34,
+                    "historical_max_score": 693.82
+                },
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 27,
+                    "previous_cutoff": 642.9,
+                    "historical_max_score": 743.7
+                }
+            ]
+        }
+    ]
+}

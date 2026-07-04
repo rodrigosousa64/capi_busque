@@ -1,0 +1,79 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "HISTORIA",
+            "campus": "Bragança",
+            "degree": "Licenciatura",
+            "shift": "Noturno",
+            "total_spots_filled": 40,
+            "leftover_spots": 0,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 17,
+                    "previous_cutoff": 593.2,
+                    "historical_max_score": 665.98
+                },
+                {
+                    "quota_code": "PCDA",
+                    "description": "Cota Adicional Exclusiva para Pessoas com Deficiência (independente da origem escolar)",
+                    "spots": 1,
+                    "previous_cutoff": 566.52,
+                    "historical_max_score": 566.52
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 1,
+                    "previous_cutoff": 591.68,
+                    "historical_max_score": 591.68
+                },
+                {
+                    "quota_code": "EPCD",
+                    "description": "Cota Escola + Pessoas com Deficiência (PcD)",
+                    "spots": 1,
+                    "previous_cutoff": 544.08,
+                    "historical_max_score": 544.08
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 8,
+                    "previous_cutoff": 539.04,
+                    "historical_max_score": 584.42
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 1,
+                    "previous_cutoff": 588.2,
+                    "historical_max_score": 588.2
+                },
+                {
+                    "quota_code": "ERPCD",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Pessoas com Deficiência (PcD)",
+                    "spots": 1,
+                    "previous_cutoff": 480.6,
+                    "historical_max_score": 480.6
+                },
+                {
+                    "quota_code": "ERQ",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Quilombolas",
+                    "spots": 1,
+                    "previous_cutoff": 553.18,
+                    "historical_max_score": 553.18
+                },
+                {
+                    "quota_code": "ERPPI",
+                    "description": "Cota Escola + Renda ≤ 1 SM + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 9,
+                    "previous_cutoff": 469.02,
+                    "historical_max_score": 533.94
+                }
+            ]
+        }
+    ]
+}

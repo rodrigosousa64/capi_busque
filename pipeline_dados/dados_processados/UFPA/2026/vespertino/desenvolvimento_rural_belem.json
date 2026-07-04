@@ -1,0 +1,44 @@
+{
+    "institution": "UFPA",
+    "year_reference": 2026,
+    "offerings": [
+        {
+            "course": "DESENVOLVIMENTO RURAL",
+            "campus": "Belém",
+            "degree": "Bacharelado",
+            "shift": "Vespertino",
+            "total_spots_filled": 43,
+            "leftover_spots": 3,
+            "competition_data": [
+                {
+                    "quota_code": "AC",
+                    "description": "Ampla Concorrência",
+                    "spots": 23,
+                    "previous_cutoff": 489.5,
+                    "historical_max_score": 637.66
+                },
+                {
+                    "quota_code": "E",
+                    "description": "Apenas Cota Escola",
+                    "spots": 3,
+                    "previous_cutoff": 525.86,
+                    "historical_max_score": 539.2
+                },
+                {
+                    "quota_code": "EPPI",
+                    "description": "Cota Escola + Autodeclarados Pretos, Pardos ou Indígenas (PPI)",
+                    "spots": 10,
+                    "previous_cutoff": 473.06,
+                    "historical_max_score": 533.02
+                },
+                {
+                    "quota_code": "ER",
+                    "description": "Cota Escola + Renda familiar per capita ≤ 1 salário mínimo",
+                    "spots": 7,
+                    "previous_cutoff": 486.2,
+                    "historical_max_score": 528.56
+                }
+            ]
+        }
+    ]
+}

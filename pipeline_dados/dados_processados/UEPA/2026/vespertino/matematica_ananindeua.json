@@ -46,13 +46,6 @@
                     "historical_max_score": 636.79
                 },
                 {
-                    "quota_code": "F",
-                    "description": "Cota Escola + Étnico-Racial-Quilombola + PcD (Grupo 6)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
-                },
-                {
                     "quota_code": "G",
                     "description": "Cota Escola + Renda (Grupo 7)",
                     "spots": 1,
@@ -72,13 +65,6 @@
                     "spots": 1,
                     "previous_cutoff": 489.35,
                     "historical_max_score": 608.34
-                },
-                {
-                    "quota_code": "J",
-                    "description": "Cota Escola + Renda + Étnico-Racial-Quilombola + PcD (Grupo 10)",
-                    "spots": 0,
-                    "previous_cutoff": 0.0,
-                    "historical_max_score": 0.0
                 }
             ]
         }
