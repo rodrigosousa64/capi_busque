@@ -16,14 +16,63 @@ class CourseOffering(models.Model):
 
 class QuotaData(models.Model):
     course_offering = models.ForeignKey(CourseOffering, on_delete=models.CASCADE, related_name="quotas")
+
+    # --- Campos originais ---
     quota_code = models.CharField(max_length=50)
     description = models.TextField(blank=True, null=True)
     spots = models.IntegerField(default=0)
     previous_cutoff = models.FloatField(null=True, blank=True)
     historical_max_score = models.FloatField(null=True, blank=True)
 
+    # --- Campo desnormalizado para resolver colisão de códigos entre instituições ---
+    # Ex: código "E" significa coisas diferentes na UFPA e na UEPA
+    institution = models.CharField(
+        max_length=50,
+        blank=True,
+        default='',
+        verbose_name="Instituição",
+        help_text="Desnormalizado de course_offering.institution para facilitar filtros diretos."
+    )
+
+    # --- Campos booleanos semânticos derivados do quota_code ---
+    is_ampla_concorrencia = models.BooleanField(
+        default=False,
+        verbose_name="Ampla Concorrência",
+        help_text="AC (UFPA/IFPA/UFRA) ou A (UEPA). Aberta a todos."
+    )
+    requer_escola_publica = models.BooleanField(
+        default=False,
+        verbose_name="Requer Escola Pública",
+        help_text="Exige que o candidato tenha cursado o ensino médio integralmente em escola pública."
+    )
+    requer_renda_baixa = models.BooleanField(
+        default=False,
+        verbose_name="Requer Renda Baixa (≤ 1 SM)",
+        help_text="Exige renda familiar per capita igual ou inferior a 1 salário mínimo."
+    )
+    is_pcd = models.BooleanField(
+        default=False,
+        verbose_name="Para PcD",
+        help_text="Vaga reservada para Pessoas com Deficiência."
+    )
+    is_adicional_pcd = models.BooleanField(
+        default=False,
+        verbose_name="Cota Adicional PcD",
+        help_text="Cota adicional exclusiva para PcD independente de escola pública (UFPA: PCDA / UEPA: B)."
+    )
+    is_ppi = models.BooleanField(
+        default=False,
+        verbose_name="Para PPI",
+        help_text="Vaga reservada para autodeclarados Pretos, Pardos ou Indígenas."
+    )
+    is_quilombola = models.BooleanField(
+        default=False,
+        verbose_name="Para Quilombola",
+        help_text="Vaga reservada para autodeclarados Quilombolas."
+    )
+
     def __str__(self):
-        return f"{self.quota_code} - {self.course_offering.course_name}"
+        return f"{self.quota_code} ({self.institution}) - {self.course_offering.course_name}"
 
 class PerfilCandidatoDB(models.Model):
     RACA_CHOICES = [
