@@ -1,0 +1,68 @@
+/* Estilos gerais para os templates de cota_min_and_max_enem */
+input, select {
+    width: 100%;
+    padding: 8px;
+    background: black;
+    border: 1px solid #30363d;
+    color: #39ff14;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #39ff14;
+}
+
+input[type="checkbox"] {
+    accent-color: #39ff14;
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilos para estado de aprovação */
+.fav-card {
+    transition: all 0.3s ease;
+}
+
+.fav-card.passed {
+    border-color: #39ff14 !important;
+    border-left: 6px solid #39ff14 !important;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.2);
+}
+
+.fav-card.passed .fav-score {
+    color: #39ff14 !important;
+}
+
+.fav-card.failed {
+    border-color: #ff3333 !important;
+    border-left: 4px solid #ff3333 !important;
+    opacity: 0.7;
+}
+
+.fav-card.failed .fav-score {
+    color: #ff3333 !important;
+}
+
+@media (max-width: 768px) {
+    .fav-card {
+        padding: 8px !important;
+        border-left-width: 3px !important;
+    }
+    .fav-card h4 {
+        font-size: 0.85rem !important;
+    }
+    .fav-card .quota-codigo {
+        font-size: 0.9rem !important;
+    }
+    .fav-card div, .fav-card span {
+        line-height: 1.1 !important;
+    }
+    /* Garantir que o grid da busca siga o index.css ou use o seu próprio */
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}

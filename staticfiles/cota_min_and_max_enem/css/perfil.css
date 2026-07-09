@@ -1,0 +1,44 @@
+.perfil-container {
+    max-width: 600px;
+}
+.perfil-subtitle {
+    color: #8b949e;
+    margin-bottom: 20px;
+}
+.perfil-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.perfil-form-group-full {
+    grid-column: 1 / -1;
+}
+.perfil-form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #58a6ff;
+}
+.perfil-checkbox-wrapper {
+    display: flex;
+    align-items: center;
+}
+.perfil-checkbox-help {
+    margin-left: 10px;
+    color: #39ff14;
+}
+.perfil-form-error {
+    color: #ff3333;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+.perfil-submit-btn {
+    background: #39ff14;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
