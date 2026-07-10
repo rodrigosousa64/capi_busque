@@ -38,7 +38,7 @@ input[type="checkbox"] {
 .fav-card.failed {
     border-color: #ff3333 !important;
     border-left: 4px solid #ff3333 !important;
-    opacity: 0.7;
+    opacity: 0.95;
 }
 
 .fav-card.failed .fav-score {
