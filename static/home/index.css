@@ -210,13 +210,13 @@ body {
 .sidebar {
     width: var(--sidebar-width);
     height: 100vh;
-    background: var(--surface-color);
+    background: #000000;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: sticky;
     top: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    border-right: 1px solid var(--border-color);
+    border-right: 1px solid rgba(48, 54, 61, 0.3);
     flex-shrink: 0;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
@@ -283,10 +283,10 @@ body {
 }
 
 .terminal-box {
-    background: var(--terminal-bg);
+    background: transparent;
     padding: 20px;
     border-radius: 5px;
-    border: 1px solid var(--border-color);
+    border: 1px solid transparent;
     font-family: 'Courier New', Courier, monospace;
     color: var(--terminal-text);
 }
